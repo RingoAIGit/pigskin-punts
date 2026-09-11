@@ -8,6 +8,9 @@
 # That asymmetry is the only way the two could ever drift, so this script removes it by
 # doing both in one go and then checking both, rather than trusting either.
 #
+# Pages lags a push by a minute or two, so the check polls for the rebuild instead of
+# calling the lag a failure.
+#
 #   ./deploy.sh "what changed"
 set -euo pipefail
 
@@ -18,7 +21,8 @@ SLUG="waking-walrus-3vcd"
 GH="https://ringoaigit.github.io/pigskin-punts"
 HN="https://waking-walrus-3vcd.here.now"
 SITE_FILES="index.html bets.html results.html method.html week-01.html protocol.html seal-client.html reply-to-curly.md README.md .nojekyll assets"
-PAGES=" bets.html results.html method.html week-01.html protocol.html seal-client.html"
+PAGES="index.html bets.html results.html method.html week-01.html protocol.html seal-client.html"
+PAGES_WAIT_TRIES=12      # 12 x 15s = 3 minutes of grace for the Pages rebuild
 
 MSG="${1:-Site update}"
 cd "$REPO"
@@ -54,17 +58,32 @@ for p in $PAGES; do
 done
 
 echo "5. do they agree on which build is live?"
-gh_commit=$(curl -s --compressed "$GH/assets/data/build.json" | python3 -c "import json,sys;print(json.load(sys.stdin)['built_utc'])")
-hn_commit=$(curl -s --compressed "$HN/assets/data/build.json" | python3 -c "import json,sys;print(json.load(sys.stdin)['built_utc'])")
-echo "   github   $gh_commit"
-echo "   here.now $hn_commit"
-[ "$gh_commit" = "$hn_commit" ] || { echo "   MISMATCH - the two hosts are serving different builds"; fail=1; }
+stamp_of() {
+  curl -s --compressed "$1/assets/data/build.json" 2>/dev/null \
+    | python3 -c "import json,sys;print(json.load(sys.stdin).get('built_utc',''))" 2>/dev/null \
+    || echo ""
+}
+hn_utc=$(stamp_of "$HN")
+echo "   here.now $hn_utc  (published just now)"
+gh_utc=$(stamp_of "$GH")
+i=0
+while [ "$gh_utc" != "$hn_utc" ] && [ "$i" -lt "$PAGES_WAIT_TRIES" ]; do
+  i=$((i + 1))
+  sleep 15
+  gh_utc=$(stamp_of "$GH")
+  echo "   github   $gh_utc  (waiting for the rebuild, $i/$PAGES_WAIT_TRIES)"
+done
+if [ "$gh_utc" = "$hn_utc" ]; then
+  echo "   github   $gh_utc  (caught up)"
+else
+  echo "   github   $gh_utc  - STILL BEHIND after $((PAGES_WAIT_TRIES * 15 / 60)) minutes"
+  fail=1
+fi
 
+echo
 if [ "$fail" = "0" ]; then
-  echo
   echo "both hosts serving the same build."
 else
-  echo
-  echo "SOMETHING IS WRONG - see above. Pages can lag a minute or two behind a push."
+  echo "SOMETHING IS WRONG - see above."
   exit 1
 fi
