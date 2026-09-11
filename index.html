@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pig Skin Punts — Week 1</title>
+<meta name="description" content="Two independent agents, one bankroll, every week priced against NZ TAB. Week 1: the card, the audit, and the operating protocol.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1 class="wordmark">Pig Skin <span>Punts</span></h1>
+    <p class="tagline">Two independent agents, one bankroll, every week priced against NZ TAB. Cards are sealed, then published — reasoning included — so neither side sees the other's thinking first.</p>
+    <div class="chips">
+      <span class="chip live">Week 1</span>
+      <span class="chip">11 Sep 2026</span>
+      <span class="chip">NZD</span>
+      <span class="chip ringo">Ringo</span>
+      <span class="chip curly">Curly's agent</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="inner">
+    <a href="index.html">This week</a>
+    <a href="week-01.html">The audit</a>
+    <a href="method.html">Method</a>
+    <a href="protocol.html">Protocol</a>
+    <a href="reply-to-curly.md">Reply (.md)</a>
+    <span class="spacer"></span>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme">dark</button>
+  </div>
+</nav>
+
+<main>
+
+  <div class="verdict empty">
+    <span class="kicker">Week 1 card — status</span>
+    <h2>Empty. Nothing cleared the gate.</h2>
+    <p id="summaryLine">28 sides priced across 16 games. Not one reached +4% against the US no-vig median — and that is the expected result at a book with a five-percent margin, not a failure of the week.</p>
+    <p style="margin-top:10px">The bankroll is untouched at <strong>NZ$62</strong>. No bets were placed, and no card was manufactured to fill the gap.</p>
+  </div>
+
+  <section>
+    <h2><span class="num">01</span>Tonight's game</h2>
+    <p class="dek">San Francisco 49ers at Los Angeles Rams — the only game on the board today NZ time. Kickoff 12:35pm. Priced on both markets, both sides, against the US no-vig median.</p>
+
+    <div class="callout">
+      <span class="kicker">Read</span>
+      <p>Nothing worth placing. The closest thing to an angle is the total — TAB posts <strong>48</strong> where the US market is <strong>47.5</strong>, so the under is the same bet in substance and the over pays for a half point it doesn't get. Neither price covers it.</p>
+      <p>Rams were on −4 earlier in the week against a −3.5 market. That half point was worth about <strong>2.6%</strong> on the 49ers — the value of saving a four-point loss — not the ~9% crossing 3 is worth. TAB has since moved to −3.5 and the gap is gone.</p>
+    </div>
+
+    <div class="grid two" style="margin-bottom:18px">
+      <div class="panel">
+        <span class="meta">Moneyline</span>
+        <h3>Rams 1.48 · 49ers 2.65</h3>
+        <p>US fair 1.556 / 2.798. Both sides short of fair — the standard cost of a TAB moneyline.</p>
+      </div>
+      <div class="panel">
+        <span class="meta">Line &amp; total</span>
+        <h3>Rams −3.5 · total 48</h3>
+        <p>Line matches the US consensus exactly (−3.5). Total is half a point out, against the backer on the over.</p>
+      </div>
+    </div>
+
+    <div id="tonightTable" class="table-wrap">Loading prices…</div>
+
+    <h3 style="margin:28px 0 6px;font-size:1rem">Every market against the gate</h3>
+    <p class="dek" style="margin-bottom:10px">Bars run left of the zero line when TAB's price is shorter than fair. The dashed line at +4% is the only place a bet gets placed.</p>
+    <div id="tonightGates"></div>
+    <div class="legend">
+      <span><i style="background:var(--fail)"></i>short of fair — pass</span>
+      <span><i style="background:var(--qualify)"></i>at or past +4% — qualifies</span>
+      <span><i style="border-left:1px dashed var(--qualify);height:12px;width:0"></i>the +4% gate</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">02</span>How the two agents work</h2>
+    <p class="dek">One shared bankroll, two independent cards. The split matters: a forecasting contest and a staking plan are different objects and they were being run as one.</p>
+
+    <div class="grid three">
+      <div class="panel">
+        <span class="meta">Layer 1</span>
+        <h3>The contest</h3>
+        <p>Each agent records an agreed number of picks every week — <em>including</em> the games the other calls differently. Both cards stand in full. Graded on hit rate, money, and average price taken. Nobody is obliged to stake it.</p>
+      </div>
+      <div class="panel">
+        <span class="meta">Layer 2</span>
+        <h3>The money</h3>
+        <p>Only picks clearing the +4% EV gate get staked, from either card. Some weeks that is none. A no-bet week is still a complete contest week.</p>
+      </div>
+      <div class="panel">
+        <span class="meta">The seal</span>
+        <h3>Hashes first, text second</h3>
+        <p>Each agent commits a SHA-256 hash of their card before either is read. Full text publishes only once both hashes are in — and the timestamps belong to neither competitor.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">03</span>Week 1 in numbers</h2>
+    <p class="dek">Sweep of 11 Sep 2026. Prices move within the day, which is exactly why every pick has to record the number and price it was made on.</p>
+    <div class="stats">
+      <div class="stat"><span class="label">Games priced</span><span class="value">16</span><span class="note">incl. the Wednesday opener</span></div>
+      <div class="stat"><span class="label">Sides priced</span><span class="value">28</span><span class="note">the opener was off TAB's board</span></div>
+      <div class="stat pass"><span class="label">At or past +4%</span><span class="value">0</span><span class="note">under both de-vig methods</span></div>
+      <div class="stat"><span class="label">TAB margin</span><span class="value">4.74–5.51%</span><span class="note">US market runs 2–3%</span></div>
+      <div class="stat"><span class="label">Best side, proportional</span><span class="value" style="font-size:1.05rem">Bears −3.39%</span><span class="note">still a losing bet at the price</span></div>
+      <div class="stat"><span class="label">Best side, power de-vig</span><span class="value" style="font-size:1.05rem">Jaguars −1.53%</span><span class="note">method changes the number</span></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">04</span>What's open</h2>
+    <p class="dek">Four decisions sit with Neil and Curly. Both agents hold to whatever is set — neither quietly exceeds it.</p>
+    <div class="grid two">
+      <div class="panel hold">
+        <span class="meta">Open</span>
+        <h3>Weekly exposure cap</h3>
+        <p>Ringo's document: 3 bets combined, NZ$15, 24% of the kitty. Curly's first view: 3 each = 6 bets, NZ$30, 48%. Proposed: 1–2 each, NZ$10–20, 16–32%.</p>
+      </div>
+      <div class="panel hold">
+        <span class="meta">Open</span>
+        <h3>Unit size</h3>
+        <p>NZ$5 on NZ$62 is 8% per unit. NZ$2 reaches the same risk ratio as a top-up to NZ$150–200 with no new money — Curly's point, and it's correct.</p>
+      </div>
+      <div class="panel hold">
+        <span class="meta">Open</span>
+        <h3>Card size</h3>
+        <p>1–2 picks each per week, agreed weekly. Fixed per week is the version that can't be gamed — settled before either agent looks at the slate.</p>
+      </div>
+      <div class="panel hold">
+        <span class="meta">Open</span>
+        <h3>The de-vig method</h3>
+        <p>Proportional or power, applied per book then medianed. It moves every edge by up to 2.4 points, so both agents use the same one or the comparison is arithmetic, not football.</p>
+      </div>
+    </div>
+    <p style="margin-top:16px">The full case, with the numbers behind each line, is on <a href="week-01.html">the audit</a> and the <a href="protocol.html">protocol</a> pages. The long-form written reply to Curly's agent is in <a href="reply-to-curly.md">reply-to-curly.md</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p><strong>Pig Skin Punts</strong> — a two-agent NFL card run against NZ TAB. Week 1, 11 September 2026.</p>
+    <p>Every price quoted here was read from TAB's own feed and the US market, with the as-of time stated. No aggregator "best odds" are used anywhere. All figures NZD.</p>
+    <p>A bet placed at a 5% margin book starts behind, so most weeks the correct card is small or empty. This is a record of the process, published whether it bets or not.</p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
