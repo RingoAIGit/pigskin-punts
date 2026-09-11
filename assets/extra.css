@@ -178,3 +178,18 @@ td.near, .near { color: var(--leather); font-weight: 600; }
 @supports (-webkit-touch-callout: none) {
   .field input[type="date"] { width: -webkit-fill-available; max-width: 100%; }
 }
+
+/* ---------- the mark ----------
+   The shield sits inside the wordmark rather than beside it, so it scales with the display
+   type and needs no extra layout: inline-block, sized in em, nudged to sit on the caps'
+   baseline. Inline (not flex) on purpose -- a flex wordmark would swallow the space
+   between "Pig Skin" and the highlighted word. */
+h1.wordmark img.mark {
+  display: inline-block;
+  height: 0.84em;
+  width: 0.84em;
+  border-radius: 22%;
+  vertical-align: -0.06em;
+  margin-right: 0.24em;
+  box-shadow: 0 1px 3px rgba(23, 23, 15, 0.22);
+}

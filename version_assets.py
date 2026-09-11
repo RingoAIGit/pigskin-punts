@@ -21,7 +21,8 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ASSETS = ["assets/style.css", "assets/extra.css", "assets/app.js"]
+ASSETS = ["assets/style.css", "assets/extra.css", "assets/app.js",
+          "assets/img/mark.png", "assets/img/mark-180.png"]
 PAGES = ["index.html", "bets.html", "results.html", "method.html",
          "week-01.html", "protocol.html", "seal-client.html"]
 
