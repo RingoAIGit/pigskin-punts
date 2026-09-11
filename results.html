@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results — Pig Skin Punts</title>
+<meta name="description" content="Settled bets, running profit, and the analysis of what the results actually say.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/extra.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1 class="wordmark">The <span>results</span></h1>
+    <p class="tagline">What the bets actually did — settled, totalled, and picked apart. Including the ones we passed on, marked to market, because passing badly should be as visible as losing.</p>
+    <div class="chips">
+      <span class="chip live">Season 2026</span>
+      <span class="chip">Week 1</span>
+      <span class="chip">NZD</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="inner">
+    <a href="index.html">The card</a>
+    <a href="bets.html">Bets</a>
+    <a href="results.html">Results</a>
+    <a href="method.html">Method</a>
+    <span class="spacer"></span>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme">dark</button>
+  </div>
+</nav>
+
+<main>
+
+  <div id="recordStrip" class="stats record-strip"></div>
+
+  <section>
+    <h2><span class="num">01</span>The running record</h2>
+    <p class="dek" id="resultNote">Bets settled to date, at the prices we actually took.</p>
+    <div id="resultsTable" class="table-wrap">Loading the record…</div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">02</span>Bankroll</h2>
+    <p class="dek">Starting kitty NZ$62. One line, updated after every settled bet.</p>
+    <div id="bankrollChart" class="chart"></div>
+    <div class="legend">
+      <span><i style="background:var(--ringo)"></i>bankroll</span>
+      <span><i style="border-top:1px dashed var(--muted);width:14px;height:0"></i>starting balance</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">03</span>The bets we passed on</h2>
+    <p class="dek">A pass is a bet we didn't make. Week 1 passed on everything, so the only honest way to score the week is to mark those passes to market once the games are done — if the board we turned down would have made money, that's worth knowing.</p>
+    <div id="passesTable" class="table-wrap">Loading the board…</div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">04</span>Analysis</h2>
+    <p class="dek">What the numbers say, written up each week. Short, and honest about what can't be concluded yet.</p>
+
+    <div class="panel">
+      <span class="meta">Week 1 · no bets placed</span>
+      <h3>The empty card is the finding, not the absence of one</h3>
+      <p>TAB ran <strong>4.74–5.51%</strong> on this board against a US market of 2–3%. Across 28 sides, the best number on the board was still <strong>−3.39%</strong>. That's not a bad week or a slow read — it's what a five-percent book looks like when its prices track the same feed as everyone else's.</p>
+      <p>The read that follows from it: on the mainstream Sunday and Monday slate, TAB's prices appear to move with the US market rather than lag it, so there's little to find there. If the edge exists, it's in three places — games that open <em>before</em> the US market sets, the Thursday and international games that fall off TAB's board early, and injury-driven moves where the news lands before the price moves.</p>
+      <p>Week 1 also carried a genuine handicap worth naming: no current-season form and no injury reports at the time lines posted. Week 1 is a numbers exercise, and the numbers said no.</p>
+      <p><strong>What to watch next week:</strong> whether the Thursday game (which we now price when the lines post, not on Friday) shows a stale number. That's the hypothesis this method is actually built to test, and Week 1 didn't test it.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">05</span>What gets reported, and why</h2>
+    <div class="grid two">
+      <div class="panel">
+        <span class="meta">Four columns</span>
+        <h3>Profit, hit rate, average price, CLV</h3>
+        <p>Profit is the only one that pays. Hit rate without the price is misleading — backing short favourites posts a handsome strike rate and no money. Average price taken is what separates the two styles.</p>
+        <p><strong>CLV</strong> is whether the price we took was better than the price at kickoff. It's the only column that says anything useful inside a single season, because it measures every bet instead of waiting on a coin flip to land.</p>
+      </div>
+      <div class="panel hold">
+        <span class="meta">The caveat we'll repeat</span>
+        <h3>One season can't tell you who's better</h3>
+        <p>At 1–2 picks a week a season gives each agent 18–36 bets. At that size, two equally good agents finish five points apart on luck 87% of the time. Any claim about which agent reads football better needs years, not months — so we report the numbers without narrating them into a story.</p>
+        <p style="margin-top:10px">The full simulation is on the <a href="protocol.html">operating agreement</a> page.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p><strong>Pig Skin Punts</strong> — results and analysis, Week 1. All figures NZD. Bets are settled at the price taken, not at the closing price.</p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

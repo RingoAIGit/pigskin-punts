@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bets — Pig Skin Punts</title>
+<meta name="description" content="Every bet placed, logged as it was placed. Enter a new bet in four fields.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/extra.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1 class="wordmark">The <span>bets</span></h1>
+    <p class="tagline">Every bet we place, logged as it was placed — the selection, the number, the price we actually got, and which agent called it.</p>
+    <div class="chips">
+      <span class="chip live">Week 1</span>
+      <span class="chip">Season 2026</span>
+      <span class="chip">NZD</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="inner">
+    <a href="index.html">The card</a>
+    <a href="bets.html">Bets</a>
+    <a href="results.html">Results</a>
+    <a href="method.html">Method</a>
+    <span class="spacer"></span>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme">dark</button>
+  </div>
+</nav>
+
+<main>
+
+  <section id="entry">
+    <h2><span class="num">01</span>Log a bet</h2>
+    <p class="dek">Four things matter and one is optional. Fill it in as you place it — the number and the price at the time of the bet are the only record that can't be reconstructed later.</p>
+
+    <form id="betForm" class="bet-form" autocomplete="off">
+      <div class="field">
+        <label for="f-date">Date placed</label>
+        <input id="f-date" name="date" type="date">
+      </div>
+      <div class="field wide">
+        <label for="f-game">Game</label>
+        <input id="f-game" name="game" type="text" placeholder="49ers @ Rams" inputmode="text">
+      </div>
+      <div class="field">
+        <label for="f-market">Market</label>
+        <select id="f-market" name="market">
+          <option>Spread</option>
+          <option>Moneyline</option>
+          <option>Total</option>
+        </select>
+      </div>
+      <div class="field wide">
+        <label for="f-sel">Selection</label>
+        <input id="f-sel" name="selection" type="text" placeholder="Rams −3.5">
+      </div>
+      <div class="field">
+        <label for="f-odds">Odds taken</label>
+        <input id="f-odds" name="odds" type="number" step="0.01" min="1.01" placeholder="1.88" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="f-stake">Stake (NZ$)</label>
+        <input id="f-stake" name="stake" type="number" step="0.50" min="0.5" placeholder="5.00" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="f-by">Placed by</label>
+        <select id="f-by" name="placed_by">
+          <option>Neil</option>
+          <option>Curly</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-agent">Called by</label>
+        <select id="f-agent" name="agent">
+          <option>Ringo</option>
+          <option>Curly's agent</option>
+          <option>Both</option>
+        </select>
+      </div>
+      <div class="field wide">
+        <label for="f-note">Note <span class="opt">optional</span></label>
+        <input id="f-note" name="note" type="text" placeholder="stale number, US market on 3.5">
+      </div>
+
+      <div class="actions">
+        <button type="button" id="betBuild" class="primary">Build the record</button>
+        <span class="hint">Nothing sends until you pick one of the options below.</span>
+      </div>
+    </form>
+
+    <div id="betOut" class="bet-out" hidden>
+      <span class="kicker">The record</span>
+      <pre id="betLine" class="bet-line"></pre>
+      <div class="actions">
+        <button type="button" id="betCopy" class="primary">Copy</button>
+        <a id="betMail" class="btn-link" href="#">Email it to Ringo</a>
+        <a id="betDiscord" class="btn-link" href="#">Or just paste it in Discord</a>
+      </div>
+      <p class="hint" id="betMsg"></p>
+    </div>
+
+    <div class="callout">
+      <span class="kicker">How this works</span>
+      <p>The site can't write to itself — it's a static page with no database behind it, which is deliberate: nothing here can lose your data or quietly change a price after the fact. So the form hands you the finished record and you get it to Ringo one of three ways: copy it, email it, or paste it in Discord. Ringo logs it against the bet file.</p>
+      <p>Faster route if you'd rather not use the form: just tell Ringo the selection, the odds, the stake and who placed it. Same result, fewer taps.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">02</span>Every bet placed</h2>
+    <p class="dek" id="ledgerNote">The log. Rows appear here as bets are placed and settled.</p>
+    <div id="betsTable" class="table-wrap">Loading the log…</div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">03</span>The rules the log enforces</h2>
+    <div class="grid three">
+      <div class="panel">
+        <span class="meta">Staking</span>
+        <h3>Flat, 1 unit = NZ$5</h3>
+        <p>Two units a week maximum while the kitty is under NZ$100. No stake-up after a loss, ever. Unit size is under review — NZ$5 on NZ$62 is 8%, which is too much.</p>
+      </div>
+      <div class="panel">
+        <span class="meta">Minimum price</span>
+        <h3>1.40</h3>
+        <p>Anything shorter than 1.40 needs an edge we're not going to find at this book — the margin is a bigger share of a short price than a long one.</p>
+      </div>
+      <div class="panel">
+        <span class="meta">Excluded</span>
+        <h3>Multis, in-play, props</h3>
+        <p>No multiples, no live betting, no player props. No reliable reference price to price them against, and no way to audit the number afterwards.</p>
+      </div>
+    </div>
+    <p style="margin-top:16px">The reasoning behind these, and the honest limits of the whole approach, are on the <a href="method.html">method page</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p><strong>Pig Skin Punts</strong> — bet log, Week 1. Every row records the price taken at the time of the bet; closing prices are added after kickoff for the CLV column.</p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

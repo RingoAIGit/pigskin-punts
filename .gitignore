@@ -5,3 +5,7 @@ __pycache__/
 
 # Ready to enable once the PAT has workflow scope, or Pages is turned on in repo settings.
 .github/workflows/deploy.yml
+
+# local publish state — never commit credential/state files
+.herenow/
+_dist/

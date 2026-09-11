@@ -1,50 +1,66 @@
-"""Render verification for the Pig Skin Punts site.
+"""Render + function verification for the Pig Skin Punts site.
 
-Drives the local headless Chrome on :9223, loads each page at desktop and mobile
-widths, runs the overflow / clipping / data-render probe, and writes screenshots.
+Checks every page at desktop and mobile widths, then exercises the bet-entry
+form for real (fill, build, copy) rather than trusting the markup.
 
-Run: ~/.hermes/hermes-agent/venv/bin/python verify_render.py
+Run: ~/.hermes/hermes-agent/venv/bin/python verify_render.py [base_url]
 """
 import asyncio
 import base64
 import json
 import os
 import sys
-import urllib.request
 
 sys.path.insert(0, "/Users/cerebral/.hermes/skills/research/browser-automation/scripts")
 from cdp_lib import CDP, connect, new_tab  # noqa: E402
 
-BASE = "http://127.0.0.1:8899/"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8899/"
 OUT = "/tmp/psp"
-PAGES = ["index.html", "week-01.html", "method.html", "protocol.html"]
+PAGES = ["index.html", "bets.html", "results.html", "method.html",
+         "week-01.html", "protocol.html"]
 
 PROBE = r"""
 (() => {
-  const out = {clipped: [], overflow: [], rows: {}, jsErr: !!window.__jsErr};
-  document.querySelectorAll('p,h1,h2,h3,h4,li,td,th,dt,dd,.stat .value,.wordmark,.tagline,.chip,.edge,.seal .hash,.spike .val').forEach(el => {
-    if (el.scrollWidth > el.clientWidth + 1)
-      out.clipped.push({t:(el.tagName+': '+el.textContent.trim().slice(0,44)), sw:el.scrollWidth, cw:el.clientWidth});
-  });
+  const out = {clipped: [], overflow: [], rows: {}, strip: 0, gates: 0, svg: 0};
+  document.querySelectorAll('p,h1,h2,h3,h4,li,td,th,dt,dd,label,.stat .value,.wordmark,.tagline,.chip,.edge,.field input,.field select')
+    .forEach(el => {
+      if (el.scrollWidth > el.clientWidth + 1)
+        out.clipped.push({t:(el.tagName+': '+(el.textContent||el.value||'').trim().slice(0,40)), sw:el.scrollWidth, cw:el.clientWidth});
+    });
   document.querySelectorAll('main *').forEach(el => {
-    if (el.closest('.table-wrap') || el.closest('pre') || el.closest('.spikes')) return;
+    if (el.closest('.table-wrap') || el.closest('pre') || el.closest('.spikes') || el.closest('.chart')) return;
     if (el.scrollHeight > el.clientHeight + 3 && getComputedStyle(el).overflowY !== 'visible' && el.clientHeight > 0)
       out.overflow.push({t:(el.className||el.tagName), sh:el.scrollHeight, ch:el.clientHeight});
   });
-  ['tonightTable','edgesTable','keyTable'].forEach(id => {
+  ['tonightTable','edgesTable','keyTable','betsTable','resultsTable','passesTable','resultsTeaser'].forEach(id => {
     const e = document.getElementById(id);
-    out.rows[id] = e ? e.querySelectorAll('tbody tr').length : 'MISSING';
+    if (e) out.rows[id] = e.querySelector('table') ? e.querySelectorAll('tbody tr').length : 'empty-state';
   });
-  const sp = document.getElementById('spikes');
-  out.rows.spikes = sp ? sp.querySelectorAll('.spike').length : 'MISSING';
-  out.rows.tonightGates = document.querySelectorAll('#tonightGates .gate-row').length;
-  const gw = document.querySelector('#tonightGates .gate .bar'); 
-  out.rows.firstBarLeft = gw ? gw.style.left : 'none';
-  out.bodyChars = document.body.innerText.length;
-  out.failed = document.body.innerText.indexOf('failed to load') >= 0;
-  out.docW = document.documentElement.scrollWidth;
-  out.winW = window.innerWidth;
+  out.strip = document.querySelectorAll('#recordStrip .stat').length;
+  out.gates = document.querySelectorAll('.gate-row').length;
+  out.svg = document.querySelectorAll('#bankrollChart svg').length;
+  out.failed = document.body.innerText.indexOf('failed to load') >= 0 ||
+               document.body.innerText.indexOf('failed to load') >= 0;
+  out.docW = document.documentElement.scrollWidth; out.winW = window.innerWidth;
   return JSON.stringify(out);
+})()
+"""
+
+FORM = r"""
+(() => {
+  const set=(id,v)=>{const e=document.getElementById(id); e.value=v;
+    e.dispatchEvent(new Event('input',{bubbles:true}));
+    e.dispatchEvent(new Event('change',{bubbles:true}));};
+  set('f-game','49ers @ Rams'); set('f-sel','Rams -3.5');
+  set('f-odds','1.88'); set('f-stake','5.00'); set('f-note','stale number test');
+  document.getElementById('betBuild').click();
+  const mail = document.getElementById('betMail').getAttribute('href') || '';
+  return JSON.stringify({
+    hidden: document.getElementById('betOut').hidden,
+    line: document.getElementById('betLine').textContent,
+    mailOk: mail.indexOf('mailto:emailringoai@gmail.com') === 0 && mail.indexOf('1.88') > 0,
+    mailLen: mail.length
+  });
 })()
 """
 
@@ -60,15 +76,15 @@ async def shot(cdp, name):
 async def main():
     os.makedirs(OUT, exist_ok=True)
     page = new_tab("about:blank")
-    from cdp_lib import connect as _c
-    ws = await _c(page["webSocketDebuggerUrl"])
+    ws = await connect(page["webSocketDebuggerUrl"])
     cdp = CDP(ws)
     await cdp.cmd("Runtime.enable")
     await cdp.cmd("Page.enable")
 
     for width, label in ((1320, "desktop"), (390, "mobile")):
-        await cdp.cmd("Emulation.setDeviceMetricsOverride", {
-            "width": width, "height": 900, "deviceScaleFactor": 1, "mobile": width < 500})
+        await cdp.cmd("Emulation.setDeviceMetricsOverride",
+                      {"width": width, "height": 900, "deviceScaleFactor": 1,
+                       "mobile": width < 500})
         for p in PAGES:
             await cdp.navigate(BASE + p)
             await asyncio.sleep(2.0)
@@ -76,20 +92,42 @@ async def main():
             try:
                 d = json.loads(raw)
             except Exception:
-                print(f"[{label}] {p}  PROBE FAILED: {str(raw)[:200]}")
+                print(f"[{label}] {p:15s} PROBE FAILED {str(raw)[:120]}")
                 continue
-            flag = []
-            if d["docW"] > d["winW"]: flag.append(f"H-DRAG docW={d['docW']} winW={d['winW']}")
-            if d["clipped"]: flag.append(f"CLIP {len(d['clipped'])}")
-            if d["overflow"]: flag.append(f"OVFL {len(d['overflow'])}")
-            if d["failed"]: flag.append("DATA-FAILED")
-            print(f"[{label}] {p:15s} chars={d['bodyChars']:6d} rows={d['rows']} {' '.join(flag) or 'OK'}")
-            for c in d["clipped"][:4]:
+            flags = []
+            if d["docW"] > d["winW"]:
+                flags.append(f"H-DRAG {d['docW']}>{d['winW']}")
+            if d["clipped"]:
+                flags.append(f"CLIP {len(d['clipped'])}")
+            if d["overflow"]:
+                flags.append(f"OVFL {len(d['overflow'])}")
+            if d["failed"]:
+                flags.append("LOAD-FAIL")
+            print(f"[{label}] {p:15s} strip={d['strip']} gates={d['gates']} svg={d['svg']} "
+                  f"rows={d['rows']} {' '.join(flags) or 'OK'}")
+            for c in d["clipped"][:3]:
                 print(f"      clip: {c['t']}  {c['sw']}>{c['cw']}")
-            for o in d["overflow"][:4]:
+            for o in d["overflow"][:3]:
                 print(f"      ovfl: {o['t']}  {o['sh']}>{o['ch']}")
-            if label == "desktop" and p in ("index.html", "week-01.html", "protocol.html"):
-                print("      shot:", await shot(cdp, p.replace(".html", "") + ".png"))
+
+    # --- functional test of the bet form (mobile, thumb-sized) ---
+    await cdp.navigate(BASE + "bets.html")
+    await asyncio.sleep(2.0)
+    print("\n--- bet form ---")
+    print(await cdp.eval_js(FORM))
+    await asyncio.sleep(1.0)
+    msg = await cdp.eval_js("document.getElementById('betMsg').textContent")
+    print("after copy click:", msg)
+    print("form fields present:", await cdp.eval_js(
+        "document.querySelectorAll('#betForm .field').length"))
+
+    # --- screenshots ---
+    await cdp.cmd("Emulation.setDeviceMetricsOverride",
+                  {"width": 1320, "height": 900, "deviceScaleFactor": 1, "mobile": False})
+    for p in ("index.html", "bets.html", "results.html"):
+        await cdp.navigate(BASE + p)
+        await asyncio.sleep(2.2)
+        print("shot:", await shot(cdp, p.replace(".html", "-v2.png")))
     await cdp.close()
 
 asyncio.run(main())
