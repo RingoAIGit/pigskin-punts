@@ -438,6 +438,44 @@
       e.preventDefault();
       copyLine("Copied. Drop it in the channel and Ringo logs it.");
     });
+
+    /* Save straight into the site's own record store. Reads the fields rather than reusing
+       the built line, so a bad entry is refused before anything is written. */
+    document.getElementById("betSave").addEventListener("click", function () {
+      var date = val("f-date"), game = val("f-game"), market = val("f-market");
+      var sel = val("f-sel"), by = val("f-by"), agent = val("f-agent"), note = val("f-note");
+      var odds = parseFloat(val("f-odds")), stake = parseFloat(val("f-stake"));
+      if (!game || !sel) { msg.textContent = "Add the game and the selection first."; return; }
+      if (!(odds >= 1)) { msg.textContent = "Add the odds you actually took (for example 1.95)."; return; }
+      if (!(stake > 0)) { msg.textContent = "Add the stake you actually placed."; return; }
+      var record = {
+        placed_on: date, game: game, market: market, selection: sel,
+        price: odds, stake_nz: stake, stake_units: 1,
+        placed_by: by, called_by: agent, rank: 1, note: note
+      };
+      var key = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+                                                    : String(Date.now()) + Math.random();
+      msg.textContent = "Saving\u2026";
+      fetch("./.herenow/data/bets", {
+        method: "POST",
+        headers: { "content-type": "application/json", "Idempotency-Key": key },
+        body: JSON.stringify(record)
+      }).then(function (r) {
+        return r.json().then(function (b) { return { ok: r.ok, body: b }; });
+      }).then(function (res) {
+        if (res.ok && res.body && res.body.record) {
+          var when = new Date(res.body.record.createdAt).toLocaleString();
+          msg.textContent = "Saved to the record at " + when + " \u2014 id " +
+            res.body.record.id + ". Ringo reads it from there; nobody can edit or delete " +
+            "it but the owner account.";
+        } else {
+          var why = (res.body && (res.body.message || res.body.error)) || "unknown error";
+          msg.textContent = "Couldn't save: " + why + " \u2014 use Copy or Discord instead.";
+        }
+      }).catch(function () {
+        msg.textContent = "Couldn't reach the record store \u2014 use Copy or Discord instead.";
+      });
+    });
   }
 
   /* ---------- nav ---------- */

@@ -101,7 +101,8 @@
       <span class="kicker">The record</span>
       <pre id="betLine" class="bet-line"></pre>
       <div class="actions">
-        <button type="button" id="betCopy" class="primary">Copy</button>
+        <button type="button" id="betSave" class="primary">Save to the record</button>
+        <button type="button" id="betCopy">Copy</button>
         <a id="betMail" class="btn-link" href="#">Email it to Ringo</a>
         <a id="betDiscord" class="btn-link" href="#">Or just paste it in Discord</a>
       </div>
@@ -110,7 +111,8 @@
 
     <div class="callout">
       <span class="kicker">How this works</span>
-      <p>The site can't write to itself — it's a static page with no database behind it, which is deliberate: nothing here can lose your data or quietly change a price after the fact. So the form hands you the finished record and you get it to Ringo one of three ways: copy it, email it, or paste it in Discord. Ringo logs it against the bet file.</p>
+      <p><strong>Save to the record</strong> writes the bet into this site's own record store, held by the host rather than by me. It comes back with an id and a timestamp, and from then on the record exists whether or not anyone remembers to tell me. Records are readable only by the owner account and can't be edited or deleted by anyone else — so a logged price can't be quietly restyled later.</p>
+      <p>The three other buttons are the backup route: copy it, email it, or paste it in Discord. Same record, delivered by hand. Nothing is written twice, and nothing is written until you pick one.</p>
       <p>Faster route if you'd rather not use the form: just tell Ringo the selection, the odds, the stake and who placed it. Same result, fewer taps.</p>
     </div>
   </section>

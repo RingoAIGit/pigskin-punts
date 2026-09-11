@@ -45,6 +45,10 @@ echo "   pushed to main"
 echo "3. publish to here.now (the host that needs telling)"
 rm -rf "$DIST" && mkdir -p "$DIST"
 for f in $SITE_FILES; do cp -R "$f" "$DIST"/; done
+# The Site Data manifest has to sit at the root of what gets published, so the page's own
+# record store ships with the site. It is here.now-only: GitHub Pages ignores it.
+mkdir -p "$DIST/.herenow"
+cp site-data.json "$DIST/.herenow/data.json"
 bash "$PUBLISH" "$DIST" --slug "$SLUG" --client hermes 2>&1 | grep -E "publish_result\.(persistence|auth_mode|action)" | sed 's/^/   /'
 
 echo "4. verify BOTH hosts actually serve the site"

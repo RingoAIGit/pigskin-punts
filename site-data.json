@@ -1,0 +1,26 @@
+{
+  "collections": {
+    "bets": {
+      "fields": {
+        "placed_on": { "type": "string", "maxLength": 10, "trim": true },
+        "game": { "type": "string", "required": true, "maxLength": 120, "trim": true },
+        "market": { "type": "string", "maxLength": 40, "trim": true },
+        "selection": { "type": "string", "required": true, "maxLength": 120, "trim": true },
+        "price": { "type": "number", "required": true, "minimum": 1, "maximum": 1000 },
+        "stake_nz": { "type": "number", "required": true, "minimum": 0, "maximum": 100000 },
+        "stake_units": { "type": "number", "default": 1, "minimum": 0, "maximum": 100 },
+        "placed_by": { "type": "string", "maxLength": 60, "trim": true },
+        "called_by": { "type": "string", "maxLength": 60, "trim": true },
+        "rank": { "type": "integer", "default": 1, "minimum": 1, "maximum": 10 },
+        "note": { "type": "string", "maxLength": 500, "trim": true }
+      },
+      "access": {
+        "read": "owner",
+        "insert": "public",
+        "update": "owner",
+        "delete": "owner"
+      },
+      "rateLimit": "20/hour/ip"
+    }
+  }
+}
