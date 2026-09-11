@@ -68,11 +68,18 @@ async def main():
     await c.cmd("Page.enable")
     await c.cmd("Network.setCacheDisabled", {"cacheDisabled": True})
     await c.navigate(URL)
-    await asyncio.sleep(4)
+    await asyncio.sleep(2)
 
     print("page     :", await c.eval_js("document.title"))
     import json
-    info = json.loads(await c.eval_js(INSPECT))
+    # The dropdown fills from a fetch, so wait for it instead of trusting a fixed delay --
+    # a cold edge copy of the snapshot can take a few seconds to arrive.
+    info = {}
+    for _ in range(20):
+        info = json.loads(await c.eval_js(INSPECT))
+        if info.get("options"):
+            break
+        await asyncio.sleep(1.5)
     print("games    :", info.get("tag"), "|", len(info.get("options", [])), "options")
     for g in info.get("groups", []):
         print("           ", g)
