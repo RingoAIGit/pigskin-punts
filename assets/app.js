@@ -552,6 +552,99 @@
       });
   }
 
+  /* ---------- the selection field follows the market ----------
+     Head To Head is a team name, so once a game is chosen it offers that game's two teams --
+     no typing, no typos. Line and Total both need a number, so they stay free text with a
+     placeholder showing the shape. The field is never hidden: which side you backed is the
+     record, on every market. */
+  document.addEventListener("DOMContentLoaded", function () {
+    var marketSel = document.getElementById("f-market");
+    if (!marketSel) return;
+    var gameSel = document.getElementById("f-game");
+
+    function current() { return document.getElementById("f-sel"); }
+
+    function teamsFromGame() {
+      var label = gameSel && gameSel.tagName === "SELECT" ? gameSel.value : "";
+      var parts = (label || "").split(" @ ");
+      return parts.length === 2 ? parts : [];
+    }
+
+    function specFor(market) {
+      if (market === "Head To Head") return { teams: true };
+      if (market === "Total") return { placeholder: "Over 48" };
+      return { placeholder: "Bears -3.5" };
+    }
+
+    function sync() {
+      var el = current();
+      if (!el) return;
+      var spec = specFor(marketSel.value);
+      var teams = teamsFromGame();
+      var wantSelect = !!spec.teams && teams.length === 2;
+      var keep = (el.value || "").trim();
+      var isSelect = el.tagName === "SELECT";
+
+      if (!wantSelect && !isSelect) { el.placeholder = spec.placeholder; return; }
+      if (wantSelect && isSelect && el.options.length === teams.length) return;
+
+      var next;
+      if (wantSelect) {
+        next = document.createElement("select");
+        teams.forEach(function (t) {
+          var o = document.createElement("option");
+          o.value = t;
+          o.textContent = t;
+          next.appendChild(o);
+        });
+        /* keep the choice if what they already have points at exactly one team */
+        var hit = teams.filter(function (t) {
+          return keep && t.toLowerCase().indexOf(keep.toLowerCase()) !== -1;
+        });
+        if (hit.length === 1) next.value = hit[0];
+      } else {
+        next = document.createElement("input");
+        next.type = "text";
+        next.placeholder = spec.teams ? "Team name" : spec.placeholder;
+        next.autocomplete = "off";
+        next.value = keep;
+      }
+      next.id = "f-sel";
+      next.name = "selection";
+      el.parentNode.replaceChild(next, el);
+      var m = document.getElementById("betMsg");
+      if (m) m.textContent = "";
+    }
+
+    /* Capture phase, so an incomplete line is refused before the save handler sees the click. */
+    var save = document.getElementById("betSave");
+    if (save) {
+      save.addEventListener("click", function (e) {
+        var el = current();
+        var value = (el && el.value ? el.value : "").trim();
+        var market = marketSel.value;
+        var needsNumber = market === "Line" || market === "Total";
+        if (needsNumber && value && !/\d/.test(value)) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          var msg = document.getElementById("betMsg");
+          if (msg) {
+            msg.textContent = market + " needs the number, not just the team — " +
+              (market === "Total" ? "for example \u201COver 48\u201D." : "for example \u201CBears -3.5\u201D.");
+          }
+        }
+      }, true);
+    }
+
+    marketSel.addEventListener("change", sync);
+    if (gameSel) {
+      gameSel.addEventListener("change", sync);
+      /* the games list arrives from a fetch, so re-sync when its options land */
+      new MutationObserver(sync).observe(gameSel, { childList: true });
+    }
+    sync();
+  });
+
   /* ---------- boot ---------- */
   document.addEventListener("DOMContentLoaded", function () {
     function load(path) {
