@@ -192,4 +192,11 @@ h1.wordmark img.mark {
   vertical-align: -0.06em;
   margin-right: 0.24em;
   box-shadow: 0 1px 3px rgba(23, 23, 15, 0.22);
+};
+
+/* The tile's own background is dark green, which reads well on the cream theme and
+   disappears against the dark one. A hairline ring (drawn as a shadow, so it costs no
+   layout) separates it without changing the mark itself. */
+html[data-theme="dark"] h1.wordmark img.mark {
+  box-shadow: 0 0 0 1px rgba(246, 244, 238, 0.32), 0 1px 3px rgba(0, 0, 0, 0.55);
 }
