@@ -495,7 +495,62 @@
       if (links[i].getAttribute("href") === here) links[i].setAttribute("aria-current", "page");
     }
     wireForm();
+    loadSlate();
   });
+
+  /* ---------- this week's games ----------
+     Read from a snapshot of the TAB slate taken when the site was built, so a fixture is
+     never typed by hand (and never misspelt into a season-long record). If the snapshot
+     won't load, the dropdown turns back into a plain text box rather than blocking entry. */
+  function loadSlate() {
+    var sel = document.getElementById("f-game");
+    if (!sel || sel.tagName !== "SELECT") return;
+    var note = document.getElementById("slateNote");
+
+    fetch("assets/data/slate.json", { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (s) {
+        var games = (s && s.games) || [];
+        if (!games.length) throw new Error("the snapshot has no games in it");
+        var order = [], byDay = {};
+        games.forEach(function (g) {
+          var d = g.day || "Date to be confirmed";
+          if (!byDay[d]) { byDay[d] = []; order.push(d); }
+          byDay[d].push(g);
+        });
+        order.forEach(function (d) {
+          var og = document.createElement("optgroup");
+          og.label = d;
+          byDay[d].forEach(function (g) {
+            var o = document.createElement("option");
+            o.value = g.label;              /* "Away @ Home", same shape the site already uses */
+            o.textContent = g.label;
+            if (g.kickoff_nz) o.title = g.kickoff_nz + " NZ";
+            og.appendChild(o);
+          });
+          sel.appendChild(og);
+        });
+        if (note) {
+          note.textContent = games.length + " games on the slate" +
+            (s.generated_nz ? ", listed " + s.generated_nz : "") +
+            ". Games drop off the list once they kick off.";
+        }
+      })
+      .catch(function (e) {
+        var input = document.createElement("input");
+        input.id = "f-game";
+        input.name = "game";
+        input.type = "text";
+        input.placeholder = "49ers @ Rams";
+        input.inputMode = "text";
+        sel.parentNode.replaceChild(input, sel);
+        if (note) note.textContent = "Couldn't load this week's games (" + e.message +
+          ") — type the game in.";
+      });
+  }
 
   /* ---------- boot ---------- */
   document.addEventListener("DOMContentLoaded", function () {

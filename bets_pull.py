@@ -85,6 +85,14 @@ def main():
         print("\nrun with --write to fold these into assets/data/ledger.json")
         return 0
 
+    # A saved bet names the game only; the kickoff comes from the slate snapshot, which is
+    # also the audit trail of what was on offer when the bet was placed.
+    slate = os.path.join(REPO, "assets", "data", "slate.json")
+    kick = {}
+    if os.path.exists(slate):
+        for g in json.load(open(slate)).get("games", []):
+            kick[g.get("label", "")] = g.get("kickoff_nz", "")
+
     ledger = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {"bets": []}
     existing = {b.get("record_id"): b for b in ledger.get("bets", []) if b.get("record_id")}
     added = 0
@@ -97,6 +105,7 @@ def main():
             "logged_at": r["createdAt"],
             "placed_on": d.get("placed_on", ""),
             "game": d.get("game", ""),
+            "kickoff_nz": kick.get(d.get("game", ""), ""),
             "market": d.get("market", ""),
             "selection": d.get("selection", ""),
             "price": d.get("price"),

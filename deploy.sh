@@ -27,6 +27,9 @@ PAGES_WAIT_TRIES=12      # 12 x 15s = 3 minutes of grace for the Pages rebuild
 MSG="${1:-Site update}"
 cd "$REPO"
 
+echo "0. refresh the games the form offers (snapshot of the live TAB slate)"
+if python3 build_slate.py; then :; else echo "   slate refresh failed — shipping the previous snapshot"; fi
+
 echo "1. build stamp"
 python3 stamp.py > /dev/null
 echo "   $(python3 -c "import json;print(json.load(open('assets/data/build.json'))['built_human'])")"

@@ -49,7 +49,10 @@
       </div>
       <div class="field wide">
         <label for="f-game">Game</label>
-        <input id="f-game" name="game" type="text" placeholder="49ers @ Rams" inputmode="text">
+        <select id="f-game" name="game">
+          <option value="" selected disabled>Choose this week's game&hellip;</option>
+        </select>
+        <p class="hint" id="slateNote">Loading this week's games&hellip;</p>
       </div>
       <div class="field">
         <label for="f-market">Market</label>
