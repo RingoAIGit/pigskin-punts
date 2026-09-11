@@ -186,8 +186,8 @@ td.near, .near { color: var(--leather); font-weight: 600; }
    between "Pig Skin" and the highlighted word. */
 h1.wordmark img.mark {
   display: inline-block;
-  height: 0.84em;
-  width: 0.84em;
+  height: 0.8em;
+  width: 0.8em;
   border-radius: 22%;
   vertical-align: -0.06em;
   margin-right: 0.24em;
