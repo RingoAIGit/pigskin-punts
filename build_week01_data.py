@@ -42,9 +42,9 @@ TONIGHT = {
     "kickoff_nz": "Fri 11 Sep, 12:35pm NZ",
     "swept": "11 Sep 2026, 10:37am NZ",
     "markets": [
-        {"market": "Moneyline", "side": "Rams", "tab": 1.48, "fair": 1.556,
+        {"market": "Head To Head", "side": "Rams", "tab": 1.48, "fair": 1.556,
          "us_line": "US fair is the 9-book no-vig median"},
-        {"market": "Moneyline", "side": "49ers", "tab": 2.65, "fair": 2.798,
+        {"market": "Head To Head", "side": "49ers", "tab": 2.65, "fair": 2.798,
          "us_line": "US fair is the 9-book no-vig median"},
         {"market": "Line", "side": "Rams -3.5", "tab": 1.88, "fair": 1.981,
          "us_line": "US consensus -3.5"},

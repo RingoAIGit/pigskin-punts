@@ -16,7 +16,7 @@
   "swept": "11 Sep 2026, 10:37am NZ",
   "markets": [
    {
-    "market": "Moneyline",
+    "market": "Head To Head",
     "side": "Rams",
     "tab": 1.48,
     "fair": 1.556,
@@ -24,7 +24,7 @@
     "edge_pct": -4.88
    },
    {
-    "market": "Moneyline",
+    "market": "Head To Head",
     "side": "49ers",
     "tab": 2.65,
     "fair": 2.798,

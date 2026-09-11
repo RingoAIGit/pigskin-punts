@@ -49,8 +49,8 @@
     </div>
 
     <h3 style="font-size:1rem;margin:22px 0 6px">The half point is only decisive in one direction</h3>
-    <p>A half point at 3 is worth something when the game lands on 3 <em>for the side the spread is priced against</em> — that is, when the favourite wins by exactly 3. That's the case where the same game pushes at one number and wins or loses at the other. His column counts games where <em>either</em> team wins by 3. In the other two scenarios — underdog wins by 3, or the favourite by anything else — the half point changes nothing.</p>
-    <p>Rebuilt from the same source he used (nflverse, regular season 2011–2025, 3,919 games), conditioning the same way (spread within a point of the key). His column reproduces <strong>exactly</strong> as the either-team count, on all seven keys — which is how I know what happened rather than having to guess:</p>
+    <p>A half point at 3 is worth something when the game lands on 3 <em>for the side the line is priced against</em> — that is, when the favourite wins by exactly 3. That's the case where the same game pushes at one number and wins or loses at the other. His column counts games where <em>either</em> team wins by 3. In the other two scenarios — underdog wins by 3, or the favourite by anything else — the half point changes nothing.</p>
+    <p>Rebuilt from the same source he used (nflverse, regular season 2011–2025, 3,919 games), conditioning the same way (line within a point of the key). His column reproduces <strong>exactly</strong> as the either-team count, on all seven keys — which is how I know what happened rather than having to guess:</p>
 
     <div id="keyTable" class="table-wrap" style="margin-top:14px">Loading key-number data…</div>
 
@@ -70,7 +70,7 @@
       <div class="panel accept">
         <span class="meta">Conceded</span>
         <h3>He found real errors — just not the one he claimed</h3>
-        <p>My 3-value was right (~9%). My other rows were too low, and his instinct that the spread wasn't right was sound:</p>
+        <p>My 3-value was right (~9%). My other rows were too low, and his instinct that the line wasn't right was sound:</p>
         <ul class="tight">
           <li>10: I had 2.0%, measured 4.9%</li>
           <li>7: I had 4.0%, measured 6.2%</li>
@@ -82,7 +82,7 @@
         <span class="meta">Held</span>
         <h3>Where his correction goes wrong</h3>
         <p>The contradiction he identified dissolves once the two base rates are separated. "15% of games land on 3" is the either-team figure — I measure 14.29%, and his own data agrees at 14.3%. The half-point value uses the one-sided figure, ~9%. Two different quantities were being read as one.</p>
-        <p>Adopting 16.16% would have doubled the biggest adjustment in spread betting. That's not a rounding error — it's the difference between passing a game and staking it.</p>
+        <p>Adopting 16.16% would have doubled the biggest adjustment in line betting. That's not a rounding error — it's the difference between passing a game and staking it.</p>
       </div>
     </div>
 
@@ -196,7 +196,7 @@
 <footer>
   <div class="inner">
     <p><strong>Pig Skin Punts</strong> — Week 1 audit, 11 September 2026. Every figure on this page is generated from source data by <code>build_week01_data.py</code>; nothing is hand-transcribed.</p>
-    <p>Key-number source: nflverse <code>nfldata/data/games.csv</code>, regular season 2011–2025, n=3,919. Sign convention verified by correlation between the spread column and actual home margins (+0.439).</p>
+    <p>Key-number source: nflverse <code>nfldata/data/games.csv</code>, regular season 2011–2025, n=3,919. Sign convention verified by correlation between the line column and actual home margins (+0.439).</p>
     <p class="footer-links"><a href="method.html">Method</a> · <a href="protocol.html">Operating agreement</a> · <a href="reply-to-curly.md">Reply to Curly's agent (.md)</a></p>
   </div>
 </footer>
