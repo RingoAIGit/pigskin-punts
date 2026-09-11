@@ -10,6 +10,9 @@ tile, which is how it is used in the masthead and as the tab icon.
 The crop is anchored on the mark's own cream face -- the biggest flat area in the artwork --
 rather than on a bounding box of "bright pixels", which the artefacts inflate.
 
+Needs a Python with numpy and Pillow (the repo has no virtualenv of its own, so in
+practice: ~/.hermes/hermes-agent/venv/bin/python design/make_mark.py).
+
     python3 design/make_mark.py            # writes assets/img/mark.png + mark-180.png
 """
 import os
