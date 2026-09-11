@@ -157,7 +157,16 @@ td.near, .near { color: var(--leather); font-weight: 600; }
 }
 @media (max-width: 560px) {
   .stats.record-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .bet-form { grid-template-columns: 1fr; padding: 16px; }
+  .bet-form { grid-template-columns: minmax(0, 1fr); padding: 16px; }
   .field.wide { grid-column: span 1; }
   .stats.record-strip .stat .value { font-size: 1.28rem; }
 }
+
+/* ---------- form controls that refuse to shrink ----------
+   A bare `1fr` grid track has an automatic minimum, so any control with a large intrinsic
+   width drags the whole column wider than the box that contains it. WebKit's date control
+   is the worst offender (iOS gives input[type=date] its own width), so the tracks above are
+   all minmax(0, 1fr) and the controls get pinned to their cell. Deliberately no
+   appearance:none — the native date picker on iOS is worth keeping. */
+.field input, .field select { min-width: 0; max-width: 100%; }
+.field input[type="date"] { width: 100%; min-width: 0; max-width: 100%; }

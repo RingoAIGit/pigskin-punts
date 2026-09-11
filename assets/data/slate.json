@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-11T10:09:10Z",
- "generated_nz": "11 Sep 2026, 10:09PM NZ",
+ "generated_utc": "2026-09-11T10:14:26Z",
+ "generated_nz": "11 Sep 2026, 10:14PM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
  "count": 14,
@@ -180,10 +180,10 @@
    "day": "Mon 14 Sep",
    "kickoff_nz": "Mon 14 Sep 12:20pm",
    "market": "Head To Head",
-   "tab_margin_pct": 4.28,
+   "tab_margin_pct": 5.05,
    "tab_prices": {
     "New York Giants": 2.35,
-    "Dallas Cowboys": 1.62
+    "Dallas Cowboys": 1.6
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-york-giants-vs-dallas-cowboys/112405bc-ca8c-4433-be4f-e3d58dd2860a"
   },
