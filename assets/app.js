@@ -484,6 +484,19 @@
         });
     });
 
+    // Rule 5 of the seal protocol: every page says when it was built and from what.
+    load("assets/data/build.json").then(function (b) {
+      var f = document.querySelector("footer .inner");
+      if (!f) return;
+      var p = el("p", "build-stamp");
+      p.appendChild(el("strong", null, "Built " + (b.built_nz || "?") + ". "));
+      p.appendChild(document.createTextNode(
+        "Sources: " + ((b.sources || []).join(" · ")) + ". "));
+      if (b.commit) p.appendChild(document.createTextNode("Commit " + b.commit + ". "));
+      if (b.note) p.appendChild(el("em", null, b.note));
+      f.appendChild(p);
+    }).catch(function () {});
+
     load("assets/data/week01.json").then(function (d) {
       renderTonight(document.getElementById("tonightTable"), d.tonight);
       renderGates(document.getElementById("tonightGates"), d.tonight.markets.map(function (m) {

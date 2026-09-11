@@ -128,6 +128,17 @@ a.btn-link:hover { color: var(--leather); }
   color: var(--ink);
 }
 
+/* ---------- build stamp ---------- */
+.build-stamp {
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.build-stamp strong { color: var(--ink); font-weight: 600; }
+
 /* ---------- long tables ---------- */
 .table-wrap table tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.028); }
 [data-theme="dark"] .table-wrap table tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.045); }

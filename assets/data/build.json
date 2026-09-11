@@ -1,0 +1,14 @@
+{
+  "sources": [
+    "TAB feed — 11 Sep 2026 10:37 NZ",
+    "US market, 9-book no-vig median — 11 Sep 2026 10:37 NZ",
+    "nflverse REG 2011–2025, n=3,919 (half-point values)",
+    "Drive cards/: none — week 1 predates the seal"
+  ],
+  "ledger": "assets/data/ledger.json — no bets placed",
+  "note": "Drive is the record. This site is a view of it — if the two ever disagree, Drive wins and this gets rebuilt.",
+  "built_utc": "2026-09-11T06:41:26Z",
+  "built_nz": "11 Sep 2026 18:41 NZ",
+  "built_human": "Fri 11 Sep 2026, 6:41PM NZST",
+  "commit": "9c66675"
+}
