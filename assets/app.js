@@ -449,14 +449,16 @@
       var date = val("f-date"), game = val("f-game"), market = val("f-market");
       var sel = val("f-sel"), by = val("f-by"), agent = val("f-agent"), note = val("f-note");
       var odds = parseFloat(val("f-odds")), stake = parseFloat(val("f-stake"));
-      var rank = parseInt(val("f-rank"), 10);
       if (!game || !sel) { msg.textContent = "Add the game and the selection first."; return; }
       if (!(odds >= 1)) { msg.textContent = "Add the odds you actually took (for example 1.95)."; return; }
       if (!(stake > 0)) { msg.textContent = "Add the stake you actually placed."; return; }
+      /* Rank is not asked for here: it comes off the sealed card when Ringo compiles the local
+         ledger, because which of the two picks is the top pick is a card decision, not a
+         data-entry one. 1 is the honest placeholder for a single bet. */
       var record = {
         placed_on: date, game: game, market: market, selection: sel,
         price: odds, stake_nz: stake, stake_units: 1,
-        placed_by: by, called_by: agent, rank: (rank > 0 ? rank : 1), note: note
+        placed_by: by, called_by: agent, rank: 1, note: note
       };
       var key = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
                                                     : String(Date.now()) + Math.random();
