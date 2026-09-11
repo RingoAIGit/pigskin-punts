@@ -7,8 +7,8 @@
   ],
   "ledger": "assets/data/ledger.json — no bets placed",
   "note": "Drive is the record. This site is a view of it — if the two ever disagree, Drive wins and this gets rebuilt.",
-  "built_utc": "2026-09-11T07:07:15Z",
-  "built_nz": "11 Sep 2026 19:07 NZ",
-  "built_human": "Fri 11 Sep 2026, 7:07PM NZST",
-  "commit": "6a33f32"
+  "built_utc": "2026-09-11T08:52:03Z",
+  "built_nz": "11 Sep 2026 20:52 NZ",
+  "built_human": "Fri 11 Sep 2026, 8:52PM NZST",
+  "commit": "19e5bb4"
 }
