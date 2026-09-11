@@ -86,16 +86,66 @@ it gets there — my preference is a GitHub issue, so neither of us owns the tim
 -- Ringo
 """
 
-BODIES = {"neil": (BODY_NEIL, "Pig Skin Punts — reply to Curly's agent (markdown attached)", [NEIL], []),
+BODY_SEAL = """Andy,
+
+Ringo here. Short one, and the good kind: the seal works from my side.
+
+I'm authorised against the folder as emailringoai@gmail.com, and I checked both directions
+rather than assuming them. I can read it — seals/, cards/ and SEAL-PROTOCOL.md, all owned by
+the artemiskp account, every one with createdTime equal to modifiedTime, so nothing in there
+was edited after creation. And I can write to it. That test left one file in the root folder:
+
+  RINGO-WRITE-PROBE-20260911T071841Z.txt
+
+Google stamped it 2026-09-11T07:18:42.518Z server-side. It contains nothing and your side is
+welcome to delete it. I left it there rather than tidying it away because a timestamped
+artefact anyone can inspect beats my word for it.
+
+drive_seal.py verify --week 1 runs unmodified and reports both seals MISSING, which is the
+right answer — week 1 predates the protocol. Nothing to fix.
+
+I've read SEAL-PROTOCOL.md in the folder, not just the summary in your document, and I'm
+working from it. Two things in it I'll hold myself to: card size gets fixed before either of
+us has read the slate, and a seal that lands after kickoff voids the week. The second one
+means the seal isn't a formality to me.
+
+Two things I'd still put to you:
+
+  - De-vig. You're right, and I'll take your test over mine: score both methods against
+    actual outcomes with Brier or log loss rather than proximity to the close, because the
+    close is itself a vigged number. Mine was the weaker test.
+
+  - The folder is owned by your account. That's the correct way round for the clock, but it
+    also means an owner could delete a seal and re-create it — new createdTime, clean
+    modifiedTime, and verify alone can't tell the difference. Cheap fix, and I'll do it
+    unilaterally if you're happy: I run verify before the first kickoff each week and publish
+    the PASS output to the site, where git timestamps it independently. A later deletion is
+    then contradicted by a record neither of us controls alone. It protects your side as much
+    as mine.
+
+Two requests. Neil should be a reader on the folder — your document offers it and I'd like it
+done, since he's the one placing the bets. And once you and Curly settle card size, it needs
+posting before either of us reads the board; I'm happy to go first on publishing mine.
+
+The site, where the weekly verify output will go:
+""" + SITE + """
+
+-- Ringo
+"""
+
+BODIES = {"neil": (BODY_NEIL, "Pig Skin Punts — reply to Curly's agent (markdown attached)",
+                   [NEIL], [], ATTACH),
           "andy": (BODY_ANDY, "Pig Skin Punts — Week 1: reply to your agent's proposal",
-                   [ANDY], [NEIL])}
+                   [ANDY], [NEIL], ATTACH),
+          "seal": (BODY_SEAL, "Pig Skin Punts — the seal is live from my side",
+                   [ANDY], [NEIL], None)}
 
 
 def main():
     who = (sys.argv[1] if len(sys.argv) > 1 else "neil").lower()
     if who not in BODIES:
-        sys.exit(f"unknown recipient '{who}' — use neil or andy")
-    body, subject, to, cc = BODIES[who]
+        sys.exit(f"unknown recipient '{who}' — use one of: {', '.join(BODIES)}")
+    body, subject, to, cc, attach = BODIES[who]
 
     if not os.path.exists(PW_FILE):
         sys.exit(f"missing password file: {PW_FILE}")
@@ -109,13 +159,13 @@ def main():
     msg["Subject"] = subject
     msg.set_content(body)
 
-    if os.path.exists(ATTACH):
-        with open(ATTACH, "rb") as f:
+    if attach and os.path.exists(attach):
+        with open(attach, "rb") as f:
             msg.add_attachment(f.read(), maintype="text", subtype="markdown",
-                               filename=os.path.basename(ATTACH))
-        print(f"attached: {os.path.basename(ATTACH)} ({os.path.getsize(ATTACH)} bytes)")
-    else:
-        print(f"WARNING: no attachment at {ATTACH} — sending body only")
+                               filename=os.path.basename(attach))
+        print(f"attached: {os.path.basename(attach)} ({os.path.getsize(attach)} bytes)")
+    elif attach:
+        print(f"WARNING: no attachment at {attach} — sending body only")
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl.create_default_context(),
                           timeout=45) as s:
