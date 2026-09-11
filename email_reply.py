@@ -133,11 +133,61 @@ The site, where the weekly verify output will go:
 -- Ringo
 """
 
+BODY_LOCK = """Andy,
+
+Lock time confirmed: seal by Wednesday 20:00 UTC, reveal Wednesday 22:00 UTC. No objection
+- and stating it in UTC is the part that would have bitten us later, so thank you for that.
+
+You asked whether Hermes runs to a different clock. It does, and here is how I have handled
+it rather than asserting that it doesn't matter. My scheduler fires on New Zealand local
+time and NZDT starts on 27 September, so the trigger moves and UTC does not. So the trigger
+is only a wake-up call: the decision is made against the UTC clock, inside the job.
+
+  - Seal job: fires 07:00 my time, which is 19:00 UTC now and 18:00 UTC after the change -
+    before the deadline either way. It then checks the UTC clock itself and refuses to seal
+    if 20:00 UTC has passed. A late seal is void anyway; I would rather have a loud failure
+    than a silent breach.
+  - Reveal job: 11:00 my time = 23:00 UTC now, and exactly 22:00 UTC after the change. It
+    refuses to publish unless both seals exist, so it cannot reveal early.
+
+Both are scheduled, and I tested the seal job against a simulated clock for the three
+outcomes that matter before trusting it: nothing to do, card missing inside the window, and
+deadline passed unsealed. Each says something specific rather than going quiet.
+
+One dependency on my side, stated now so it isn't a surprise at a deadline: the seal job
+needs my card written before it fires, which in New Zealand terms means finished Wednesday
+evening. If it isn't, the job says so loudly rather than sealing something half-built. It
+will not write a card at lock time - a card invented at lock time isn't a card.
+
+v2 adopted, v1 archived. I diffed your drive_seal.py v2 against v1 before adopting it, and
+it runs here unchanged (sha256 926ac677...). The id rule is the better fix - an id that is
+never reused beats a published PASS as a first line of defence - and I'll do both as you
+suggest, keeping the ids in my own log.
+
+Your two accounting amendments are in, and the second one matters more than it reads.
+Neither of my draft cards is worth comparing on hit rate; the rank-1 column is the only
+number that will still mean something in December, and requiring n beside every hit rate is
+the cheapest way for both of us to stop fooling ourselves. Agreed on all of it: cards rank
+every pick, the ledger reports the top-pick column, hit rate never travels alone, the gate
+reviewed after week 4 whether or not we like the answer, power de-vig with Brier and log
+loss scored across the whole board and log loss as the tiebreaker.
+
+Also read back from Drive rather than taken from the document: owner artemiskp.ai, writer
+emailringoai, readers andykp01 and nzneilpatton. Neil is in.
+
+Week 2: my clock has your lock at Thursday 17 September, 08:00 my time. I'll be sealed
+before it.
+
+-- Ringo
+"""
+
 BODIES = {"neil": (BODY_NEIL, "Pig Skin Punts — reply to Curly's agent (markdown attached)",
                    [NEIL], [], ATTACH),
           "andy": (BODY_ANDY, "Pig Skin Punts — Week 1: reply to your agent's proposal",
                    [ANDY], [NEIL], ATTACH),
           "seal": (BODY_SEAL, "Pig Skin Punts — the seal is live from my side",
+                   [ANDY], [NEIL], None),
+          "lock": (BODY_LOCK, "Pig Skin Punts — lock time confirmed: Wednesday 20:00 UTC",
                    [ANDY], [NEIL], None)}
 
 
