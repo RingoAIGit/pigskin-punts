@@ -30,9 +30,12 @@ cd "$REPO"
 echo "0. refresh the games the form offers (snapshot of the live TAB slate)"
 if python3 build_slate.py; then :; else echo "   slate refresh failed — shipping the previous snapshot"; fi
 
-echo "1. build stamp"
+echo "1. build stamp + asset versions"
 python3 stamp.py > /dev/null
 echo "   $(python3 -c "import json;print(json.load(open('assets/data/build.json'))['built_human'])")"
+# here.now caches assets for an hour, so the pages point at a content-hashed URL. Without
+# this a deploy can take up to a day to reach a browser that already has the old file.
+python3 version_assets.py
 
 echo "2. commit + push (this is what updates GitHub Pages)"
 git add -A

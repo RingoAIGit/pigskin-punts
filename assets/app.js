@@ -585,7 +585,7 @@
       var keep = (el.value || "").trim();
       var isSelect = el.tagName === "SELECT";
 
-      if (!wantSelect && !isSelect) { el.placeholder = spec.placeholder; return; }
+      if (!wantSelect && !isSelect) { el.placeholder = spec.placeholder || "Team name"; return; }
       if (wantSelect && isSelect && el.options.length === teams.length) return;
 
       var next;
