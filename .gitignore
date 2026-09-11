@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 /tmp
+
+# Ready to enable once the PAT has workflow scope, or Pages is turned on in repo settings.
+.github/workflows/deploy.yml
