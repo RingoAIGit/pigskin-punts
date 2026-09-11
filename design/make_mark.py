@@ -36,7 +36,8 @@ CREAM = (231, 231, 207)
 CREAM_TOL = 20
 CREAM_TOP_FRACTION = 0.30
 SHOULDER_WIDTH = 1.03     # shoulders a touch wider than the cream face
-BREATHING_ROOM = 1.16     # square crop, 8% each side
+BREATHING_ROOM = 1.08     # square crop, 4% each side -- the tile's own dark field
+                          # already separates the shield, so padding here is wasted
 
 
 def largest_cream_component(rgb):
