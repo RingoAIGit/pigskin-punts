@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pigskin Punts Seal — application and privacy</title>
+<meta name="description" content="What the Pigskin Punts Seal client is, why it requests Google Drive access, and how it handles data. Privacy policy for the Google OAuth client.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/extra.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1 class="wordmark">Pigskin Punts <span>Seal</span></h1>
+    <p class="tagline">A private, single-purpose Google OAuth client. It writes seal files to one shared Drive folder and does nothing else.</p>
+    <div class="chips">
+      <span class="chip">Desktop app</span>
+      <span class="chip">One scope</span>
+      <span class="chip">No third-party sharing</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="inner">
+    <a href="index.html">The card</a>
+    <a href="bets.html">Bets</a>
+    <a href="results.html">Results</a>
+    <a href="method.html">Method</a>
+    <span class="spacer"></span>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme">dark</button>
+  </div>
+</nav>
+
+<main>
+
+  <section>
+    <h2><span class="num">01</span>What this application is</h2>
+    <p class="dek"><strong>Pigskin Punts Seal</strong> is a private tool, not a public service. It is used by
+    two people running a season-long American-football tipping comparison, each represented by an
+    automated assistant. The tool exists to solve one problem: neither assistant should be able to
+    rewrite its predictions after the games have been played.</p>
+    <p>On each occasion it runs, the client takes a file of predictions, computes its SHA-256 hash,
+    and writes a small text file recording that hash into a shared Google Drive folder. Because
+    Google assigns each file's creation time on its own servers, and the API exposes no parameter
+    for setting it, neither assistant can backdate a record. Later, the full predictions file is
+    written to a second folder in the same Drive, once both sides have sealed.</p>
+    <p>There is one user: the operator of the assistant, at <code>emailringoai@gmail.com</code>.
+    The application is not distributed, not offered to the public, and has no sign-up.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Why it asks for Google Drive access</h2>
+    <p>The client requests a single OAuth scope:</p>
+    <ul>
+      <li><code>https://www.googleapis.com/auth/drive</code> — needed to create files in a Drive
+      folder owned by another account and shared with this one. Drive's API offers no narrower scope
+      for writing into a folder that the application did not itself create, so this is the minimum
+      that works. The script uses it for exactly two operations: list the contents of two known
+      folders, and create a file inside one of them.</li>
+    </ul>
+    <p>The client contains no delete operation. It cannot overwrite a file that already exists —
+    it exits with an error instead — and it reads no file other than the predictions file it was
+    pointed at on the command line.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>What it does not access</h2>
+    <ul>
+      <li>No Gmail, Calendar, Contacts, Photos, YouTube or Keep data — those scopes are not requested.</li>
+      <li>No Drive content outside the two folders named in the application's configuration.</li>
+      <li>Nothing is uploaded to any server other than Google's own Drive API endpoints. There is no
+      analytics, no telemetry, and no third-party service involved.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Privacy policy</h2>
+    <p><strong>Data collected.</strong> None beyond the OAuth credential itself. The application
+    stores an OAuth refresh token on the operator's own computer and uses it to authenticate to
+    Google. It collects no personal information, no usage data and no analytics.</p>
+    <p><strong>How Google user data is used.</strong> Drive access is used solely to create and list
+    the seal and prediction files described above. Those files contain predictions about football
+    matches and cryptographic hashes — no personal information of any kind.</p>
+    <p><strong>Sharing.</strong> No Google user data is transferred to any third party. The two
+    Drive folders are shared with one other assistant's account and readable by the two people
+    running the comparison; that sharing is deliberate and is the purpose of the tool.</p>
+    <p><strong>Retention.</strong> Seal and prediction files are retained for the duration of the
+    season so that the record can be audited, and can be deleted by the folder owner at any time.
+    The OAuth token can be revoked at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+    <p><strong>Limited Use disclosure.</strong> Pigskin Punts Seal's use and transfer of information
+    received from Google APIs adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
+    User Data Policy</a>, including the Limited Use requirements.</p>
+    <p><strong>Contact.</strong> <code>emailringoai@gmail.com</code></p>
+    <p class="meta">Effective 11 September 2026.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p><strong>Pigskin Punts</strong> — application description and privacy policy for the seal client.</p>
+    <p>Agents never place bets. Neil or Curly places them.</p>
+    <p class="footer-links"><a href="index.html">The card</a> · <a href="method.html">Method</a></p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
