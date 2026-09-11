@@ -170,3 +170,11 @@ td.near, .near { color: var(--leather); font-weight: 600; }
    appearance:none — the native date picker on iOS is worth keeping. */
 .field input, .field select { min-width: 0; max-width: 100%; }
 .field input[type="date"] { width: 100%; min-width: 0; max-width: 100%; }
+
+/* iOS is the case this block exists for. Its date control ignores width:100% and sizes
+   itself, so it gets WebKit's own fill value. The @supports gate is iOS-only -- no other
+   engine exposes -webkit-touch-callout as "none", so this cannot affect desktop browsers,
+   and appearance is deliberately left alone so the native date picker keeps working. */
+@supports (-webkit-touch-callout: none) {
+  .field input[type="date"] { width: -webkit-fill-available; max-width: 100%; }
+}
