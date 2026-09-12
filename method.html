@@ -18,7 +18,7 @@
 <header class="masthead">
   <div class="masthead-inner">
     <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> The <span>method</span></h1>
-    <p class="tagline">One question, asked honestly every week: is TAB's price longer than the true fair price? Everything below is machinery for answering it.</p>
+    <p class="tagline">One question, asked honestly every week: is TAB's price better than the true price? Everything below is how we answer it.</p>
     <div class="chips">
       <span class="chip ringo">Ringo</span>
       <span class="chip">Week 1</span>
@@ -29,7 +29,7 @@
 
 <nav class="tabs">
   <div class="inner">
-    <a href="index.html">The card</a>
+    <a href="index.html">Picks</a>
     <a href="bets.html">Bets</a>
     <a href="results.html">Results</a>
     <a href="method.html">Method</a>
@@ -42,31 +42,31 @@
 
   <section>
     <h2><span class="num">01</span>What we're actually trying to beat</h2>
-    <p class="dek">TAB is the only legal sportsbook in New Zealand. No other operator may offer sports betting to people located here, which has one hard consequence: <strong>there is no line shopping.</strong></p>
-    <p>We can't beat the bookmaker's margin by taking the best price across five books, because there is only one book. Its margin is the tax we pay. Measured across this week's board, TAB runs <strong>4.74% to 5.51%</strong>; the US market runs 2–3%.</p>
-    <p>So a bet at TAB starts ~2.5 points behind the US market before we've thought about the game at all. The only durable edge available is a <em>stale or lazily copied number</em> — TAB priced off a line the US market has already moved past.</p>
+    <p class="dek">TAB is the only place in New Zealand you can legally bet on sport — nobody else is allowed to take sports bets from people here. That has one big consequence: <strong>we can't shop around for a better price.</strong></p>
+    <p>With only one book we can't dodge its cut by taking the best price elsewhere. That cut is a tax we just pay. On this week's games TAB's cut was <strong>4.74% to 5.51%</strong>; the US books work on 2–3%.</p>
+    <p>So every bet at TAB starts about 2.5 points behind before we've even looked at the two teams. The one advantage we can reliably find is a <em>price TAB hasn't got around to updating</em> — one the US market has already moved past.</p>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">02</span>The gate</h2>
-    <p class="dek">A side qualifies at an edge of <strong>+4.0% or better</strong> against the US no-vig fair price. Below that, the margin eats it.</p>
+    <h2><span class="num">02</span>The bar</h2>
+    <p class="dek">We only back a team if TAB's price is <strong>4.0% or better</strong> than the true US price — the US price with the bookies' cut taken out. Anything under 4%, and TAB's cut eats the whole advantage.</p>
     <div class="grid three">
       <div class="panel">
         <span class="meta">Step 1</span>
         <h3>Read TAB's own prices</h3>
-        <p>TAB's site is a Vue app pulling odds from <code>api.tab.co.nz</code> as public persisted GraphQL queries — no login. We read the exact prices, never an aggregator's "best odds" page.</p>
+        <p>We read TAB's prices straight from the feed behind its own website, at <code>api.tab.co.nz</code>. No login needed, and never a third-party "best odds" page — those are someone else's numbers, not TAB's.</p>
       </div>
       <div class="panel">
         <span class="meta">Step 2</span>
         <h3>Get the true price from the US</h3>
-        <p>Median no-vig fair price across the major US books (DraftKings, FanDuel, BetMGM, Caesars, BetRivers, Fanatics and others). Median rather than mean, so one outlier can't drag it.</p>
+        <p>The middle price from the big US books (DraftKings, FanDuel, BetMGM, Caesars, BetRivers, Fanatics and others), with their cut taken out. The middle one rather than the average, so one odd book can't drag it around.</p>
       </div>
       <div class="panel">
         <span class="meta">Step 3</span>
         <h3>Compare, then decide</h3>
-        <p><code>edge = TAB price ÷ US fair price − 1</code>, plus the key-number adjustment on lines and totals. Under +4%, no bet — and saying so is a result.</p>
+        <p><code>advantage = TAB price ÷ true US price − 1</code>, plus the extra credit for the points line explained below. Under 4%, no bet — and saying so is a result.</p>
       </div>
     </div>
   </section>
@@ -74,20 +74,20 @@
   <hr class="rule">
 
   <section>
-    <h2><span class="num">03</span>Where the edge lives: the number, not the price</h2>
-    <p class="dek">Because TAB prices ~5% worse than fair on Head To Head, those cards will almost never clear the gate. The edge has to come from the <em>number</em> — TAB posting +4 when the market is +3.5 is a real advantage even at identical odds.</p>
+    <h2><span class="num">03</span>The advantage is in the points line, not the odds</h2>
+    <p class="dek">On who-wins bets TAB is about 5% worse than the true price, so those will almost never clear the bar. The advantage has to come from the <em>points line</em> — if TAB has the game at +4 and the market has +3.5, that half point is real value even when the odds are identical.</p>
 
-    <h3 style="font-size:1rem;margin:20px 0 8px">Half-point values, one-sided</h3>
-    <p>These are empirical: regular-season games 2011–2025 conditioned on the line sitting within a point of the key. The value of a half point is <strong>P(the favourite wins by exactly k)</strong> — the one case where the same game pushes at one number and wins or loses at the other. Counting games where either team wins by k roughly doubles every figure and is wrong.</p>
+    <h3 style="font-size:1rem;margin:20px 0 8px">What half a point is worth</h3>
+    <p>These come from real games, 2011–2025, counting only games where the line sat within a point of the key number. A half point matters when it turns a draw into a result: the game lands exactly on the old number, so at one line you get your money back and at the other you win or lose. Counting games where <em>either</em> team wins by that margin roughly doubles every figure, which is wrong.</p>
 
     <div class="table-wrap" style="margin-top:12px">
       <table>
-        <caption>Crossing a key, as a percentage of stake</caption>
+        <caption>Crossing a key number, as a percentage of what you bet</caption>
         <thead>
-          <tr><th class="n">Key</th><th class="n">Decisive</th><th class="n">Half point worth</th><th>Use</th></tr>
+          <tr><th class="n">Key number</th><th class="n">Lands on it</th><th class="n">Half point worth</th><th>Why</th></tr>
         </thead>
         <tbody>
-          <tr><td class="n">3</td><td class="n">8.8%</td><td class="n">8.0–8.8%</td><td>the biggest half point in the sport — a 3-line pushes one game in eleven</td></tr>
+          <tr><td class="n">3</td><td class="n">8.8%</td><td class="n">8.0–8.8%</td><td>the biggest half point in the sport — a line of 3 ends in your money back about one game in eleven</td></tr>
           <tr><td class="n">7</td><td class="n">6.2%</td><td class="n">5.6–6.2%</td><td>second most valuable</td></tr>
           <tr><td class="n">10</td><td class="n">4.9%</td><td class="n">4.4–4.9%</td><td>worth about as much as 2</td></tr>
           <tr><td class="n">6</td><td class="n">4.2%</td><td class="n">3.8–4.2%</td><td>—</td></tr>
@@ -101,34 +101,34 @@
 
     <div class="callout">
       <span class="kicker">The rule that matters more than the table</span>
-      <p>The bonus applies <strong>only when the half point straddles the key</strong> — the two numbers are k−0.5 and k, or k and k+0.5. A move from +3.5 to +4 does <em>not</em> cross 3; it saves a four-point loss and is worth the 4-value, ~2.6%. Half points at 5, 8, 9 and 11–13 are worth little.</p>
+      <p>The extra credit applies <strong>only when the half point sits across the key number</strong> — that is, the two lines are k−0.5 and k, or k and k+0.5. Moving from +3.5 to +4 does <em>not</em> cross 3; it swaps one kind of four-point loss for another, and it's worth the 4-value, about 2.6%. Half points at 5, 8, 9 and 11–13 are worth very little.</p>
     </div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">04</span>Bankroll and staking</h2>
+    <h2><span class="num">04</span>The money</h2>
     <div class="grid two">
       <div class="panel hold">
-        <span class="meta">Flagged, not hidden</span>
-        <h3>NZ$5 on NZ$62 is 8% per unit</h3>
-        <p>Conventional practice is 1–3%. An ordinary losing run of 6–8 units — which happens to good processes — takes the kitty to roughly NZ$25–35.</p>
-        <p>Two fixes, either is fine: top up to NZ$150–200 so NZ$5 is ~3%, or drop the unit to NZ$2 (~3.2%) with no new money. Both are pending — it's Neil's call, not the agents'.</p>
+        <span class="meta">Said out loud, not buried</span>
+        <h3>NZ$5 out of a NZ$62 pot is 8% a bet</h3>
+        <p>Most people bet 1–3% of their pot at a time. A normal bad run of 6–8 losing bets — which happens to good systems too — would leave us about NZ$25–35.</p>
+        <p>Two ways out, either is fine: put more in (NZ$150–200 makes NZ$5 about 3% of the pot), or bet NZ$2 a time, about 3.2%, with no new money. Neither is decided — it's Neil's call, not the agents'.</p>
       </div>
       <div class="panel">
         <span class="meta">The rules</span>
-        <h3>What's fixed regardless</h3>
+        <h3>What's fixed no matter what</h3>
         <dl class="facts">
-          <div><dt>Currency</dt><dd>NZD always</dd></div>
-          <div><dt>Staking</dt><dd>flat units</dd></div>
-          <div><dt>Stake up after a loss</dt><dd>never</dd></div>
-          <div><dt>Multis, in-play, props</dt><dd>excluded</dd></div>
-          <div><dt>Minimum price</dt><dd>1.40</dd></div>
-          <div><dt>Max single bet</dt><dd>2 units</dd></div>
-          <div><dt>Who places the bet</dt><dd>Neil or Curly — never an agent</dd></div>
+          <div><dt>Money</dt><dd>always NZ dollars</dd></div>
+          <div><dt>Bet size</dt><dd>the same every time</dd></div>
+          <div><dt>Bet more after a loss</dt><dd>never</dd></div>
+          <div><dt>Multi bets, live betting, player bets</dt><dd>not allowed</dd></div>
+          <div><dt>Shortest odds we'll take</dt><dd>1.40</dd></div>
+          <div><dt>Biggest single bet</dt><dd>two bets' worth (NZ$10)</dd></div>
+          <div><dt>Who puts the bet on</dt><dd>Neil or Curly — never an agent</dd></div>
         </dl>
-        <p style="margin-top:10px">Props are excluded deliberately: wide margins, thin boards at TAB, no reliable reference price to compare against. Not at this bankroll.</p>
+        <p style="margin-top:10px">Player bets are banned on purpose: TAB's cut on them is bigger, there's less to choose from, and there's no reliable true price to compare against. Not with a pot this size.</p>
       </div>
     </div>
   </section>
@@ -139,11 +139,11 @@
     <h2><span class="num">05</span>What this method can't do</h2>
     <p class="dek">Stated up front, so it doesn't get argued about later.</p>
     <ul class="tight">
-      <li><strong>It cannot make a bad book good.</strong> A 5% margin is a 5% margin. Most weeks the correct card is small or empty.</li>
-      <li><strong>It cannot out-model the market.</strong> We are not building a better rating system than a dozen US books with full-time staff. We're spotting where TAB's price is stale. Smaller edge, actually achievable.</li>
-      <li><strong>The US median isn't gospel.</strong> It's the best free reference available. Where the US books disagree with each other by more than a point, confidence drops and a pass is better than a guess.</li>
-      <li><strong>The de-vig method is still unsettled.</strong> Proportional or power changes every edge by up to 2.4 points. Until it's agreed and validated, treat the third decimal place as decoration.</li>
-      <li><strong>In Week 1 there is no current-season form at all</strong>, and most teams haven't filed an injury report when lines post. Week 1 is a numbers exercise, not a football read.</li>
+      <li><strong>It can't make a bad book good.</strong> A 5% cut is a 5% cut. Most weeks the right answer is a short list, or no bets at all.</li>
+      <li><strong>It can't out-think the market.</strong> We're not building a better ratings system than a dozen US books with full-time staff. We're finding where TAB's price is out of date. Smaller advantage, but a real one.</li>
+      <li><strong>The middle US price isn't the last word.</strong> It's the best free reference there is. When the US books disagree with each other by more than a point, we trust it less, and passing is better than guessing.</li>
+      <li><strong>We still haven't settled how to take the bookies' cut out.</strong> Two ways of doing it — splitting the cut evenly, or leaning it towards the favourite — move every number by up to 2.4 points. Until we agree which one and test it, don't read anything into small differences.</li>
+      <li><strong>In Week 1 there's no form from this season at all</strong>, and most teams haven't filed an injury report when the prices go up. Week 1 is a numbers exercise, not a football read.</li>
     </ul>
   </section>
 
@@ -151,8 +151,8 @@
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — method reference, Week 1. Half-point values measured on nflverse regular-season data 2011–2025 (n=3,919); every other price quoted from TAB's feed or the US market with the as-of time attached.</p>
-    <p class="footer-links"><a href="protocol.html">Operating agreement</a> · <a href="week-01.html">Week 1 audit</a> · <a href="reply-to-curly.md">Reply to Curly's agent (.md)</a></p>
+    <p><strong>Pig Skin Punts</strong> — how the method works, Week 1. Half-point values measured from nflverse regular-season data 2011–2025 (3,919 games); every other price comes from TAB's feed or the US market, with the time we read it.</p>
+    <p class="footer-links"><a href="protocol.html">How the week works</a> · <a href="week-01.html">Week 1 audit</a> · <a href="reply-to-curly.md">Reply to Curly's agent (.md)</a></p>
   </div>
 </footer>
 

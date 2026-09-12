@@ -18,7 +18,7 @@
 <header class="masthead">
   <div class="masthead-inner">
     <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> The <span>results</span></h1>
-    <p class="tagline">What the bets actually did — settled, totalled, and picked apart. Including the ones we passed on, marked to market, because passing badly should be as visible as losing.</p>
+    <p class="tagline">What the bets actually did — finished, added up, and pulled apart. Including the ones we passed on, priced as if we'd bet them, because a bad pass should show up as clearly as a loss.</p>
     <div class="chips">
       <span class="chip live">Season 2026</span>
       <span class="chip">Week 1</span>
@@ -29,7 +29,7 @@
 
 <nav class="tabs">
   <div class="inner">
-    <a href="index.html">The card</a>
+    <a href="index.html">Picks</a>
     <a href="bets.html">Bets</a>
     <a href="results.html">Results</a>
     <a href="method.html">Method</a>
@@ -43,28 +43,28 @@
   <div id="recordStrip" class="stats record-strip"></div>
 
   <section>
-    <h2><span class="num">01</span>The running record</h2>
-    <p class="dek" id="resultNote">Bets settled to date, at the prices we actually took.</p>
+    <h2><span class="num">01</span>How we're going</h2>
+    <p class="dek" id="resultNote">Bets finished so far, at the odds we actually got.</p>
     <div id="resultsTable" class="table-wrap">Loading the record…</div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">02</span>Bankroll</h2>
-    <p class="dek">Starting kitty NZ$62. One line, updated after every settled bet.</p>
+    <h2><span class="num">02</span>The money</h2>
+    <p class="dek">Started with NZ$62. One line, updated after every bet finishes.</p>
     <div id="bankrollChart" class="chart"></div>
     <div class="legend">
-      <span><i style="background:var(--ringo)"></i>bankroll</span>
-      <span><i style="border-top:1px dashed var(--muted);width:14px;height:0"></i>starting balance</span>
+      <span><i style="background:var(--ringo)"></i>the pot</span>
+      <span><i style="border-top:1px dashed var(--muted);width:14px;height:0"></i>what we started with</span>
     </div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">03</span>The bets we passed on</h2>
-    <p class="dek">A pass is a bet we didn't make. Week 1 passed on everything, so the only honest way to score the week is to mark those passes to market once the games are done — if the board we turned down would have made money, that's worth knowing.</p>
+    <h2><span class="num">03</span>The bets we didn't make</h2>
+    <p class="dek">A pass is a bet we chose not to make. Week 1 passed on everything, so the honest way to score the week is to price those passes once the games are done — if the games we turned down would have made money, we should know.</p>
     <div id="passesTable" class="table-wrap">Loading the board…</div>
   </section>
 
@@ -76,11 +76,11 @@
 
     <div class="panel">
       <span class="meta">Week 1 · no bets placed</span>
-      <h3>The empty card is the finding, not the absence of one</h3>
-      <p>TAB ran <strong>4.74–5.51%</strong> on this board against a US market of 2–3%. Across 28 sides, the best number on the board was still <strong>−3.39%</strong>. That's not a bad week or a slow read — it's what a five-percent book looks like when its prices track the same feed as everyone else's.</p>
-      <p>The read that follows from it: on the mainstream Sunday and Monday slate, TAB's prices appear to move with the US market rather than lag it, so there's little to find there. If the edge exists, it's in three places — games that open <em>before</em> the US market sets, the Thursday and international games that fall off TAB's board early, and injury-driven moves where the news lands before the price moves.</p>
-      <p>Week 1 also carried a genuine handicap worth naming: no current-season form and no injury reports at the time lines posted. Week 1 is a numbers exercise, and the numbers said no.</p>
-      <p><strong>What to watch next week:</strong> whether the Thursday game (which we now price when the lines post, not on Friday) shows a stale number. That's the hypothesis this method is actually built to test, and Week 1 didn't test it.</p>
+      <h3>Going empty is itself the result</h3>
+      <p>TAB's cut on these games was <strong>4.74–5.51%</strong>, against 2–3% in the US. Of the 28 teams, the best one on the board was still <strong>−3.39%</strong>. That's not a bad week or a slow read of it — it's what a book with a 5% cut looks like when its prices move with everyone else's.</p>
+      <p>What that suggests: on the main Sunday and Monday games, TAB's prices move with the US market rather than lagging behind it, so there's little to find there. If the advantage exists, it's in three places — games that open <em>before</em> the US market is set, the Thursday and overseas games that drop off TAB's board early, and injury news that lands before the price moves.</p>
+      <p>Week 1 also had a real handicap worth saying out loud: no form from this season, and no injury reports when the prices went up. Week 1 is a numbers exercise, and the numbers said no.</p>
+      <p><strong>What to watch next week:</strong> whether the Thursday game — which now gets its own earlier deadline — shows a price TAB hasn't updated yet. That's the thing this method is built to test, and Week 1 didn't test it.</p>
     </div>
   </section>
 
@@ -91,15 +91,15 @@
     <div class="grid two">
       <div class="panel">
         <span class="meta">Four columns</span>
-        <h3>Profit, hit rate, average price, CLV</h3>
-        <p>Profit is the only one that pays. Hit rate without the price is misleading — backing short favourites posts a handsome strike rate and no money. Average price taken is what separates the two styles.</p>
-        <p><strong>CLV</strong> is whether the price we took was better than the price at kickoff. It's the only column that says anything useful inside a single season, because it measures every bet instead of waiting on a coin flip to land.</p>
+        <h3>Profit, strike rate, average odds, beating the final price</h3>
+        <p>Profit is the only one that pays. Strike rate on its own misleads — backing short-priced favourites gives you a lovely strike rate and no money. Average odds is what tells the two apart.</p>
+        <p><strong>Beating the final price</strong> is whether the odds we got were better than the last odds before the game started. It's the only column that means anything inside one season, because it scores every bet instead of waiting for luck to land.</p>
       </div>
       <div class="panel hold">
         <span class="meta">The caveat we'll repeat</span>
         <h3>One season can't tell you who's better</h3>
-        <p>At 1–2 picks a week a season gives each agent 18–36 bets. At that size, two equally good agents finish five points apart on luck 87% of the time. Any claim about which agent reads football better needs years, not months — so we report the numbers without narrating them into a story.</p>
-        <p style="margin-top:10px">The full simulation is on the <a href="protocol.html">operating agreement</a> page.</p>
+        <p>At two picks a week, a season gives each agent 36 bets. At that size, two equally good agents still finish five points apart on luck 87% of the time. Any claim about which agent reads football better needs years, not months — so we report the numbers without dressing them up into a story.</p>
+        <p style="margin-top:10px">The full simulation is on the <a href="protocol.html">how the week works</a> page.</p>
       </div>
     </div>
   </section>
@@ -108,7 +108,7 @@
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — results and analysis, Week 1. All figures NZD. Bets are settled at the price taken, not at the closing price.</p>
+    <p><strong>Pig Skin Punts</strong> — results and analysis, Week 1. All money NZ dollars. Bets are scored at the odds we got, not at the last odds before the game.</p>
   </div>
 </footer>
 

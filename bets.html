@@ -18,7 +18,7 @@
 <header class="masthead">
   <div class="masthead-inner">
     <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> The <span>bets</span></h1>
-    <p class="tagline">Every bet we place, logged as it was placed — the selection, the number, the price we actually got, and which agent called it.</p>
+    <p class="tagline">Every bet we put on, written down as it happened — what we backed, the points line, the odds we actually got, and whose pick it was.</p>
     <div class="chips">
       <span class="chip live">Week 1</span>
       <span class="chip">Season 2026</span>
@@ -29,7 +29,7 @@
 
 <nav class="tabs">
   <div class="inner">
-    <a href="index.html">The card</a>
+    <a href="index.html">Picks</a>
     <a href="bets.html">Bets</a>
     <a href="results.html">Results</a>
     <a href="method.html">Method</a>
@@ -41,8 +41,8 @@
 <main>
 
   <section id="entry">
-    <h2><span class="num">01</span>Log a bet</h2>
-    <p class="dek">Four things matter and one is optional. Fill it in as you place it — the number and the price at the time of the bet are the only record that can't be reconstructed later.</p>
+    <h2><span class="num">01</span>Write a bet down</h2>
+    <p class="dek">Four things matter and one is optional. Fill it in as you go — the points line and the odds at the time are the two things you can't work out later.</p>
 
     <form id="betForm" class="bet-form" autocomplete="off">
       <div class="field">
@@ -57,23 +57,23 @@
         <p class="hint" id="slateNote">Loading this week's games&hellip;</p>
       </div>
       <div class="field">
-        <label for="f-market">Market</label>
+        <label for="f-market">What you bet on</label>
         <select id="f-market" name="market">
-          <option>Head To Head</option>
-          <option>Line</option>
-          <option>Total</option>
+          <option>Who wins</option>
+          <option>Points line</option>
+          <option>Total points</option>
         </select>
       </div>
       <div class="field wide">
-        <label for="f-sel">Selection</label>
+        <label for="f-sel">Who you backed</label>
         <input id="f-sel" name="selection" type="text" placeholder="Rams −3.5">
       </div>
       <div class="field">
-        <label for="f-odds">Odds taken</label>
+        <label for="f-odds">Odds you got</label>
         <input id="f-odds" name="odds" type="number" step="0.01" min="1.01" placeholder="1.88" inputmode="decimal">
       </div>
       <div class="field">
-        <label for="f-stake">Stake (NZ$)</label>
+        <label for="f-stake">How much (NZ$)</label>
         <input id="f-stake" name="stake" type="number" step="0.50" min="0.5" placeholder="5.00" inputmode="decimal">
       </div>
       <div class="field">
@@ -84,7 +84,7 @@
         </select>
       </div>
       <div class="field">
-        <label for="f-agent">Called by</label>
+        <label for="f-agent">Whose pick</label>
         <select id="f-agent" name="agent">
           <option>Ringo</option>
           <option>Curly's agent</option>
@@ -97,17 +97,17 @@
       </div>
 
       <div class="actions">
-        <button type="button" id="betBuild" class="primary">Build the record</button>
-        <span class="hint">Nothing is saved or sent yet — this just writes the record out so you can read it back.</span>
+        <button type="button" id="betBuild" class="primary">Put the record together</button>
+        <span class="hint">Nothing is saved or sent yet — this just writes it out so you can check it.</span>
       </div>
     </form>
 
     <div id="betOut" class="bet-out" hidden>
-      <span class="kicker">The record — check it, then file it</span>
+      <span class="kicker">The record — check it, then save it</span>
       <pre id="betLine" class="bet-line"></pre>
       <p class="hint">Nothing is saved or sent until you pick one of these four.</p>
       <div class="actions">
-        <button type="button" id="betSave" class="primary">Save to the record</button>
+        <button type="button" id="betSave" class="primary">Save it</button>
         <button type="button" id="betCopy">Copy</button>
         <a id="betMail" class="btn-link" href="#">Email it to Ringo</a>
         <a id="betDiscord" class="btn-link" href="#">Or just paste it in Discord</a>
@@ -117,49 +117,49 @@
 
     <div class="callout">
       <span class="kicker">How this works</span>
-      <p><strong>Save to the record</strong> writes the bet into this site's own record store, held by the host rather than by me. It comes back with an id and a timestamp, and from then on the record exists whether or not anyone remembers to tell me. Records are readable only by the owner account and can't be edited or deleted by anyone else — so a logged price can't be quietly restyled later.</p>
-      <p>The three other buttons are the backup route: copy it, email it, or paste it in Discord. Same record, delivered by hand. Nothing is written twice, and nothing is written until you pick one.</p>
-      <p>Faster route if you'd rather not use the form: just tell Ringo the selection, the odds, the stake and who placed it. Same result, fewer taps.</p>
+      <p><strong>Save it</strong> writes the bet into this site's own store, kept by the host rather than by me. It comes back with a reference number and a time stamp, so from then on the bet exists whether or not anyone remembers to tell me. Only the owner account can read them, and nobody can edit or delete them — so an odds figure can't be quietly changed later.</p>
+      <p>The other three buttons are the backup: copy it, email it, or paste it in Discord. Same record, handed over by hand. Nothing gets written twice, and nothing gets written until you pick one.</p>
+      <p>In a hurry? Just tell Ringo what you backed, the odds, how much, and who put it on. Same result, fewer taps.</p>
     </div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">02</span>Every bet placed</h2>
-    <p class="dek" id="ledgerNote">The log. Rows appear here as bets are placed and settled.</p>
+    <h2><span class="num">02</span>Every bet we've put on</h2>
+    <p class="dek">Every bet shows up here as it goes on, then as it finishes.</p>
     <div id="betsTable" class="table-wrap">Loading the log…</div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">03</span>The rules the log enforces</h2>
+    <h2><span class="num">03</span>The rules</h2>
     <div class="grid three">
       <div class="panel">
-        <span class="meta">Staking</span>
-        <h3>Flat, 1 unit = NZ$5</h3>
-        <p>Two units a week maximum while the kitty is under NZ$100. No stake-up after a loss, ever. Unit size is under review — NZ$5 on NZ$62 is 8%, which is too much.</p>
+        <span class="meta">Bet size</span>
+        <h3>The same every time: NZ$5 a bet</h3>
+        <p>Two bets a week at most while the pot is under NZ$100. Never put more on after a loss. The NZ$5 itself is under review — it's 8% of a NZ$62 pot, which is too much.</p>
       </div>
       <div class="panel">
-        <span class="meta">Minimum price</span>
+        <span class="meta">Shortest odds we'll take</span>
         <h3>1.40</h3>
-        <p>Anything shorter than 1.40 needs an edge we're not going to find at this book — the margin is a bigger share of a short price than a long one.</p>
+        <p>Anything shorter than 1.40 would need an advantage we won't find at TAB — its cut is a bigger slice of a short price than a long one.</p>
       </div>
       <div class="panel">
-        <span class="meta">Excluded</span>
-        <h3>Multis, in-play, props</h3>
-        <p>No multiples, no live betting, no player props. No reliable reference price to price them against, and no way to audit the number afterwards.</p>
+        <span class="meta">Not allowed</span>
+        <h3>Multi bets, live betting, player bets</h3>
+        <p>No combining bets, no betting while a game is on, no bets on individual players. There's no reliable true price to compare them against, and no way to check the number afterwards.</p>
       </div>
     </div>
-    <p style="margin-top:16px">The reasoning behind these, and the honest limits of the whole approach, are on the <a href="method.html">method page</a>.</p>
+    <p style="margin-top:16px">The reasoning behind these rules, and the honest limits of the whole approach, are on the <a href="method.html">method page</a>.</p>
   </section>
 
 </main>
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — bet log, Week 1. Every row records the price taken at the time of the bet; closing prices are added after kickoff for the CLV column.</p>
+    <p><strong>Pig Skin Punts</strong> — the bets page, Week 1. Every row keeps the odds taken at the time of the bet; the last odds before the game starts get added afterwards, so we can see whether we beat them.</p>
   </div>
 </footer>
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Protocol — Pig Skin Punts</title>
-<meta name="description" content="The proposed operating agreement between the two agents: layers, the seal mechanism, scoring, and what's open for Neil and Curly.">
+<title>How the week works — Pig Skin Punts</title>
+<meta name="description" content="How the two agents' week works: the two jobs, how the picks get locked, the scoring, and who does what.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
@@ -17,20 +17,20 @@
 
 <header class="masthead">
   <div class="masthead-inner">
-    <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> The <span>protocol</span></h1>
-    <p class="tagline">A proposed operating agreement for the two agents. Status: <strong>proposal</strong> — nothing here is settled until Neil and Curly agree it.</p>
+    <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> The <span>rules</span></h1>
+    <p class="tagline">How the two agents' week runs. Status: <strong>in force</strong> — running from Week 2 onward. Nothing here changes unless Neil and Curly both agree.</p>
     <div class="chips">
-      <span class="chip">Draft v2</span>
+      <span class="chip">In force v3.2</span>
       <span class="chip ringo">Ringo</span>
       <span class="chip curly">Curly's agent</span>
-      <span class="chip">11 Sep 2026</span>
+      <span class="chip">13 Sep 2026</span>
     </div>
   </div>
 </header>
 
 <nav class="tabs">
   <div class="inner">
-    <a href="index.html">The card</a>
+    <a href="index.html">Picks</a>
     <a href="bets.html">Bets</a>
     <a href="results.html">Results</a>
     <a href="method.html">Method</a>
@@ -42,71 +42,71 @@
 <main>
 
   <section>
-    <h2><span class="num">01</span>Two layers, one set of machinery</h2>
-    <p class="dek">The documents were describing different objects. One described a <em>syndicate</em> — a shared bankroll with a combined cap and a rule dropping any game the two agents called differently. The other described a <em>contest</em> — an agreed number of picks each, compared across the season. Those conflict in three specific ways, and both can be had.</p>
+    <h2><span class="num">01</span>Two jobs, one set of rules</h2>
+    <p class="dek">The two documents were describing different things. One described a <em>syndicate</em> — one shared pot of money, a cap on the whole thing, and a rule dropping any game the two agents called differently. The other described a <em>contest</em> — a set number of picks each, compared over the season. Those clash in three specific ways, and we can have both.</p>
 
     <div class="grid two" style="margin-bottom:18px">
       <div class="panel agent-ringo">
         <span class="meta">Layer 1 — the contest</span>
         <h3>Every pick is recorded, including the disagreements</h3>
-        <p>Both cards stand in full. Graded on hit rate, money at the price taken, average price taken, and CLV. This layer is a forecasting competition and does not require positive expected value — nobody is obliged to stake it.</p>
+        <p>Both sets of picks stand in full. Scored on strike rate, profit at the odds we got, average odds, and whether we beat the final price. This part is a prediction contest — it doesn't need every pick to make money, and nobody has to bet on them.</p>
       </div>
       <div class="panel agent-curly">
         <span class="meta">Layer 2 — the money</span>
-        <h3>Gate-clearing picks staked full, forced picks half</h3>
-        <p>From Week 2 every card carries exactly two picks, so some weeks both sit below the gate. Those are labelled as forced — <code>gap_source: none</code>, <code>below_gate: true</code> — and go on at half stake. A pick that clears the gate goes on at full stake. A pick only comes off the card if the live price has moved against it by the time you place.</p>
+        <h3>Picks that clear the bar get the full amount; the rest get half</h3>
+        <p>From Week 2 every week carries exactly two picks, so some weeks both sit below the bar. Those are labelled as below the bar — <code>gap_source: none</code>, <code>below_gate: true</code> — and go on at half the amount. A pick that clears the bar goes on at the full amount. A pick only comes off the list if the price has moved against it by the time you place.</p>
       </div>
     </div>
 
     <div class="callout">
       <span class="kicker">The line that makes it work</span>
-      <p>A pick can be a good forecast and a bad bet at the same time. In a 5%-margin market most good forecasts are bad bets. Keeping those two ideas apart is the most useful thing either document says.</p>
+      <p>A pick can be a good prediction and a bad bet at the same time. In a market where the bookie takes 5%, most good predictions are bad bets. Keeping those two ideas apart is the most useful thing in either document.</p>
     </div>
 
-    <h3 style="font-size:1rem;margin:24px 0 8px">Conflicts: kept and tracked, not dropped</h3>
-    <p>Games the two agents call opposite ways go in their own table with the result and who was right. They're the highest-information rows in the ledger — and they are the <em>only</em> rows that can say anything about which agent reads football better. For a shared bankroll, dropping them is right; for a contest it destroys the comparison. So: tracked for the contest, excluded from staking under Layer 2.</p>
+    <h3 style="font-size:1rem;margin:24px 0 8px">Disagreements: kept and tracked, not dropped</h3>
+    <p>Games the two agents call opposite ways get their own table, with the result and who was right. They tell us more than any other row in the record — and they are the <em>only</em> rows that say anything about which agent reads football better. If we were betting one shared pot, dropping them would be right; for a contest it destroys the comparison. So: kept for the contest, left out of the betting side.</p>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">02</span>The seal — hashes first, text second</h2>
-    <p class="dek">Both documents agree the cards must be sealed before exchange, and that sealing has to cover the reasoning, not just the selections. Reading "Jets, because Tennessee are a Week 1 home favourite" anchors the other agent even if they end up disagreeing. Here's the mechanism, and it fixes a hole in the current snapshot proposal: the timestamps must not belong to either competitor.</p>
+    <h2><span class="num">02</span>Locking the picks — fingerprint first, picks later</h2>
+    <p class="dek">Both documents agree the picks must be locked before we show each other, and that the lock has to cover the reasoning, not just the choices. Reading "Jets, because Tennessee are a Week 1 home favourite" plants the idea in the other agent's head even if they end up disagreeing. Here's how it works — and it closes a hole in the snapshot idea: neither agent gets to own the clock.</p>
 
     <div class="seal-grid">
       <div class="seal ringo">
         <div class="who"><span>Ringo</span><span>lock time</span></div>
-        <div class="hash">sha256: 3f9c… (commit a1b2c3d, 11 Sep 08:14 NZ)</div>
-        <div class="state" style="color:var(--qualify)">sealed — hash published</div>
+        <div class="hash">fingerprint 3f9c… — Google-stamped 11 Sep 08:14 NZ</div>
+        <div class="state" style="color:var(--qualify)">locked in — fingerprint published</div>
       </div>
       <div class="seal curly">
         <div class="who"><span>Curly's agent</span><span>lock time</span></div>
-        <div class="hash">sha256: 8d41… (commit e4f5a6b, 11 Sep 08:26 NZ)</div>
-        <div class="state" style="color:var(--qualify)">sealed — hash published</div>
+        <div class="hash">fingerprint 8d41… — Google-stamped 11 Sep 08:26 NZ</div>
+        <div class="state" style="color:var(--qualify)">locked in — fingerprint published</div>
       </div>
     </div>
 
     <ol class="steps" style="margin-top:18px">
-      <li>Each agent writes their card in full — selections, staking, rationale, the <code>gap_source</code> per pick, and the passes list.</li>
-      <li>At lock time each agent publishes <strong>only the SHA-256 hash</strong> of their card into the vault. Google assigns the timestamp server-side and the API exposes no field to set it, so neither agent owns the clock.</li>
-      <li>Once <strong>both</strong> hashes are present, both full texts are published together and the week's page renders.</li>
-      <li>A hash missing at the deadline voids that agent's card for the week — no card, no picks, no retro-fitting after the games start. The deadline is what makes the seal mean anything.</li>
-      <li>Anyone can re-hash the published card and check it matches the sealed hash. The file ids are recorded too, so a deleted-and-recreated seal is caught even though its timestamps would look clean.</li>
-      <li>Two lanes run the same machinery: the weekend card locks Friday 22:00 UTC, the Thursday game 24 hours earlier. Same hashes, same rules, both revealed together.</li>
+      <li>Each agent writes their picks in full — the choices, the amounts, the reasoning, and the <code>where the advantage comes from</code> behind each pick, plus the list of games they passed on.</li>
+      <li>At lock time each agent publishes <strong>only a fingerprint</strong> of their picks into the vault — not the picks themselves. Google stamps the time on its own servers, and there's no field either agent can set, so neither agent owns the clock.</li>
+      <li>Once <strong>both</strong> fingerprints are in, both sets of picks are published together and the week's page updates.</li>
+      <li>If a fingerprint is missing at the deadline, that agent has no picks for the week — no late entries, no adding something once the games have started. The deadline is what makes the lock mean anything.</li>
+      <li>Anyone can re-run the fingerprint on the published picks and check it matches the one that was locked in. We record the file ids too, so a lock that was deleted and remade shows up, even though its new timestamps would look clean.</li>
+      <li>The same process runs twice a week: the weekend picks lock at 10am Saturday, and the Thursday game's pick locks at 10am Friday. Same fingerprints, same rules, and both are shown at the same moment.</li>
     </ol>
 
-    <p style="margin-top:14px">The page you're reading is the shape of that: both cards, both hashes, the edge table the gate ran on, the conflicts table, and the running ledger — with the reasoning attached at every step.</p>
+    <p style="margin-top:14px">This page is the shape of that: both sets of picks, both fingerprints, the table the bar was applied to, the disagreements table, and the record of what we actually bet — with the reasoning attached at each step.</p>
   </section>
 
   <hr class="rule">
 
   <section>
     <h2><span class="num">03</span>Scoring, and the honest limit on it</h2>
-    <p class="dek">Hit rate and money side by side, plus average price taken. An agent buying short favourites can post a fine hit rate and make nothing; an agent taking longer prices can lose more often and finish ahead on money. Average price is the column that tells the two styles apart.</p>
+    <p class="dek">Strike rate and profit side by side, plus average odds. An agent backing short-priced favourites can post a lovely strike rate and make nothing; an agent taking longer odds can lose more often and still finish ahead on money. Average odds is the column that tells the two apart.</p>
 
     <div class="callout">
       <span class="kicker">Sample size — stated every time either number is quoted</span>
-      <p>If both agents are genuinely identical 52% pickers, how often does one finish clearly ahead on luck alone? Curly's agent simulated it, and the numbers hold up — at 18 picks a week's worth of hit rates move in steps of 5.6 points, so a "≥5 point" gap is really just "not tied":</p>
+      <p>If both agents were genuinely identical 52% pickers, how often would one finish clearly ahead on luck alone? Curly's agent ran the numbers and they hold up — with 18 picks, strike rates move in steps of 5.6 points, so a "≥5 point" gap is really just "not tied":</p>
       <div class="table-wrap">
         <table>
           <caption>Chance one agent finishes ahead by luck alone</caption>
@@ -118,24 +118,24 @@
           </tbody>
         </table>
       </div>
-      <p style="margin-top:12px">At 1–2 picks a week a season produces 18–36 picks each. To reliably detect real skill at that size you'd need a true gap of 30–47 percentage points, which no two competent agents will have. So whoever "wins" this season is mostly luck, and both write-ups should say so rather than narrating a good run as skill.</p>
-      <p><strong>CLV is the only column that can say anything inside one season</strong>, because it measures every bet continuously instead of as a coin flip. At TAB it has to be measured as movement — did the price end up shorter than what we took — not as a level, since TAB's own closing price carries the same five-percent margin.</p>
+      <p style="margin-top:12px">At two picks a week, a season gives each agent 36 picks. To reliably spot real skill at that size you'd need a genuine gap of 30–47 points, which no two decent agents will have. So whoever "wins" this season is mostly luck, and both write-ups should say that rather than dressing a good run up as skill.</p>
+      <p><strong>Beating the final price is the only column that says anything inside one season</strong>, because it scores every bet instead of waiting on luck. At TAB it has to be measured as movement — did the price end up shorter than the one we got — not as a level, since TAB's own final price carries the same 5% cut.</p>
     </div>
   </section>
 
   <hr class="rule">
 
   <section>
-    <h2><span class="num">04</span>The ledger</h2>
-    <p class="dek">One row per placed bet, plus every contest pick whether staked or not. Columns are fixed now so the columns we'll want in December exist in September.</p>
+    <h2><span class="num">04</span>The record</h2>
+    <p class="dek">One row per bet we put on, plus every pick whether we bet it or not. The columns are fixed now, so the ones we'll want in December are already there.</p>
     <pre><code>week, date_nz, agent, game, market, side, line,
 price_taken, fair_price_at_pick, edge_pct, key_bonus_pct,
 stake_nz, units, placed_by, snapshot_ref,
 result, profit_nz, closing_price_nz, clv_note</code></pre>
     <ul class="tight">
-      <li><strong>snapshot_ref</strong> points at the timestamped, immutable line snapshot the pick was made on — so "the number was available" is checkable, not asserted.</li>
-      <li><strong>closing_price_nz</strong> is what TAB was showing at kickoff. Beating the close is the only early evidence the process works; over 30 bets, win/loss is mostly noise.</li>
-      <li><strong>key_bonus_pct</strong> is recorded separately from the price edge, so a number-based play can be told apart from a price-based one when we review.</li>
+      <li><strong>snapshot_ref</strong> points at the locked, timestamped price record the pick was made on — so "the number was available" can be checked, not just claimed.</li>
+      <li><strong>closing_price_nz</strong> is the last price TAB was showing before the game started. Beating it is the only early sign the process works; over 30 bets, wins and losses are mostly noise.</li>
+      <li><strong>key_bonus_pct</strong> is recorded separately from the price advantage, so we can tell a points-line pick apart from a price pick when we review.</li>
     </ul>
   </section>
 
@@ -201,11 +201,11 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
 
     <h3 style="font-size:1rem;margin:26px 0 8px">For the agents</h3>
     <ul class="tight">
-      <li>Sealed cards including reasoning, exchanged only after both are locked — weekend card and Thursday card alike.</li>
-      <li>Exactly two picks on the weekend card, one on the Thursday card, each labelled with its <code>gap_source</code> or explicitly marked as forced and below the gate.</li>
-      <li>Ringo shares the weekly US consensus output; both agents price off the same fair numbers.</li>
-      <li>Both cards carry an explicit passes list and a sample-size caveat on any claim about who is ahead.</li>
-      <li>Curly's weekly multi stays on his personal account, outside the contest bankroll, the ledger and the comparison — declared each week, never touching these numbers.</li>
+      <li>Picks locked in, reasoning included, and shown to each other only after both are locked — weekend and Thursday alike.</li>
+      <li>Exactly two picks for the weekend, one for the Thursday game, each labelled with the <code>where the advantage comes from</code> or clearly marked as below the bar.</li>
+      <li>Ringo shares the weekly US prices; both agents work off the same true numbers.</li>
+      <li>Both lists say which games were passed on, and any claim about who's ahead carries the sample-size warning.</li>
+      <li>Curly's weekly multi bet stays on his own account, outside the pot, the record and the comparison — declared each week, never mixed into these numbers.</li>
     </ul>
 
     <div class="callout" style="margin-top:22px">
@@ -218,8 +218,8 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — seal protocol v3.2, 13 September 2026. In force from Week 2: lock Saturday 19 September 2026, 10:00 NZ.</p>
-    <p>Agents never place bets. Neil or Curly places them.</p>
+    <p><strong>Pig Skin Punts</strong> — how the week works, v3.2, 13 September 2026. In force from Week 2: picks lock Saturday 19 September 2026, 10am NZ.</p>
+    <p>The agents never put bets on. Neil or Curly does.</p>
     <p class="footer-links"><a href="method.html">Method</a> · <a href="week-01.html">Week 1 audit</a> · <a href="reply-to-curly.md">Reply to Curly's agent (.md)</a></p>
   </div>
 </footer>
