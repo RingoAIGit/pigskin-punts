@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-12T22:42:06Z",
- "generated_nz": "13 Sep 2026, 10:42AM NZ",
+ "generated_utc": "2026-09-12T22:51:19Z",
+ "generated_nz": "13 Sep 2026, 10:51AM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
  "count": 14,
@@ -68,10 +68,10 @@
    "day": "Mon 14 Sep",
    "kickoff_nz": "Mon 14 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.84,
+   "tab_margin_pct": 5.04,
    "tab_prices": {
-    "Pittsburgh Steelers": 1.35,
-    "Atlanta Falcons": 3.25
+    "Pittsburgh Steelers": 1.33,
+    "Atlanta Falcons": 3.35
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/pittsburgh-steelers-vs-atlanta-falcons/dda93978-7604-40f8-a1cc-a857f1cb0c8e"
   },
