@@ -53,8 +53,8 @@
       </div>
       <div class="panel agent-curly">
         <span class="meta">Layer 2 — the money</span>
-        <h3>Only gate-clearing picks get staked</h3>
-        <p>Some weeks that is none, and a no-bet week is still a complete contest week. The bankroll discipline survives intact, and the weeks where the right answer is "don't bet" stay honest instead of being overridden by the need to field a card.</p>
+        <h3>Gate-clearing picks staked full, forced picks half</h3>
+        <p>From Week 2 every card carries exactly two picks, so some weeks both sit below the gate. Those are labelled as forced — <code>gap_source: none</code>, <code>below_gate: true</code> — and go on at half stake. A pick that clears the gate goes on at full stake. A pick only comes off the card if the live price has moved against it by the time you place.</p>
       </div>
     </div>
 
@@ -87,11 +87,12 @@
     </div>
 
     <ol class="steps" style="margin-top:18px">
-      <li>Each agent writes their card in full — selections, staking, rationale, and the passes list.</li>
-      <li>At lock time each commits <strong>only the SHA-256 hash</strong> of their card. The commit is the timestamp, and git owns it; neither agent can backdate one.</li>
+      <li>Each agent writes their card in full — selections, staking, rationale, the <code>gap_source</code> per pick, and the passes list.</li>
+      <li>At lock time each agent publishes <strong>only the SHA-256 hash</strong> of their card into the vault. Google assigns the timestamp server-side and the API exposes no field to set it, so neither agent owns the clock.</li>
       <li>Once <strong>both</strong> hashes are present, both full texts are published together and the week's page renders.</li>
       <li>A hash missing at the deadline voids that agent's card for the week — no card, no picks, no retro-fitting after the games start. The deadline is what makes the seal mean anything.</li>
-      <li>Anyone can re-hash the published card and check it matches the earlier commit.</li>
+      <li>Anyone can re-hash the published card and check it matches the sealed hash. The file ids are recorded too, so a deleted-and-recreated seal is caught even though its timestamps would look clean.</li>
+      <li>Two lanes run the same machinery: the weekend card locks Friday 22:00 UTC, the Thursday game 24 hours earlier. Same hashes, same rules, both revealed together.</li>
     </ol>
 
     <p style="margin-top:14px">The page you're reading is the shape of that: both cards, both hashes, the edge table the gate ran on, the conflicts table, and the running ledger — with the reasoning attached at every step.</p>
@@ -141,42 +142,50 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
   <hr class="rule">
 
   <section>
-    <h2><span class="num">05</span>Decision list</h2>
-    <p class="dek">Four for Neil and Curly. Both agents hold to whatever is set, and neither quietly exceeds it.</p>
-    <div class="grid two">
-      <div class="panel hold">
-        <span class="meta">For Neil &amp; Curly</span>
-        <h3>1 · Weekly exposure cap</h3>
-        <p>Ringo's document: 3 bets combined, NZ$15, 24% of the kitty. Curly's first view: 3 each. Now proposed: 1–2 each, NZ$10–20, 16–32%. Needs a number both agents hold to.</p>
-      </div>
-      <div class="panel hold">
-        <span class="meta">For Neil &amp; Curly</span>
-        <h3>2 · Card size</h3>
-        <p>1–2 picks each per week. Fixed per week, settled <em>before</em> either agent looks at the slate — "agreed weekly" after seeing the board is negotiable and therefore gameable.</p>
-      </div>
-      <div class="panel hold">
-        <span class="meta">For Neil &amp; Curly</span>
-        <h3>3 · Conflicts kept and tracked</h3>
-        <p>Rather than dropped, with Layer 2 still free to decline to stake them. Confirm.</p>
-      </div>
-      <div class="panel hold">
-        <span class="meta">For Neil &amp; Curly</span>
-        <h3>4 · The gate</h3>
-        <p>+4%, or somewhere else? Whatever the number, both agents use the same one <em>and</em> the same de-vig method, or the comparison is arithmetic rather than football.</p>
-      </div>
+    <h2><span class="num">05</span>Your week — the short version</h2>
+    <p class="dek">Two people do anything at all here: Neil and Curly. Each week has three moments, and only one of them is yours.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Every deadline below is UTC and never moves. The NZ clock shifts an hour when daylight saving starts on 27 September — the parenthetical times are after that date.</caption>
+        <thead><tr><th>When (NZ)</th><th>What happens</th><th>Who</th></tr></thead>
+        <tbody>
+          <tr><td>Thu 7:00pm</td><td>Bet form refreshed with the Thursday game</td><td>automatic</td></tr>
+          <tr><td>Fri 10:00am (11:00)</td><td><strong>Thursday pick locks.</strong> Its game kicks off at 12:15pm</td><td>agents</td></tr>
+          <tr><td>Fri 11:00am</td><td>Place / skip check for the Thursday pick</td><td>automatic, to you</td></tr>
+          <tr><td>Sat 8:00am</td><td>Bet form refreshed with the weekend games</td><td>automatic</td></tr>
+          <tr><td>Sat 10:00am (11:00)</td><td><strong>Weekend picks lock</strong> — both cards, 10:00am sharp</td><td>agents</td></tr>
+          <tr><td>Sat 12:00pm (1:00pm)</td><td><strong>Both cards revealed</strong> — read them on the home page</td><td>you</td></tr>
+          <tr><td>Sat 3:00pm</td><td>Place / skip check for the weekend picks</td><td>automatic, to you</td></tr>
+          <tr><td>Mon 5:00am</td><td>First games kick off (Sunday in the US)</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ol class="steps" style="margin-top:20px">
+      <li><strong>Saturday 12:00pm — read the cards (a minute).</strong> The home page shows both agents' picks, the price, and the gate on every market on the board. Nothing to decide, and nothing to write.</li>
+      <li><strong>Wait for the check, then place (a minute).</strong> Before each window closes you get a short PLACE / VOID line for each pick. Place the PLACE ones, skip the VOID ones. The check exists so you never have to price anything yourself.</li>
+      <li><strong>Log every bet on the <a href="bets.html">bet form</a>.</strong> Date, game, market, selection, <em>the odds you actually took</em>, stake — plus who placed it and which agent called it. The price you type is what the money column is graded on, so type what the app gave you.</li>
+      <li><strong>Thursday, if there is a Thursday game.</strong> Same three steps a day earlier: locked Friday 10:00am, checked 11:00am, gone by 12:15pm.</li>
+    </ol>
+
+    <div class="callout" style="margin-top:22px">
+      <span class="kicker">The one rule that matters</span>
+      <p>The form is the only place a bet exists. A bet placed at TAB but not logged is invisible to the ledger, and the ledger is the only thing either agent can be graded on. If you skip a pick, log nothing for it — the sealed card already records that it was offered.</p>
     </div>
 
     <h3 style="font-size:1rem;margin:26px 0 8px">For the agents</h3>
     <ul class="tight">
-      <li>Sealed cards including reasoning, exchanged only after both are locked.</li>
+      <li>Sealed cards including reasoning, exchanged only after both are locked — weekend card and Thursday card alike.</li>
+      <li>Exactly two picks on the weekend card, one on the Thursday card, each labelled with its <code>gap_source</code> or explicitly marked as forced and below the gate.</li>
       <li>Ringo shares the weekly US consensus output; both agents price off the same fair numbers.</li>
       <li>Both cards carry an explicit passes list and a sample-size caveat on any claim about who is ahead.</li>
       <li>Curly's weekly multi stays on his personal account, outside the contest bankroll, the ledger and the comparison — declared each week, never touching these numbers.</li>
     </ul>
 
     <div class="callout" style="margin-top:22px">
-      <span class="kicker">One correction to my own document</span>
-      <p>My original document opened with "all 15 games, all 30 sides". Week 1 had 16 games and 32 sides — the Wednesday opener was off TAB's board by the time of the sweep. The conclusion stands (nothing qualified), but the wording was sloppy and the gap is structural, so Thursday games now get priced when the week's lines post rather than waiting for Friday.</p>
+      <span class="kicker">Settled, and why the Thursday game got its own lane</span>
+      <p>My original document opened with "all 15 games, all 30 sides", and Week 1's Wednesday opener was already off TAB's board by the time of the sweep. Moving the lock to Friday fixed everything except the Thursday game — which kicks off Friday lunchtime, hours before the lock. So it now has its own earlier deadline (Amendment B). Nothing is given up: a Thursday game's injury report is filed Wednesday US time, so it is in hand a day before that lane closes.</p>
     </div>
   </section>
 
@@ -184,7 +193,7 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — protocol draft v2, 11 September 2026. Proposal only: it takes effect when Neil and Curly settle the four decisions above.</p>
+    <p><strong>Pig Skin Punts</strong> — seal protocol v3.2, 13 September 2026. In force from Week 2: lock Saturday 19 September 2026, 10:00 NZ.</p>
     <p>Agents never place bets. Neil or Curly places them.</p>
     <p class="footer-links"><a href="method.html">Method</a> · <a href="week-01.html">Week 1 audit</a> · <a href="reply-to-curly.md">Reply to Curly's agent (.md)</a></p>
   </div>
