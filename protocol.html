@@ -20,10 +20,10 @@
     <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> The <span>rules</span></h1>
     <p class="tagline">How the two agents' week runs. Status: <strong>in force</strong> — running from Week 2 onward. Nothing here changes unless Neil and Curly both agree.</p>
     <div class="chips">
-      <span class="chip">In force v3.2</span>
+      <span class="chip">In force v3.3</span>
       <span class="chip ringo">Ringo</span>
       <span class="chip curly">Curly's agent</span>
-      <span class="chip">13 Sep 2026</span>
+      <span class="chip">15 Sep 2026</span>
     </div>
   </div>
 </header>
@@ -53,8 +53,9 @@
       </div>
       <div class="panel agent-curly">
         <span class="meta">Layer 2 — the money</span>
-        <h3>Picks that clear the bar get the full amount; the rest get half</h3>
-        <p>From Week 2 every week carries exactly two picks, so some weeks both sit below the bar. Those are labelled as below the bar — <code>gap_source: none</code>, <code>below_gate: true</code> — and go on at half the amount. A pick that clears the bar goes on at the full amount. A pick only comes off the list if the price has moved against it by the time you place.</p>
+        <h3>Money goes on the picks that clear the bar — and nothing else</h3>
+        <p>From Week 2 every week carries exactly two picks, and some weeks both sit below the bar. Those are labelled as below the bar — <code>gap_source: none</code>, <code>below_gate: true</code> — and <strong>no money goes on them</strong>. The bar is a cutoff for money, not just a way of ranking: if nothing clears it, that week we don't bet. A pick only comes off the list if the price has moved against it by the time you place.</p>
+        <p>One exception, and it is always labelled: a single <strong>wildcard</strong> bet when you fancy one — small, for fun. It sits outside the $15 weekly cap and outside the skill numbers, so it can't flatter or dent anyone's strike rate or profit. It still goes on the <a href="bets.html">bets page</a>, marked as the wildcard. Nothing is ever staked silently.</p>
       </div>
     </div>
 
@@ -166,6 +167,7 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
       <li>10am — both sets of picks for the weekend get locked in <em>(by itself)</em></li>
       <li><strong>1:15pm — go to the home page. Ringo's two picks and Curly's two picks are both there. Have a look.</strong></li>
       <li>3pm — I message you which of them to actually bet</li>
+      <li>If nothing cleared the bar, that message says so — that week we don't bet. A wildcard is your call, never a default.</li>
       <li><strong>Put those bets on at TAB</strong></li>
       <li><strong>Write each one down on the bets page</strong></li>
     </ul>
@@ -194,6 +196,7 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
     <ul class="tight" style="margin-top:14px">
       <li>If it isn't written down here, it never happened</li>
       <li>Skipped a pick? Write nothing. That's allowed.</li>
+      <li>A wildcard bet goes on here too, marked as the wildcard</li>
       <li>Got the odds wrong? Delete it and add it again rather than editing it</li>
     </ul>
 
@@ -212,13 +215,18 @@ result, profit_nz, closing_price_nz, clv_note</code></pre>
       <span class="kicker">Settled, and why the Thursday game got its own lane</span>
       <p>My original document opened with "all 15 games, all 30 sides", and Week 1's Wednesday opener was already off TAB's board by the time of the sweep. Moving the lock to Friday fixed everything except the Thursday game — which kicks off Friday lunchtime, hours before the lock. So it now has its own earlier deadline (Amendment B). Nothing is given up: a Thursday game's injury report is filed Wednesday US time, so it is in hand a day before that lane closes.</p>
     </div>
+
+    <div class="callout" style="margin-top:18px">
+      <span class="kicker">Amendment C — the bar is a cutoff for money</span>
+      <p>In from Week 2, at Curly's agent's request. A pick below the bar is never staked, and a quiet week means no bet — the half-stake rule for below-bar picks is gone. The one exception is a single labelled wildcard: small, marked, outside the $15 cap, outside the strike rate and profit numbers, and written down on the bets page like everything else.</p>
+    </div>
   </section>
 
 </main>
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — how the week works, v3.2, 13 September 2026. In force from Week 2: picks lock Saturday 19 September 2026, 10am NZ.</p>
+    <p><strong>Pig Skin Punts</strong> — how the week works, v3.3, 15 September 2026. In force from Week 2: picks lock Saturday 19 September 2026, 10am NZ.</p>
     <p>The agents never put bets on. Neil or Curly does.</p>
     <p class="footer-links"><a href="method.html">Method</a> · <a href="week-01.html">Week 1 audit</a> · <a href="reply-to-curly.md">Reply to Curly's agent (.md)</a></p>
   </div>

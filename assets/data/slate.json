@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-14T20:55:08Z",
- "generated_nz": "15 Sep 2026, 8:55AM NZ",
+ "generated_utc": "2026-09-14T23:15:17Z",
+ "generated_nz": "15 Sep 2026, 11:15AM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
  "count": 17,
@@ -26,10 +26,10 @@
    "day": "Fri 18 Sep",
    "kickoff_nz": "Fri 18 Sep 12:15pm",
    "market": "Head To Head",
-   "tab_margin_pct": 5.53,
+   "tab_margin_pct": 4.86,
    "tab_prices": {
     "Buffalo Bills": 1.46,
-    "Detroit Lions": 2.7
+    "Detroit Lions": 2.75
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/buffalo-bills-vs-detroit-lions/7cc3148d-e482-47ba-b22c-de0f87d94c9c"
   },
@@ -138,10 +138,10 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 5.3,
+   "tab_margin_pct": 5.13,
    "tab_prices": {
-    "New York Jets": 2.65,
-    "Green Bay Packers": 1.48
+    "New York Jets": 2.6,
+    "Green Bay Packers": 1.5
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-york-jets-vs-green-bay-packers/29af7d7c-1e30-48a0-b234-ec35f1840e3b"
   },

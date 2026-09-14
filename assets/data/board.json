@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-14T20:55:08Z",
- "generated_nz": "15 Sep 2026, 8:55AM NZ",
+ "generated_utc": "2026-09-14T23:15:17Z",
+ "generated_nz": "15 Sep 2026, 11:15AM NZ",
  "priced_at_nz": "14 Sep 2026, 4:01AM NZ",
  "priced_at_utc": "2026-09-13T16:01:10Z",
  "week": null,
@@ -12,7 +12,7 @@
  "best_pct": -3.51,
  "best_pick": "Chicago Bears",
  "still_to_start": 2,
- "note": "Every price we checked, ranked best first. A pick clears the bar at +4% or better against the true US price; only clearing picks can be bet, and everything below the bar is a contest pick with no money on it.",
+ "note": "Every price we checked, ranked best first. A pick clears the bar at +4% or better against the true US price; only clearing picks can be bet, and everything below the bar is a contest pick with no money on it \u2014 unless it is the one labelled wildcard bet, which sits outside the weekly cap and outside the numbers.",
  "rows": [
   {
    "pick": "Chicago Bears",
