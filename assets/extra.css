@@ -139,6 +139,62 @@ a.btn-link:hover { color: var(--leather); }
 }
 .build-stamp strong { color: var(--ink); font-weight: 600; }
 
+/* ---------- the board (every price we checked) ----------
+   Neil's ask, 14 Sep 2026: publish the whole ranked board, with the picks that reached the
+   bar kept visibly apart from the ones that did not. Red gets its own colour rather than
+   reusing --fail, which is a deliberate grey ("not good enough") and too quiet to read as a
+   verdict at a glance down a 28-row list. Everything here is colour and marks only — the
+   numbers themselves come from build_board.py. */
+:root { --short: #b3271f; }
+html[data-theme="dark"] { --short: #e8776c; }
+
+.board-summary {
+  margin: 18px 0 20px;
+  padding: 16px 18px 17px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--leather);
+}
+.board-summary .board-head {
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.board-summary .board-head strong {
+  font-family: var(--display);
+  font-size: 1.22rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-right: 6px;
+}
+.board-summary .board-read {
+  margin: 8px 0 0;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+table tbody tr.cleared td:first-child { box-shadow: inset 3px 0 0 var(--qualify); }
+table tbody tr.short td:first-child { box-shadow: inset 3px 0 0 var(--short); }
+td.b-pick { font-weight: 600; }
+td.b-game { color: var(--muted); font-size: 0.82rem; }
+td.cleared-ink { color: var(--qualify); font-weight: 600; }
+td.short-ink { color: var(--short); }
+td.v { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; }
+td.v::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  vertical-align: 1px;
+}
+td.v-cleared { color: var(--qualify); }
+td.v-cleared::before { background: var(--qualify); }
+td.v-short { color: var(--short); }
+td.v-short::before { background: var(--short); }
+
 /* ---------- long tables ---------- */
 .table-wrap table tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.028); }
 [data-theme="dark"] .table-wrap table tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.045); }

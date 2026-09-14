@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="assets/style.css?v=7c757b18">
-<link rel="stylesheet" href="assets/extra.css?v=f0cb37d6">
+<link rel="stylesheet" href="assets/extra.css?v=497341a4">
   <link rel="icon" href="assets/img/mark.png?v=fbabd2e8">
   <link rel="apple-touch-icon" href="assets/img/mark-180.png?v=22c5c44d">
 </head>
@@ -73,7 +73,23 @@
   <hr class="rule">
 
   <section>
-    <h2><span class="num">02</span>Tonight's game</h2>
+    <h2><span class="num">02</span>The board — every price we checked</h2>
+    <p class="dek">Every team we priced this week, best first. Green means the price was good enough to bet; red means it wasn't, so no money goes on it. Nothing is left off the list — including the weeks where nothing at all gets through.</p>
+
+    <div id="boardSummary" class="board-summary">Loading the board…</div>
+    <div id="boardTable" class="table-wrap">Loading the board…</div>
+
+    <div class="legend">
+      <span><i style="background:var(--qualify)"></i>cleared the bar — good enough to bet</span>
+      <span><i style="background:var(--short)"></i>short of it — on the list, no money</span>
+    </div>
+    <p class="hint" id="boardNote"></p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2><span class="num">03</span>Tonight's game</h2>
     <p class="dek">San Francisco 49ers at Los Angeles Rams — the only game on today in NZ. It starts at 12:35pm. We priced every market, both teams.</p>
 
     <div class="grid two" style="margin-bottom:18px">
@@ -104,7 +120,7 @@
   <hr class="rule">
 
   <section>
-    <h2><span class="num">03</span>Write a bet down</h2>
+    <h2><span class="num">04</span>Write a bet down</h2>
     <p class="dek">When we do put a bet on, it gets written down here and stays put — the price, how much, who put it on, and whose pick it was.</p>
     <div class="grid two">
       <div class="panel">
@@ -125,7 +141,7 @@
   <hr class="rule">
 
   <section>
-    <h2><span class="num">04</span>Results</h2>
+    <h2><span class="num">05</span>Results</h2>
     <p class="dek">Finished bets, profit so far, and why they went the way they did — including the ones we passed on, priced as if we'd bet them, so a bad pass shows up too.</p>
     <div id="resultsTeaser" class="table-wrap">Loading the record…</div>
     <p style="margin-top:14px"><a class="btn-link" href="results.html">Full results and analysis →</a></p>
@@ -146,6 +162,6 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=a3cd8387"></script>
+<script src="assets/app.js?v=bbd80457"></script>
 </body>
 </html>

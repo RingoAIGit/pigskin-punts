@@ -238,6 +238,60 @@
        ["Edge", "n"], ["Would have", "n"]], rows);
   }
 
+  /* ---------- the board: every price we checked ----------
+     Built by build_board.py off the 2-hourly TAB price log, so what is shown is what we
+     measured, ranked, with the picks that reached the bar kept visibly apart from the ones
+     that did not. A week where nothing clears is then a decision on the page rather than an
+     absence, and the whole list is there to look at when Neil chooses to go against it. */
+  function renderBoard(host, b) {
+    var rows = (b && b.rows) || [];
+    if (!host) return;
+    if (!rows.length) {
+      host.innerHTML = '<p class="empty-note">No board published yet.</p>';
+      return;
+    }
+    var cleared = rows.filter(function (r) { return r.cleared; });
+    var started = rows.filter(function (r) { return r.started; }).length;
+
+    var sum = document.getElementById("boardSummary");
+    if (sum) {
+      sum.innerHTML = "";
+      var head = el("div", "board-head");
+      head.appendChild(el("strong", null,
+        cleared.length ? cleared.length + " of " + rows.length + " cleared the bar"
+                       : "None of the " + rows.length + " cleared the bar"));
+      var who = cleared.map(function (r) { return r.pick + " at " + r.tab.toFixed(2); })
+                       .slice(0, 4).join(", ");
+      head.appendChild(el("span", null, who
+        ? " " + who + (cleared.length > 4 ? " and " + (cleared.length - 4) + " more" : "") + "."
+        : " Best on the board was " + b.best_pick + " at " + fmtEdge(b.best_pct) +
+          " against the true price, which is still short of the +" + b.bar_pct + "% a bet needs."));
+      sum.appendChild(head);
+      sum.appendChild(el("p", "board-read",
+        rows.length + " prices across " + b.games + " games, read " + b.priced_at_nz +
+        (started ? " — " + started + " of those games have since kicked off." : ".")));
+    }
+
+    var heads = [["#", "n"], ["Pick", ""], ["Game", ""], ["TAB", "n"],
+                 ["True price", "n"], ["Gap", "n"]];
+    table(host, "Every price we checked this week, best first. A pick has to reach +" +
+      b.bar_pct + "% to be worth money.",
+      heads,
+      rows.map(function (r) {
+        return {
+          rowClass: (r.cleared ? "cleared" : "short"),
+          cells: [
+            { t: r.rank, c: "n" },
+            { t: r.pick, c: "b-pick" },
+            { t: r.game, c: "b-game" },
+            { t: r.tab.toFixed(2), c: "n" },
+            { t: r.fair.toFixed(3), c: "n" },
+            { t: fmtEdge(r.gap_pct), c: "n " + (r.cleared ? "cleared-ink" : "short-ink") }
+          ]
+        };
+      }));
+  }
+
   /* ---------- the gate bar ---------- */
   var GATE_MIN = -12, GATE_MAX = 6, GATE_AT = 4;
   var SPAN = GATE_MAX - GATE_MIN;
@@ -714,6 +768,16 @@
         var h = document.getElementById(id);
         if (h) h.textContent = "Data module failed to load (" + e.message + ").";
       });
+    });
+
+    load("assets/data/board.json").then(function (b) {
+      renderBoard(document.getElementById("boardTable"), b);
+      var n = document.getElementById("boardNote");
+      if (n) n.textContent = b.note;
+    }).catch(function (e) {
+      var h = document.getElementById("boardTable");
+      if (h) h.innerHTML = '<p class="empty-note">The board failed to load (' + e.message +
+        "). Open the site over http:// rather than file://</p>";
     });
   });
 })();

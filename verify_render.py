@@ -32,7 +32,7 @@ PROBE = r"""
     if (el.scrollHeight > el.clientHeight + 3 && getComputedStyle(el).overflowY !== 'visible' && el.clientHeight > 0)
       out.overflow.push({t:(el.className||el.tagName), sh:el.scrollHeight, ch:el.clientHeight});
   });
-  ['tonightTable','edgesTable','keyTable','betsTable','resultsTable','passesTable','resultsTeaser'].forEach(id => {
+  ['tonightTable','edgesTable','keyTable','betsTable','resultsTable','passesTable','resultsTeaser','boardTable'].forEach(id => {
     const e = document.getElementById(id);
     if (e) out.rows[id] = e.querySelector('table') ? e.querySelectorAll('tbody tr').length : 'empty-state';
   });

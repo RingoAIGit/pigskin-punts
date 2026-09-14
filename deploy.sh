@@ -30,6 +30,9 @@ cd "$REPO"
 echo "0. refresh the games the form offers (snapshot of the live TAB slate)"
 if python3 build_slate.py; then :; else echo "   slate refresh failed — shipping the previous snapshot"; fi
 
+echo "0b. rebuild the board — every price we checked, ranked best first"
+if python3 build_board.py; then :; else echo "   board build failed — shipping the previous board"; fi
+
 echo "1. build stamp + asset versions"
 python3 stamp.py > /dev/null
 echo "   $(python3 -c "import json;print(json.load(open('assets/data/build.json'))['built_human'])")"
