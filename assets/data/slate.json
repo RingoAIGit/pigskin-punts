@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-14T23:15:17Z",
- "generated_nz": "15 Sep 2026, 11:15AM NZ",
+ "generated_utc": "2026-09-15T00:16:17Z",
+ "generated_nz": "15 Sep 2026, 12:16PM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
  "count": 17,
@@ -10,12 +10,12 @@
    "away": "Denver Broncos",
    "home": "Kansas City Chiefs",
    "day": "Tue 15 Sep",
-   "kickoff_nz": "Tue 15 Sep 12:15pm",
+   "kickoff_nz": "Tue 15 Sep 12:16pm",
    "market": "Head To Head",
-   "tab_margin_pct": 4.76,
+   "tab_margin_pct": 4.95,
    "tab_prices": {
-    "Kansas City Chiefs": 1.75,
-    "Denver Broncos": 2.1
+    "Kansas City Chiefs": 1.82,
+    "Denver Broncos": 2.0
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/kansas-city-chiefs-vs-denver-broncos/b0abf58d-592d-4f4f-96ae-210116c7e1b9"
   },
@@ -138,10 +138,10 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 5.13,
+   "tab_margin_pct": 5.3,
    "tab_prices": {
-    "New York Jets": 2.6,
-    "Green Bay Packers": 1.5
+    "New York Jets": 2.65,
+    "Green Bay Packers": 1.48
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-york-jets-vs-green-bay-packers/29af7d7c-1e30-48a0-b234-ec35f1840e3b"
   },

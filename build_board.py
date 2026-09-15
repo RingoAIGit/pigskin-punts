@@ -188,10 +188,9 @@ def main():
         "best_pick": board[0]["pick"],
         "still_to_start": len([r for r in board if not r["started"]]),
         "note": ("Every price we checked, ranked best first. A pick clears the bar at "
-                 "+4% or better against the true US price; only clearing picks can be bet, "
-                 "and everything below the bar is a contest pick with no money on it — "
-                 "unless it is the one labelled wildcard bet, which sits outside the "
-                 "weekly cap and outside the numbers."),
+                 "+4% or better against the true US price. The bar is a label rather "
+                 "than a cutoff: everything below it is published with its number, and "
+                 "the call on what actually gets backed is Neil's and Curly's."),
         "rows": board,
     }
 
