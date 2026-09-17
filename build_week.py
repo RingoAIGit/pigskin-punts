@@ -126,6 +126,14 @@ def gap_words(pct):
     return f"the price falls {abs(pct):.2f}% short of the true one"
 
 
+def short_gap(pct):
+    """Same fact as gap_words, as a predicate: 'falls 2.85% short of the true price'."""
+    if pct is None:
+        return "has no true price to compare with"
+    return (f"is {abs(pct):.2f}% better than the true price" if pct >= 0
+            else f"falls {abs(pct):.2f}% short of the true price")
+
+
 def signed(v, plus=True):
     """3 -> '+3', -5.5 -> '−5.5'. The spread range reads as signs, not magnitudes."""
     if v is None:
@@ -246,14 +254,33 @@ def next_game_block(snap, board, now):
         under_txt = (f" over / {money(under['tab_price'])} under" if under else "")
         oedge = (round((over["tab_price"] / over["us_fair"] - 1) * 100, 2)
                  if over.get("tab_price") and over.get("us_fair") else None)
+        uedge = (round((under["tab_price"] / under["us_fair"] - 1) * 100, 2)
+                 if under and under.get("tab_price") and under.get("us_fair") else None)
         if g.get("us_total_num") is not None and over.get("tab_number") is not None:
             d = over["tab_number"] - g["us_total_num"]
-            half = ("the same number the US books post" if abs(d) < 0.01 else
-                    "half a point our way on the over" if 0 < d <= 0.5 else
-                    "half a point against us on the over" if -0.5 <= d < 0 else
-                    f"{abs(d):g} points {'our way' if d > 0 else 'against us'} on the over")
-            body = (f"The US books post {g['us_total_num']:g}, so TAB's {over['tab_number']:g} is "
-                    f"{half} — and {gap_words(oedge)}.")
+            # Direction matters, and this said the opposite until 18 Sep 2026. Over 55 needs 56+
+            # while over 54.5 wins on 55, so when TAB posts the HIGHER number the half point sits
+            # with the under. The old wording called it "half a point our way on the over".
+            if abs(d) < 0.01:
+                where = "the same number the US books post"
+            elif d > 0:
+                where = (f"{abs(d):g} points above the US number, which sits with the under"
+                         if d > 0.5 else
+                         "half a point above the US number, which sits with the under")
+            else:
+                where = (f"{abs(d):g} points below the US number, which sits with the over"
+                         if d < -0.5 else
+                         "half a point below the US number, which sits with the over")
+            if oedge is not None and uedge is not None and oedge < 0 and uedge < 0:
+                both = (f" On price, both sides are short of the true one — the over by "
+                        f"{abs(oedge):.2f}%, the under by {abs(uedge):.2f}%.")
+            elif uedge is not None:
+                both = (f" On price, the over {short_gap(oedge)} and the under "
+                        f"{short_gap(uedge)}.")
+            else:
+                both = f" On price, the over {short_gap(oedge)}."
+            body = (f"The US books post {g['us_total_num']:g} and TAB posts "
+                    f"{over['tab_number']:g}, so TAB's number is {where}." + both)
         else:
             body = f"{gap_words(oedge).capitalize()}."
         panels.append({

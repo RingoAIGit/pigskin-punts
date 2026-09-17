@@ -1,8 +1,8 @@
 {
- "generated_utc": "2026-09-17T19:09:03Z",
- "generated_nz": "18 Sep 2026, 7:09AM NZ",
- "priced_at_nz": "18 Sep 2026, 6:24AM NZ",
- "priced_at_utc": "2026-09-17T18:24:02Z",
+ "generated_utc": "2026-09-17T21:06:41Z",
+ "generated_nz": "18 Sep 2026, 9:06AM NZ",
+ "priced_at_nz": "18 Sep 2026, 8:24AM NZ",
+ "priced_at_utc": "2026-09-17T20:24:20Z",
  "week": null,
  "source": "TAB price log (2-hourly snapshot of TAB against the US no-vig fair)",
  "bar_pct": 4.0,
@@ -48,17 +48,6 @@
    "rank": 3
   },
   {
-   "pick": "Baltimore Ravens",
-   "game": "Baltimore Ravens vs New Orleans Saints",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "tab": 1.24,
-   "fair": 1.289,
-   "gap_pct": -3.8,
-   "cleared": false,
-   "started": false,
-   "rank": 4
-  },
-  {
    "pick": "Los Angeles Chargers",
    "game": "Los Angeles Chargers vs Las Vegas Raiders",
    "kickoff_nz": "Mon 21 Sep 08:05am",
@@ -67,7 +56,7 @@
    "gap_pct": -3.83,
    "cleared": false,
    "started": false,
-   "rank": 5
+   "rank": 4
   },
   {
    "pick": "Kansas City Chiefs",
@@ -78,18 +67,18 @@
    "gap_pct": -3.83,
    "cleared": false,
    "started": false,
-   "rank": 6
+   "rank": 5
   },
   {
-   "pick": "Carolina Panthers",
-   "game": "Atlanta Falcons vs Carolina Panthers",
+   "pick": "Houston Texans",
+   "game": "Houston Texans vs Cincinnati Bengals",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "tab": 1.7,
-   "fair": 1.769,
-   "gap_pct": -3.9,
+   "fair": 1.768,
+   "gap_pct": -3.85,
    "cleared": false,
    "started": false,
-   "rank": 7
+   "rank": 6
   },
   {
    "pick": "Philadelphia Eagles",
@@ -100,15 +89,26 @@
    "gap_pct": -3.92,
    "cleared": false,
    "started": false,
+   "rank": 7
+  },
+  {
+   "pick": "Chicago Bears",
+   "game": "Chicago Bears vs Minnesota Vikings",
+   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "tab": 1.46,
+   "fair": 1.52,
+   "gap_pct": -3.95,
+   "cleared": false,
+   "started": false,
    "rank": 8
   },
   {
-   "pick": "Buffalo Bills",
+   "pick": "Detroit Lions",
    "game": "Buffalo Bills vs Detroit Lions",
    "kickoff_nz": "Fri 18 Sep 12:15pm",
-   "tab": 1.4,
-   "fair": 1.459,
-   "gap_pct": -4.04,
+   "tab": 3.05,
+   "fair": 3.179,
+   "gap_pct": -4.06,
    "cleared": false,
    "started": false,
    "rank": 9
@@ -118,11 +118,22 @@
    "game": "Denver Broncos vs Jacksonville Jaguars",
    "kickoff_nz": "Mon 21 Sep 08:05am",
    "tab": 1.67,
-   "fair": 1.741,
-   "gap_pct": -4.08,
+   "fair": 1.742,
+   "gap_pct": -4.13,
    "cleared": false,
    "started": false,
    "rank": 10
+  },
+  {
+   "pick": "Baltimore Ravens",
+   "game": "Baltimore Ravens vs New Orleans Saints",
+   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "tab": 1.24,
+   "fair": 1.294,
+   "gap_pct": -4.17,
+   "cleared": false,
+   "started": false,
+   "rank": 11
   },
   {
    "pick": "New England Patriots",
@@ -133,7 +144,7 @@
    "gap_pct": -4.18,
    "cleared": false,
    "started": false,
-   "rank": 11
+   "rank": 12
   },
   {
    "pick": "Atlanta Falcons",
@@ -144,7 +155,7 @@
    "gap_pct": -4.39,
    "cleared": false,
    "started": false,
-   "rank": 12
+   "rank": 13
   },
   {
    "pick": "Cincinnati Bengals",
@@ -155,7 +166,18 @@
    "gap_pct": -4.43,
    "cleared": false,
    "started": false,
-   "rank": 13
+   "rank": 14
+  },
+  {
+   "pick": "Tampa Bay Buccaneers",
+   "game": "Tampa Bay Buccaneers vs Cleveland Browns",
+   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "tab": 1.22,
+   "fair": 1.278,
+   "gap_pct": -4.54,
+   "cleared": false,
+   "started": false,
+   "rank": 15
   },
   {
    "pick": "Los Angeles Rams",
@@ -164,28 +186,6 @@
    "tab": 1.28,
    "fair": 1.343,
    "gap_pct": -4.69,
-   "cleared": false,
-   "started": false,
-   "rank": 14
-  },
-  {
-   "pick": "Tampa Bay Buccaneers",
-   "game": "Tampa Bay Buccaneers vs Cleveland Browns",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "tab": 1.22,
-   "fair": 1.281,
-   "gap_pct": -4.76,
-   "cleared": false,
-   "started": false,
-   "rank": 15
-  },
-  {
-   "pick": "Chicago Bears",
-   "game": "Chicago Bears vs Minnesota Vikings",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "tab": 1.46,
-   "fair": 1.533,
-   "gap_pct": -4.76,
    "cleared": false,
    "started": false,
    "rank": 16
@@ -213,15 +213,26 @@
    "rank": 18
   },
   {
-   "pick": "Houston Texans",
-   "game": "Houston Texans vs Cincinnati Bengals",
+   "pick": "Carolina Panthers",
+   "game": "Atlanta Falcons vs Carolina Panthers",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "tab": 1.68,
-   "fair": 1.768,
-   "gap_pct": -4.98,
+   "fair": 1.769,
+   "gap_pct": -5.03,
    "cleared": false,
    "started": false,
    "rank": 19
+  },
+  {
+   "pick": "Buffalo Bills",
+   "game": "Buffalo Bills vs Detroit Lions",
+   "kickoff_nz": "Fri 18 Sep 12:15pm",
+   "tab": 1.38,
+   "fair": 1.459,
+   "gap_pct": -5.41,
+   "cleared": false,
+   "started": false,
+   "rank": 20
   },
   {
    "pick": "Seattle Seahawks",
@@ -232,29 +243,7 @@
    "gap_pct": -5.5,
    "cleared": false,
    "started": false,
-   "rank": 20
-  },
-  {
-   "pick": "New York Giants",
-   "game": "Los Angeles Rams vs New York Giants",
-   "kickoff_nz": "Tue 22 Sep 12:15pm",
-   "tab": 3.7,
-   "fair": 3.916,
-   "gap_pct": -5.52,
-   "cleared": false,
-   "started": false,
    "rank": 21
-  },
-  {
-   "pick": "Detroit Lions",
-   "game": "Buffalo Bills vs Detroit Lions",
-   "kickoff_nz": "Fri 18 Sep 12:15pm",
-   "tab": 3.0,
-   "fair": 3.179,
-   "gap_pct": -5.63,
-   "cleared": false,
-   "started": false,
-   "rank": 22
   },
   {
    "pick": "Washington Commanders",
@@ -265,7 +254,7 @@
    "gap_pct": -5.63,
    "cleared": false,
    "started": false,
-   "rank": 23
+   "rank": 22
   },
   {
    "pick": "Pittsburgh Steelers",
@@ -276,18 +265,18 @@
    "gap_pct": -5.69,
    "cleared": false,
    "started": false,
-   "rank": 24
+   "rank": 23
   },
   {
-   "pick": "New Orleans Saints",
-   "game": "Baltimore Ravens vs New Orleans Saints",
+   "pick": "Minnesota Vikings",
+   "game": "Chicago Bears vs Minnesota Vikings",
    "kickoff_nz": "Mon 21 Sep 05:00am",
-   "tab": 4.2,
-   "fair": 4.455,
-   "gap_pct": -5.72,
+   "tab": 2.75,
+   "fair": 2.924,
+   "gap_pct": -5.95,
    "cleared": false,
    "started": false,
-   "rank": 25
+   "rank": 24
   },
   {
    "pick": "Tennessee Titans",
@@ -298,40 +287,29 @@
    "gap_pct": -5.98,
    "cleared": false,
    "started": false,
-   "rank": 26
-  },
-  {
-   "pick": "Minnesota Vikings",
-   "game": "Chicago Bears vs Minnesota Vikings",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "tab": 2.7,
-   "fair": 2.877,
-   "gap_pct": -6.15,
-   "cleared": false,
-   "started": false,
-   "rank": 27
+   "rank": 25
   },
   {
    "pick": "Jacksonville Jaguars",
    "game": "Denver Broncos vs Jacksonville Jaguars",
    "kickoff_nz": "Mon 21 Sep 08:05am",
    "tab": 2.2,
-   "fair": 2.349,
-   "gap_pct": -6.34,
+   "fair": 2.348,
+   "gap_pct": -6.3,
    "cleared": false,
    "started": false,
-   "rank": 28
+   "rank": 26
   },
   {
-   "pick": "Cleveland Browns",
-   "game": "Tampa Bay Buccaneers vs Cleveland Browns",
+   "pick": "New Orleans Saints",
+   "game": "Baltimore Ravens vs New Orleans Saints",
    "kickoff_nz": "Mon 21 Sep 05:00am",
-   "tab": 4.25,
-   "fair": 4.563,
-   "gap_pct": -6.86,
+   "tab": 4.1,
+   "fair": 4.401,
+   "gap_pct": -6.84,
    "cleared": false,
    "started": false,
-   "rank": 29
+   "rank": 27
   },
   {
    "pick": "Las Vegas Raiders",
@@ -342,7 +320,18 @@
    "gap_pct": -7.15,
    "cleared": false,
    "started": false,
-   "rank": 30
+   "rank": 28
+  },
+  {
+   "pick": "Cleveland Browns",
+   "game": "Tampa Bay Buccaneers vs Cleveland Browns",
+   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "tab": 4.25,
+   "fair": 4.601,
+   "gap_pct": -7.63,
+   "cleared": false,
+   "started": false,
+   "rank": 29
   },
   {
    "pick": "New York Jets",
@@ -351,6 +340,17 @@
    "tab": 2.5,
    "fair": 2.709,
    "gap_pct": -7.72,
+   "cleared": false,
+   "started": false,
+   "rank": 30
+  },
+  {
+   "pick": "New York Giants",
+   "game": "Los Angeles Rams vs New York Giants",
+   "kickoff_nz": "Tue 22 Sep 12:15pm",
+   "tab": 3.6,
+   "fair": 3.916,
+   "gap_pct": -8.07,
    "cleared": false,
    "started": false,
    "rank": 31

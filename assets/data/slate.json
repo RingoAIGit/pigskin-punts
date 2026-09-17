@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-17T19:09:03Z",
- "generated_nz": "18 Sep 2026, 7:09AM NZ",
+ "generated_utc": "2026-09-17T21:06:41Z",
+ "generated_nz": "18 Sep 2026, 9:06AM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
  "count": 16,
@@ -12,10 +12,10 @@
    "day": "Fri 18 Sep",
    "kickoff_nz": "Fri 18 Sep 12:15pm",
    "market": "Head To Head",
-   "tab_margin_pct": 4.76,
+   "tab_margin_pct": 5.25,
    "tab_prices": {
-    "Buffalo Bills": 1.4,
-    "Detroit Lions": 3.0
+    "Buffalo Bills": 1.38,
+    "Detroit Lions": 3.05
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/buffalo-bills-vs-detroit-lions/7cc3148d-e482-47ba-b22c-de0f87d94c9c"
   },
@@ -26,9 +26,9 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.98,
+   "tab_margin_pct": 4.28,
    "tab_prices": {
-    "Houston Texans": 1.68,
+    "Houston Texans": 1.7,
     "Cincinnati Bengals": 2.2
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/houston-texans-vs-cincinnati-bengals/e8ff17df-f2aa-4224-b0de-81f6e5647603"
@@ -40,10 +40,10 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.45,
+   "tab_margin_pct": 5.0,
    "tab_prices": {
-    "Baltimore Ravens": 1.24,
-    "New Orleans Saints": 4.2
+    "Baltimore Ravens": 1.25,
+    "New Orleans Saints": 4.0
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/baltimore-ravens-vs-new-orleans-saints/eb26803f-6c2d-4f56-a99f-005334e632f0"
   },
@@ -82,10 +82,10 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 5.53,
+   "tab_margin_pct": 4.86,
    "tab_prices": {
     "Chicago Bears": 1.46,
-    "Minnesota Vikings": 2.7
+    "Minnesota Vikings": 2.75
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/chicago-bears-vs-minnesota-vikings/5b142d7d-c355-4b11-913f-71b67bd495a0"
   },

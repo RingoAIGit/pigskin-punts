@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-17T19:09:03Z",
- "generated_nz": "18 Sep 2026, 7:09AM NZ",
+ "generated_utc": "2026-09-17T21:06:41Z",
+ "generated_nz": "18 Sep 2026, 9:06AM NZ",
  "week": 2,
  "week_label": "Week 2",
  "date_label": "18 Sep 2026",
@@ -25,9 +25,9 @@
  ],
  "callout": {
   "kicker": "Why nothing has been bet yet",
-  "body": "TAB's cut on these games is <strong>4.28\u20135.53%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
+  "body": "TAB's cut on these games is <strong>4.28\u20135.90%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
  },
- "cut_label": "4.28% to 5.53%",
+ "cut_label": "4.28% to 5.90%",
  "ledger_headline": "Nothing placed yet",
  "ledger_line": "No bets placed yet this season. This fills up from the first bet we put on \u2014 the price, how much, who put it on, and whose pick it was.",
  "footer_line": "Week 2, 18 September 2026",
@@ -41,60 +41,60 @@
   "panels": [
    {
     "meta": "Line",
-    "title": "TAB Detroit Lions +5.5 at 1.90",
-    "body": "The US books post +3 to +5.5, and +5.5 is the one most of them post \u2014 the same as TAB's. The price falls 5.19% short of the true one."
+    "title": "TAB Detroit Lions +5.5 at 1.91",
+    "body": "The US books post +3 to +5.5, and +5.5 is the one most of them post \u2014 the same as TAB's. The price falls 4.50% short of the true one."
    },
    {
     "meta": "Total",
-    "title": "TAB 55 at 1.88 over / 1.92 under",
-    "body": "The US books post 54.5, so TAB's 55 is half a point our way on the over \u2014 and the price falls 4.37% short of the true one."
+    "title": "TAB 55 at 1.91 over / 1.90 under",
+    "body": "The US books post 54.5 and TAB posts 55, so TAB's number is half a point above the US number, which sits with the under. On price, both sides are short of the true one \u2014 the over by 2.85%, the under by 6.63%."
    }
   ],
   "markets": [
    {
     "market": "Head To Head",
-    "side": "Buffalo Bills",
-    "tab": 1.4,
-    "fair": 1.459,
-    "edge_pct": -4.04
+    "side": "Detroit Lions",
+    "tab": 3.05,
+    "fair": 3.179,
+    "edge_pct": -4.06
    },
    {
     "market": "Head To Head",
-    "side": "Detroit Lions",
-    "tab": 3.0,
-    "fair": 3.179,
-    "edge_pct": -5.63
+    "side": "Buffalo Bills",
+    "tab": 1.38,
+    "fair": 1.459,
+    "edge_pct": -5.41
    },
    {
     "market": "Line",
     "side": "Detroit Lions +5.5",
-    "tab": 1.9,
-    "fair": 2.004,
-    "edge_pct": -5.19
+    "tab": 1.91,
+    "fair": 2.0,
+    "edge_pct": -4.5
    },
    {
     "market": "Line",
     "side": "Buffalo Bills \u22125.5",
     "tab": 1.9,
-    "fair": 1.996,
-    "edge_pct": -4.81
+    "fair": 2.0,
+    "edge_pct": -5.0
    },
    {
     "market": "Total",
     "side": "Over 55",
-    "tab": 1.88,
+    "tab": 1.91,
     "fair": 1.966,
-    "edge_pct": -4.37
+    "edge_pct": -2.85
    },
    {
     "market": "Total",
     "side": "Under 55",
-    "tab": 1.92,
+    "tab": 1.9,
     "fair": 2.035,
-    "edge_pct": -5.65
+    "edge_pct": -6.63
    }
   ],
-  "caption": "NZ TAB read 18 Sep, 7:07AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
-  "swept": "18 Sep, 7:07AM NZ"
+  "caption": "NZ TAB read 18 Sep, 8:50AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
+  "swept": "18 Sep, 8:50AM NZ"
  }
 }
