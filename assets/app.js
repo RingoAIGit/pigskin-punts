@@ -365,7 +365,8 @@
           { t: m.edge_pct >= 4 ? "bet" : "pass", c: "n" }]
       };
     });
-    table(host, "NZ TAB " + t.swept + " — priced against the US no-vig median. Gate is +4%.",
+    table(host, t.caption || ("NZ TAB " + t.swept +
+      " — priced against the US no-vig median. Bar is +4%."),
       [["Market", ""], ["Selection", ""], ["TAB", "n"], ["US fair", "n"], ["Edge", "n"], ["", "n"]], rows);
   }
 
@@ -400,6 +401,64 @@
     table(host, kn.source,
       [["Key", "n"], ["Games", "n"], ["Favourite by k (decisive)", "n"],
        ["Either team by k", "n"], ["Half point worth", "n"], ["Doc said", "n"]], rows);
+  }
+
+  /* ---------- this week ----------
+     Every week-scoped word on the site comes from assets/data/week.json, written by
+     build_week.py from the live logs. It was hand-typed until 17 September 2026, which
+     is why the page spent two days showing a Week 1 headline above a live Week 2 board.
+     The markup here is our own generated string (build_week.py is the only writer), so
+     innerHTML is safe and keeps the panel bodies' <strong> emphasis. */
+  function setText(id, txt) {
+    var e = id && document.getElementById(id);
+    if (e && txt !== null && txt !== undefined && txt !== "") e.textContent = txt;
+  }
+
+  function renderWeek(w) {
+    setText("chipWeek", w.week_label);
+    setText("chipDate", w.date_label);
+    setText("footerWeek", w.footer_line);
+    setText("ledgerHeadline", w.ledger_headline);
+    setText("ledgerLine", w.ledger_line);
+    setText("cutLine", w.cut_label);
+
+    var hero = document.getElementById("weekHero");
+    if (hero) {
+      var out = ['<div class="' + (w.hero_class || "verdict empty") + '">' +
+        '<span class="kicker">' + w.kicker + '</span>' +
+        '<h2>' + w.headline + '</h2>' +
+        '<p>' + w.body + '</p></div>'];
+      if (w.panels && w.panels.length) {
+        out.push('<div class="grid two" style="margin-top:16px">');
+        w.panels.forEach(function (p) {
+          out.push('<div class="panel ' + (p.cls || "reject") + '">' +
+            '<span class="meta">' + p.meta + '</span>' +
+            '<h3>' + p.title + '</h3><p>' + p.body + '</p></div>');
+        });
+        out.push('</div>');
+      }
+      if (w.callout) {
+        out.push('<div class="callout"><span class="kicker">' + w.callout.kicker +
+          '</span><p>' + w.callout.body + '</p></div>');
+      }
+      hero.innerHTML = out.join("");
+    }
+
+    var n = w.next_game;
+    if (!n) return;
+    setText("nextDek", n.away + " at " + n.home + " — kicks off " + n.kickoff_long +
+      " NZ. We priced every market, both teams.");
+    var ph = document.getElementById("nextPanels");
+    if (ph) {
+      ph.innerHTML = (n.panels || []).map(function (p) {
+        return '<div class="panel"><span class="meta">' + p.meta + '</span>' +
+          '<h3>' + p.title + '</h3><p>' + p.body + '</p></div>';
+      }).join("");
+    }
+    renderTonight(document.getElementById("tonightTable"), n);
+    renderGates(document.getElementById("tonightGates"), (n.markets || []).map(function (m) {
+      return { side: m.side, sub: m.market, edge: m.edge_pct };
+    }));
   }
 
   /* ---------- the bet form ---------- */
@@ -748,10 +807,6 @@
     }).catch(function () {});
 
     load("assets/data/week01.json").then(function (d) {
-      renderTonight(document.getElementById("tonightTable"), d.tonight);
-      renderGates(document.getElementById("tonightGates"), d.tonight.markets.map(function (m) {
-        return { side: m.side, sub: m.market, edge: m.edge_pct };
-      }));
       renderEdges(document.getElementById("edgesTable"), d.sides);
       renderKeyTable(document.getElementById("keyTable"), d.key_numbers);
       renderSpikes(document.getElementById("spikes"), d.key_numbers.rows);
@@ -768,6 +823,17 @@
         var h = document.getElementById(id);
         if (h) h.textContent = "Data module failed to load (" + e.message + ").";
       });
+    });
+
+    // This week: the chips, the front page's week block, and the next game's prices.
+    // Written by build_week.py, so the page follows the week rather than being told it.
+    load("assets/data/week.json").then(function (w) {
+      renderWeek(w);
+    }).catch(function (e) {
+      var h = document.getElementById("weekHero");
+      if (h) h.innerHTML = '<div class="verdict empty"><span class="kicker">This week</span>' +
+        '<h2>The week stamp failed to load.</h2><p>' + e.message +
+        " — open the site over http:// rather than file://</p></div>";
     });
 
     load("assets/data/board.json").then(function (b) {

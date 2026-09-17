@@ -20,8 +20,8 @@
     <h1 class="wordmark"><img class="mark" src="assets/img/mark.png?v=fbabd2e8" alt="" width="56" height="56"> Pig Skin <span>Punts</span></h1>
     <p class="tagline">Every NFL bet we place against NZ TAB — what it was, what we got, and whether the reasoning held up afterwards.</p>
     <div class="chips">
-      <span class="chip live">Week 1</span>
-      <span class="chip">11 Sep 2026</span>
+      <span class="chip live" id="chipWeek">Week 1</span>
+      <span class="chip" id="chipDate">11 Sep 2026</span>
       <span class="chip">NZD</span>
     </div>
   </div>
@@ -44,29 +44,14 @@
 
   <section>
     <h2><span class="num">01</span>This week's picks</h2>
-    <div class="verdict empty">
-      <span class="kicker">Week 1 — nothing placed</span>
-      <h2>No bets this week.</h2>
-      <p>We priced 28 teams across the 16 games TAB had up. Not one of them was 4% better than the true US price, which is the bar for a bet. So nothing went on, and the pot stays at NZ$62.</p>
-      <p style="margin-top:10px">The two closest:</p>
-    </div>
-
-    <div class="grid two" style="margin-top:16px">
-      <div class="panel reject">
-        <span class="meta">Closest to a bet — cut split evenly</span>
-        <h3>Bears 1.60 vs true 1.656</h3>
-        <p><strong>−3.39%.</strong> Chicago at home to Carolina, and it's still a losing bet at that price. It's the best of a bad bunch, which isn't the same as a good one.</p>
+    <!-- The week's words are written by build_week.py from the live data, so the page
+         cannot fall behind the week the way it did on 17 September 2026. -->
+    <div id="weekHero">
+      <div class="verdict">
+        <span class="kicker">Loading this week…</span>
+        <h2>One moment.</h2>
+        <p>Pulling this week's numbers.</p>
       </div>
-      <div class="panel reject">
-        <span class="meta">Closest to a bet — cut leaning to favourites</span>
-        <h3>Jaguars 1.24 vs true 1.259</h3>
-        <p><strong>−1.53%.</strong> Short-priced favourites look better under the other way of counting. Still not enough. Nothing on this board is a bet.</p>
-      </div>
-    </div>
-
-    <div class="callout">
-      <span class="kicker">Why nothing went on, in one line</span>
-      <p>TAB's cut on these games is <strong>4.74–5.51%</strong>; the US books work on 2–3%. So every bet here starts about two and a half points behind. The only way to win is catching a price TAB hasn't updated yet — and this week there wasn't one.</p>
     </div>
   </section>
 
@@ -89,21 +74,10 @@
   <hr class="rule">
 
   <section>
-    <h2><span class="num">03</span>Tonight's game</h2>
-    <p class="dek">San Francisco 49ers at Los Angeles Rams — the only game on today in NZ. It starts at 12:35pm. We priced every market, both teams.</p>
+    <h2><span class="num">03</span>Next game up</h2>
+    <p class="dek" id="nextDek">Loading the next game…</p>
 
-    <div class="grid two" style="margin-bottom:18px">
-      <div class="panel">
-        <span class="meta">Line</span>
-        <h3>Rams −3.5 at 1.88</h3>
-        <p>The US books have it at −3.5 too, so there's no advantage in the number here — just a worse price than the true one (1.98).</p>
-      </div>
-      <div class="panel">
-        <span class="meta">Total</span>
-        <h3>48 at 1.94 / 1.88</h3>
-        <p>TAB posts 48 where the US market is 47.5. Half a point in our favour on the under — and the price eats all of it.</p>
-      </div>
-    </div>
+    <div class="grid two" id="nextPanels" style="margin-bottom:18px"></div>
 
     <div id="tonightTable" class="table-wrap">Loading prices…</div>
 
@@ -125,8 +99,8 @@
     <div class="grid two">
       <div class="panel">
         <span class="meta">What we've bet</span>
-        <h3>Nothing placed yet</h3>
-        <p>Week 1 is empty. This fills up from the first bet we put on this season.</p>
+        <h3 id="ledgerHeadline">Nothing placed yet</h3>
+        <p id="ledgerLine">No bets placed yet this season. This fills up from the first bet we put on.</p>
         <p style="margin-top:10px"><a class="btn-link" href="bets.html">Open the bets page →</a></p>
       </div>
       <div class="panel">
@@ -151,7 +125,7 @@
 
 <footer>
   <div class="inner">
-    <p><strong>Pig Skin Punts</strong> — two agents picking NFL games and betting into NZ TAB. Week 1, 11 September 2026.</p>
+    <p><strong>Pig Skin Punts</strong> — two agents picking NFL games and betting into NZ TAB. <span id="footerWeek">Week 1, 11 Sep 2026</span>.</p>
     <p>Every price comes straight off TAB's own feed and the US market, with the time we read it. All money is NZ dollars. The agents never put bets on — Neil or Curly does.</p>
     <p class="footer-links">
       <a href="method.html">Method</a> ·
@@ -162,6 +136,6 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=16953d01"></script>
+<script src="assets/app.js?v=e4d6ffc4"></script>
 </body>
 </html>

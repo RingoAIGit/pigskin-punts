@@ -1,0 +1,100 @@
+{
+ "generated_utc": "2026-09-17T19:09:03Z",
+ "generated_nz": "18 Sep 2026, 7:09AM NZ",
+ "week": 2,
+ "week_label": "Week 2",
+ "date_label": "18 Sep 2026",
+ "state": "awaiting",
+ "hero_class": "verdict empty",
+ "kicker": "Week 2 \u2014 the picks aren't out yet",
+ "headline": "No picks filed yet this week.",
+ "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 32 sides across the 16 games TAB has up. None of them has cleared the +4% bar.",
+ "panels": [
+  {
+   "meta": "Best on the board",
+   "cls": "reject",
+   "title": "Miami Dolphins 7.75 vs true 7.818",
+   "body": "<strong>-0.87%.</strong> San Francisco 49ers vs Miami Dolphins, Mon 21 Sep 08:25am. Best of the 32 \u2014 and still a losing bet at that price."
+  },
+  {
+   "meta": "Second best",
+   "cls": "reject",
+   "title": "Green Bay Packers 1.53 vs true 1.585",
+   "body": "<strong>-3.47%.</strong> New York Jets vs Green Bay Packers, Mon 21 Sep 05:00am. Still short of the +4% bar."
+  }
+ ],
+ "callout": {
+  "kicker": "Why nothing has been bet yet",
+  "body": "TAB's cut on these games is <strong>4.28\u20135.53%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
+ },
+ "cut_label": "4.28% to 5.53%",
+ "ledger_headline": "Nothing placed yet",
+ "ledger_line": "No bets placed yet this season. This fills up from the first bet we put on \u2014 the price, how much, who put it on, and whose pick it was.",
+ "footer_line": "Week 2, 18 September 2026",
+ "picks": [],
+ "next_game": {
+  "away": "Detroit Lions",
+  "home": "Buffalo Bills",
+  "label": "Buffalo Bills vs Detroit Lions",
+  "kickoff_nz": "Fri 18 Sep 12:15pm",
+  "kickoff_long": "Friday 18 September, 12:15pm",
+  "panels": [
+   {
+    "meta": "Line",
+    "title": "TAB Detroit Lions +5.5 at 1.90",
+    "body": "The US books post +3 to +5.5, and +5.5 is the one most of them post \u2014 the same as TAB's. The price falls 5.19% short of the true one."
+   },
+   {
+    "meta": "Total",
+    "title": "TAB 55 at 1.88 over / 1.92 under",
+    "body": "The US books post 54.5, so TAB's 55 is half a point our way on the over \u2014 and the price falls 4.37% short of the true one."
+   }
+  ],
+  "markets": [
+   {
+    "market": "Head To Head",
+    "side": "Buffalo Bills",
+    "tab": 1.4,
+    "fair": 1.459,
+    "edge_pct": -4.04
+   },
+   {
+    "market": "Head To Head",
+    "side": "Detroit Lions",
+    "tab": 3.0,
+    "fair": 3.179,
+    "edge_pct": -5.63
+   },
+   {
+    "market": "Line",
+    "side": "Detroit Lions +5.5",
+    "tab": 1.9,
+    "fair": 2.004,
+    "edge_pct": -5.19
+   },
+   {
+    "market": "Line",
+    "side": "Buffalo Bills \u22125.5",
+    "tab": 1.9,
+    "fair": 1.996,
+    "edge_pct": -4.81
+   },
+   {
+    "market": "Total",
+    "side": "Over 55",
+    "tab": 1.88,
+    "fair": 1.966,
+    "edge_pct": -4.37
+   },
+   {
+    "market": "Total",
+    "side": "Under 55",
+    "tab": 1.92,
+    "fair": 2.035,
+    "edge_pct": -5.65
+   }
+  ],
+  "caption": "NZ TAB read 18 Sep, 7:07AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
+  "swept": "18 Sep, 7:07AM NZ"
+ }
+}

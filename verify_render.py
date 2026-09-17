@@ -51,14 +51,23 @@ FORM = r"""
   const set=(id,v)=>{const e=document.getElementById(id); e.value=v;
     e.dispatchEvent(new Event('input',{bubbles:true}));
     e.dispatchEvent(new Event('change',{bubbles:true}));};
-  set('f-game','49ers @ Rams'); set('f-sel','Rams -3.5');
-  set('f-odds','1.88'); set('f-stake','5.00'); set('f-note','stale number test');
+  // The game field is a select filled from slate.json, which is rebuilt every deploy, so
+  // a hardcoded game name silently stopped matching the slate and the probe was building
+  // a line with "(game?)" in it — a check that no longer checked. Take a real option.
+  const gs = document.getElementById('f-game');
+  const opt = Array.from(gs.options).find(o => o.value && !o.disabled);
+  set('f-game', opt ? opt.textContent.trim() : '');
+  set('f-sel','Rams -3.5');
+  set('f-odds','1.88'); set('f-stake','5.00'); set('f-note','render check probe');
   document.getElementById('betBuild').click();
   const mail = document.getElementById('betMail').getAttribute('href') || '';
+  const line = document.getElementById('betLine').textContent;
   return JSON.stringify({
+    game: opt ? opt.textContent.trim() : null,
     hidden: document.getElementById('betOut').hidden,
-    line: document.getElementById('betLine').textContent,
+    line: line,
     mailOk: mail.indexOf('mailto:emailringoai@gmail.com') === 0 && mail.indexOf('1.88') > 0,
+    placeholder: line.indexOf('(game?)') >= 0,
     mailLen: mail.length
   });
 })()

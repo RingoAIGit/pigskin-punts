@@ -33,6 +33,9 @@ if python3 build_slate.py; then :; else echo "   slate refresh failed — shippi
 echo "0b. rebuild the board — every price we checked, ranked best first"
 if python3 build_board.py; then :; else echo "   board build failed — shipping the previous board"; fi
 
+echo "0c. stamp the week — the chips, the front page block, the next game up"
+if python3 build_week.py; then :; else echo "   week stamp failed — shipping the previous week.json"; fi
+
 echo "1. build stamp + asset versions"
 python3 stamp.py > /dev/null
 echo "   $(python3 -c "import json;print(json.load(open('assets/data/build.json'))['built_human'])")"
