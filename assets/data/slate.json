@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-17T21:21:11Z",
- "generated_nz": "18 Sep 2026, 9:21AM NZ",
+ "generated_utc": "2026-09-17T23:33:46Z",
+ "generated_nz": "18 Sep 2026, 11:33AM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
  "count": 16,
@@ -12,10 +12,10 @@
    "day": "Fri 18 Sep",
    "kickoff_nz": "Fri 18 Sep 12:15pm",
    "market": "Head To Head",
-   "tab_margin_pct": 5.25,
+   "tab_margin_pct": 5.33,
    "tab_prices": {
-    "Buffalo Bills": 1.38,
-    "Detroit Lions": 3.05
+    "Buffalo Bills": 1.4,
+    "Detroit Lions": 2.95
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/buffalo-bills-vs-detroit-lions/7cc3148d-e482-47ba-b22c-de0f87d94c9c"
   },
@@ -110,10 +110,10 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 05:00am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.98,
+   "tab_margin_pct": 4.28,
    "tab_prices": {
     "Atlanta Falcons": 2.2,
-    "Carolina Panthers": 1.68
+    "Carolina Panthers": 1.7
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/atlanta-falcons-vs-carolina-panthers/29b06f27-6978-439e-ba13-628b87583c60"
   },
@@ -180,10 +180,10 @@
    "day": "Mon 21 Sep",
    "kickoff_nz": "Mon 21 Sep 08:25am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.6,
+   "tab_margin_pct": 5.3,
    "tab_prices": {
     "Dallas Cowboys": 1.48,
-    "Washington Commanders": 2.7
+    "Washington Commanders": 2.65
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/dallas-cowboys-vs-washington-commanders/511f05ef-5e2b-4f9e-96f2-df9177d43c73"
   },
@@ -222,10 +222,10 @@
    "day": "Tue 22 Sep",
    "kickoff_nz": "Tue 22 Sep 12:15pm",
    "market": "Head To Head",
-   "tab_margin_pct": 5.9,
+   "tab_margin_pct": 5.15,
    "tab_prices": {
     "Los Angeles Rams": 1.28,
-    "New York Giants": 3.6
+    "New York Giants": 3.7
    },
    "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/los-angeles-rams-vs-new-york-giants/3f2f505a-2cfa-49c3-8c61-c87c30fe96ed"
   }

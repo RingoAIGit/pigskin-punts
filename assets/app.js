@@ -265,7 +265,8 @@
       head.appendChild(el("span", null, who
         ? " " + who + (cleared.length > 4 ? " and " + (cleared.length - 4) + " more" : "") + "."
         : " Best on the board was " + b.best_pick + " at " + fmtEdge(b.best_pct) +
-          " against the true price, which is still short of the +" + b.bar_pct + "% that marks a pick as worth backing."));
+          " against the true price — still short of it, and short of the +" + b.bar_pct +
+          "% bar. Nothing here cleared the bar, so this week's board offers no bet on price."));
       sum.appendChild(head);
       sum.appendChild(el("p", "board-read",
         rows.length + " prices across " + b.games + " games, read " + b.priced_at_nz +

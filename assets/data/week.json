@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-09-17T21:21:11Z",
- "generated_nz": "18 Sep 2026, 9:21AM NZ",
+ "generated_utc": "2026-09-17T23:33:46Z",
+ "generated_nz": "18 Sep 2026, 11:33AM NZ",
  "week": 2,
  "week_label": "Week 2",
  "date_label": "18 Sep 2026",
@@ -19,8 +19,8 @@
   {
    "meta": "Second best",
    "cls": "reject",
-   "title": "Green Bay Packers 1.53 vs true 1.585",
-   "body": "<strong>-3.47%.</strong> New York Jets vs Green Bay Packers, Mon 21 Sep 05:00am. Still short of the +4% bar."
+   "title": "Green Bay Packers 1.53 vs true 1.570",
+   "body": "<strong>-2.55%.</strong> New York Jets vs Green Bay Packers, Mon 21 Sep 05:00am. Still short of the +4% bar."
   }
  ],
  "callout": {
@@ -46,8 +46,8 @@
    },
    {
     "meta": "Total",
-    "title": "TAB 55 at 1.91 over / 1.90 under",
-    "body": "The US books post 54.5 and TAB posts 55, so TAB's number is half a point above the US number, which sits with the under. On price, both sides are short of the true one \u2014 the over by 2.85%, the under by 6.63%."
+    "title": "TAB 55 at 1.94 over / 1.88 under",
+    "body": "The US books post 54.5 and TAB posts 55, so TAB's number is half a point above the US number, which sits with the under. On price, both sides are short of the true one \u2014 the over by 1.52%, the under by 7.43%."
    }
   ],
   "markets": [
@@ -55,15 +55,15 @@
     "market": "Head To Head",
     "side": "Detroit Lions",
     "tab": 3.05,
-    "fair": 3.179,
-    "edge_pct": -4.06
+    "fair": 3.166,
+    "edge_pct": -3.66
    },
    {
     "market": "Head To Head",
     "side": "Buffalo Bills",
     "tab": 1.38,
-    "fair": 1.459,
-    "edge_pct": -5.41
+    "fair": 1.462,
+    "edge_pct": -5.61
    },
    {
     "market": "Line",
@@ -82,19 +82,19 @@
    {
     "market": "Total",
     "side": "Over 55",
-    "tab": 1.91,
-    "fair": 1.966,
-    "edge_pct": -2.85
+    "tab": 1.94,
+    "fair": 1.97,
+    "edge_pct": -1.52
    },
    {
     "market": "Total",
     "side": "Under 55",
-    "tab": 1.9,
-    "fair": 2.035,
-    "edge_pct": -6.63
+    "tab": 1.88,
+    "fair": 2.031,
+    "edge_pct": -7.43
    }
   ],
-  "caption": "NZ TAB read 18 Sep, 8:50AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
-  "swept": "18 Sep, 8:50AM NZ"
+  "caption": "NZ TAB read 18 Sep, 10:50AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
+  "swept": "18 Sep, 10:50AM NZ"
  }
 }

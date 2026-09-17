@@ -82,11 +82,11 @@
     <div id="tonightTable" class="table-wrap">Loading prices…</div>
 
     <h3 style="margin:28px 0 6px;font-size:1rem">Every market against the bar</h3>
-    <p class="dek" style="margin-bottom:10px">A bar sitting left of zero means TAB's price is worse than the true price. We only bet where a bar reaches the dashed +4% line.</p>
+    <p class="dek" style="margin-bottom:10px">A bar sitting left of zero means TAB's price is worse than the true price. A bar reaching the dashed +4% line means the price beat the true one by that much or more. The bar is a label rather than a cutoff: everything below it is published with its number, and what gets backed is Neil's and Curly's call.</p>
     <div id="tonightGates"></div>
     <div class="legend">
-      <span><i style="background:var(--fail)"></i>not good enough — no bet</span>
-      <span><i style="background:var(--qualify)"></i>4% or better — bet</span>
+      <span><i style="background:var(--fail)"></i>short of the bar — published with its number</span>
+      <span><i style="background:var(--qualify)"></i>reached the bar — the price beat the true one</span>
       <span><i style="border-left:1px dashed var(--qualify);height:12px;width:0"></i>the +4% bar</span>
     </div>
   </section>
@@ -136,6 +136,6 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=e4d6ffc4"></script>
+<script src="assets/app.js?v=876ac51e"></script>
 </body>
 </html>
