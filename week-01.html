@@ -153,6 +153,10 @@
     <h2><span class="num">04</span>The whole board</h2>
     <p class="dek">Every team on the Week 1 slate, priced both ways, best first. This is the table the bar runs on — published whether or not it produces a bet.</p>
     <div id="edgesTable" class="table-wrap">Loading the board…</div>
+    <!-- app.js writes the week's summary of sides priced, games priced and how many cleared the
+         gate under each de-vig method. Missing element until 18 Sep 2026: the script guarded it
+         with `if (s)` so it did nothing at all, and nobody saw the line was gone. -->
+    <p class="hint" id="summaryLine"></p>
     <div class="panel" style="margin-top:16px">
       <span class="meta">Note on the drift</span>
       <p>An earlier check the same day (10 Sep) had the best even-split side at −3.92% on the Jaguars; by this sweep it was the Bears at −3.39%. Prices move within hours. Both readings say the same thing, and it's why a pick has to record the line and price it was made on, not whichever quote looked kindest.</p>

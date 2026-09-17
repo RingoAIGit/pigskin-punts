@@ -46,6 +46,10 @@
     <h2><span class="num">01</span>How we're going</h2>
     <p class="dek" id="resultNote">Bets finished so far, at the odds we actually got.</p>
     <div id="resultsTable" class="table-wrap">Loading the record…</div>
+    <!-- app.js fills this with the as-of date and what the rows mean. The element went missing
+         in the 8 Sep 2026 rebuild, so the script's getElementById returned null and the note
+         silently never appeared. Kept here, next to the table it describes. -->
+    <p class="hint" id="ledgerNote"></p>
   </section>
 
   <hr class="rule">
