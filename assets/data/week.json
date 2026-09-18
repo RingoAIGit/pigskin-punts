@@ -1,100 +1,100 @@
 {
- "generated_utc": "2026-09-17T23:33:46Z",
- "generated_nz": "18 Sep 2026, 11:33AM NZ",
+ "generated_utc": "2026-09-18T20:00:29Z",
+ "generated_nz": "19 Sep 2026, 8:00AM NZ",
  "week": 2,
  "week_label": "Week 2",
- "date_label": "18 Sep 2026",
+ "date_label": "21 Sep 2026",
  "state": "awaiting",
  "hero_class": "verdict empty",
  "kicker": "Week 2 \u2014 the picks aren't out yet",
  "headline": "No picks filed yet this week.",
- "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 32 sides across the 16 games TAB has up. None of them has cleared the +4% bar.",
+ "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 30 sides across the 15 games TAB has up. None of them has cleared the +4% bar.",
  "panels": [
   {
    "meta": "Best on the board",
    "cls": "reject",
-   "title": "Miami Dolphins 7.75 vs true 7.818",
-   "body": "<strong>-0.87%.</strong> San Francisco 49ers vs Miami Dolphins, Mon 21 Sep 08:25am. Best of the 32 \u2014 and still a losing bet at that price."
+   "title": "Kansas City Chiefs 1.33 vs true 1.364",
+   "body": "<strong>-2.49%.</strong> Kansas City Chiefs vs Indianapolis Colts, Mon 21 Sep 12:20pm. Best of the 30 \u2014 and still a losing bet at that price."
   },
   {
    "meta": "Second best",
    "cls": "reject",
-   "title": "Green Bay Packers 1.53 vs true 1.570",
-   "body": "<strong>-2.55%.</strong> New York Jets vs Green Bay Packers, Mon 21 Sep 05:00am. Still short of the +4% bar."
+   "title": "Green Bay Packers 1.53 vs true 1.578",
+   "body": "<strong>-3.04%.</strong> New York Jets vs Green Bay Packers, Mon 21 Sep 05:00am. Still short of the +4% bar."
   }
  ],
  "callout": {
   "kicker": "Why nothing has been bet yet",
-  "body": "TAB's cut on these games is <strong>4.28\u20135.90%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
+  "body": "TAB's cut on these games is <strong>4.32\u20135.50%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
  },
- "cut_label": "4.28% to 5.90%",
+ "cut_label": "4.32% to 5.50%",
  "ledger_headline": "Nothing placed yet",
  "ledger_line": "No bets placed yet this season. This fills up from the first bet we put on \u2014 the price, how much, who put it on, and whose pick it was.",
- "footer_line": "Week 2, 18 September 2026",
+ "footer_line": "Week 2, 21 September 2026",
  "picks": [],
  "next_game": {
-  "away": "Detroit Lions",
-  "home": "Buffalo Bills",
-  "label": "Buffalo Bills vs Detroit Lions",
-  "kickoff_nz": "Fri 18 Sep 12:15pm",
-  "kickoff_long": "Friday 18 September, 12:15pm",
+  "away": "Cincinnati Bengals",
+  "home": "Houston Texans",
+  "label": "Houston Texans vs Cincinnati Bengals",
+  "kickoff_nz": "Mon 21 Sep 05:00am",
+  "kickoff_long": "Monday 21 September, 5:00am",
   "panels": [
    {
     "meta": "Line",
-    "title": "TAB Detroit Lions +5.5 at 1.91",
-    "body": "The US books post +3 to +5.5, and +5.5 is the one most of them post \u2014 the same as TAB's. The price falls 4.50% short of the true one."
+    "title": "TAB Cincinnati Bengals +2.5 at 1.92",
+    "body": "The US books are on +2.5 as well, so there's nothing in the number here. The price falls 4.53% short of the true one."
    },
    {
     "meta": "Total",
-    "title": "TAB 55 at 1.94 over / 1.88 under",
-    "body": "The US books post 54.5 and TAB posts 55, so TAB's number is half a point above the US number, which sits with the under. On price, both sides are short of the true one \u2014 the over by 1.52%, the under by 7.43%."
+    "title": "TAB 45.5 at 1.90 over / 1.91 under",
+    "body": "The US books post 45.5 and TAB posts 45.5, so TAB's number is the same number the US books post. On price, both sides are short of the true one \u2014 the over by 4.57%, the under by 4.93%."
    }
   ],
   "markets": [
    {
     "market": "Head To Head",
-    "side": "Detroit Lions",
-    "tab": 3.05,
-    "fair": 3.166,
-    "edge_pct": -3.66
+    "side": "Cincinnati Bengals",
+    "tab": 2.2,
+    "fair": 2.296,
+    "edge_pct": -4.18
    },
    {
     "market": "Head To Head",
-    "side": "Buffalo Bills",
-    "tab": 1.38,
-    "fair": 1.462,
-    "edge_pct": -5.61
+    "side": "Houston Texans",
+    "tab": 1.68,
+    "fair": 1.772,
+    "edge_pct": -5.19
    },
    {
     "market": "Line",
-    "side": "Detroit Lions +5.5",
-    "tab": 1.91,
-    "fair": 2.0,
-    "edge_pct": -4.5
+    "side": "Cincinnati Bengals +2.5",
+    "tab": 1.92,
+    "fair": 2.011,
+    "edge_pct": -4.53
    },
    {
     "market": "Line",
-    "side": "Buffalo Bills \u22125.5",
-    "tab": 1.9,
-    "fair": 2.0,
-    "edge_pct": -5.0
-   },
-   {
-    "market": "Total",
-    "side": "Over 55",
-    "tab": 1.94,
-    "fair": 1.97,
-    "edge_pct": -1.52
-   },
-   {
-    "market": "Total",
-    "side": "Under 55",
+    "side": "Houston Texans \u22122.5",
     "tab": 1.88,
-    "fair": 2.031,
-    "edge_pct": -7.43
+    "fair": 1.989,
+    "edge_pct": -5.48
+   },
+   {
+    "market": "Total",
+    "side": "Over 45.5",
+    "tab": 1.9,
+    "fair": 1.991,
+    "edge_pct": -4.57
+   },
+   {
+    "market": "Total",
+    "side": "Under 45.5",
+    "tab": 1.91,
+    "fair": 2.009,
+    "edge_pct": -4.93
    }
   ],
-  "caption": "NZ TAB read 18 Sep, 10:50AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
-  "swept": "18 Sep, 10:50AM NZ"
+  "caption": "NZ TAB read 19 Sep, 6:49AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
+  "swept": "19 Sep, 6:49AM NZ"
  }
 }
