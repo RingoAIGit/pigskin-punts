@@ -1,219 +1,233 @@
 {
- "generated_utc": "2026-09-18T20:00:29Z",
- "generated_nz": "19 Sep 2026, 8:00AM NZ",
+ "generated_utc": "2026-09-24T07:00:12Z",
+ "generated_nz": "24 Sep 2026, 7:00PM NZ",
  "source": "TAB slate sweep (live feed)",
  "note": "Rolling feed: a game leaves this list once it kicks off, so this is a snapshot.",
- "count": 15,
+ "count": 16,
  "games": [
   {
-   "label": "Cincinnati Bengals @ Houston Texans",
-   "away": "Cincinnati Bengals",
-   "home": "Houston Texans",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "label": "Atlanta Falcons @ Green Bay Packers",
+   "away": "Atlanta Falcons",
+   "home": "Green Bay Packers",
+   "day": "Fri 25 Sep",
+   "kickoff_nz": "Fri 25 Sep 12:15pm",
    "market": "Head To Head",
-   "tab_margin_pct": 4.98,
+   "tab_margin_pct": 5.25,
    "tab_prices": {
-    "Houston Texans": 1.68,
-    "Cincinnati Bengals": 2.2
+    "Green Bay Packers": 1.38,
+    "Atlanta Falcons": 3.05
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/houston-texans-vs-cincinnati-bengals/e8ff17df-f2aa-4224-b0de-81f6e5647603"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/green-bay-packers-vs-atlanta-falcons/1bccc94a-3a27-454e-b6f8-617b2962e713"
   },
   {
-   "label": "New Orleans Saints @ Baltimore Ravens",
-   "away": "New Orleans Saints",
-   "home": "Baltimore Ravens",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "label": "Cincinnati Bengals @ Pittsburgh Steelers",
+   "away": "Cincinnati Bengals",
+   "home": "Pittsburgh Steelers",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 5.01,
+   "tab_prices": {
+    "Pittsburgh Steelers": 2.55,
+    "Cincinnati Bengals": 1.52
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/pittsburgh-steelers-vs-cincinnati-bengals/e3ca7a75-a72e-4818-a48d-c7e72b3532a8"
+  },
+  {
+   "label": "New York Jets @ Detroit Lions",
+   "away": "New York Jets",
+   "home": "Detroit Lions",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 5.17,
+   "tab_prices": {
+    "Detroit Lions": 1.32,
+    "New York Jets": 3.4
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/detroit-lions-vs-new-york-jets/f4f25c09-9801-4fa4-945e-e9cfa54f4c6c"
+  },
+  {
+   "label": "Tennessee Titans @ New York Giants",
+   "away": "Tennessee Titans",
+   "home": "New York Giants",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 5.05,
+   "tab_prices": {
+    "New York Giants": 1.65,
+    "Tennessee Titans": 2.25
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-york-giants-vs-tennessee-titans/ed5508c1-273f-4be1-8071-a48b8309e1f6"
+  },
+  {
+   "label": "Los Angeles Chargers @ Buffalo Bills",
+   "away": "Los Angeles Chargers",
+   "home": "Buffalo Bills",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 4.79,
+   "tab_prices": {
+    "Buffalo Bills": 1.28,
+    "Los Angeles Chargers": 3.75
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/buffalo-bills-vs-los-angeles-chargers/e0323cdf-670e-4b81-9bfe-7c69a61c5c40"
+  },
+  {
+   "label": "Seattle Seahawks @ Washington Commanders",
+   "away": "Seattle Seahawks",
+   "home": "Washington Commanders",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 4.7,
+   "tab_prices": {
+    "Washington Commanders": 3.6,
+    "Seattle Seahawks": 1.3
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/washington-commanders-vs-seattle-seahawks/7cc1abab-08ae-43b6-bdfe-a5fd41eb2c75"
+  },
+  {
+   "label": "Carolina Panthers @ Cleveland Browns",
+   "away": "Carolina Panthers",
+   "home": "Cleveland Browns",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 5.33,
+   "tab_prices": {
+    "Cleveland Browns": 2.2,
+    "Carolina Panthers": 1.67
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/cleveland-browns-vs-carolina-panthers/373c5f62-d86b-406f-90c5-5cd9879e2d5a"
+  },
+  {
+   "label": "Kansas City Chiefs @ Miami Dolphins",
+   "away": "Kansas City Chiefs",
+   "home": "Miami Dolphins",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 5.11,
+   "tab_prices": {
+    "Miami Dolphins": 5.75,
+    "Kansas City Chiefs": 1.14
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/miami-dolphins-vs-kansas-city-chiefs/346b7779-45d2-4b62-9ec6-597b65807539"
+  },
+  {
+   "label": "Houston Texans @ Indianapolis Colts",
+   "away": "Houston Texans",
+   "home": "Indianapolis Colts",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
+   "market": "Head To Head",
+   "tab_margin_pct": 5.33,
+   "tab_prices": {
+    "Indianapolis Colts": 2.2,
+    "Houston Texans": 1.67
+   },
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/indianapolis-colts-vs-houston-texans/10112882-b713-42df-91fa-565db4b6a027"
+  },
+  {
+   "label": "New England Patriots @ Jacksonville Jaguars",
+   "away": "New England Patriots",
+   "home": "Jacksonville Jaguars",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 05:00am",
    "market": "Head To Head",
    "tab_margin_pct": 4.45,
    "tab_prices": {
-    "Baltimore Ravens": 1.24,
-    "New Orleans Saints": 4.2
+    "Jacksonville Jaguars": 1.64,
+    "New England Patriots": 2.3
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/baltimore-ravens-vs-new-orleans-saints/eb26803f-6c2d-4f56-a99f-005334e632f0"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/jacksonville-jaguars-vs-new-england-patriots/078d9b04-a3cc-418c-a63c-a62f0cd6b597"
   },
   {
-   "label": "Philadelphia Eagles @ Tennessee Titans",
-   "away": "Philadelphia Eagles",
-   "home": "Tennessee Titans",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "market": "Head To Head",
-   "tab_margin_pct": 4.7,
-   "tab_prices": {
-    "Tennessee Titans": 3.6,
-    "Philadelphia Eagles": 1.3
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/tennessee-titans-vs-philadelphia-eagles/c79c0631-6509-4c66-b70d-d149b32f1b5e"
-  },
-  {
-   "label": "Cleveland Browns @ Tampa Bay Buccaneers",
-   "away": "Cleveland Browns",
-   "home": "Tampa Bay Buccaneers",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "market": "Head To Head",
-   "tab_margin_pct": 4.69,
-   "tab_prices": {
-    "Tampa Bay Buccaneers": 1.22,
-    "Cleveland Browns": 4.4
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/tampa-bay-buccaneers-vs-cleveland-browns/91249d01-bcdf-49ad-82c4-aff93a90ae57"
-  },
-  {
-   "label": "Minnesota Vikings @ Chicago Bears",
+   "label": "Minnesota Vikings @ Tampa Bay Buccaneers",
    "away": "Minnesota Vikings",
-   "home": "Chicago Bears",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "home": "Tampa Bay Buccaneers",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 08:05am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.86,
+   "tab_margin_pct": 4.96,
    "tab_prices": {
-    "Chicago Bears": 1.46,
-    "Minnesota Vikings": 2.75
+    "Tampa Bay Buccaneers": 2.05,
+    "Minnesota Vikings": 1.78
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/chicago-bears-vs-minnesota-vikings/5b142d7d-c355-4b11-913f-71b67bd495a0"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/tampa-bay-buccaneers-vs-minnesota-vikings/56e423bd-bfa7-49d4-896e-07f07bbd70df"
   },
   {
-   "label": "Pittsburgh Steelers @ New England Patriots",
-   "away": "Pittsburgh Steelers",
-   "home": "New England Patriots",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "label": "Arizona Cardinals @ San Francisco 49ers",
+   "away": "Arizona Cardinals",
+   "home": "San Francisco 49ers",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 08:05am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.91,
+   "tab_margin_pct": 5.5,
    "tab_prices": {
-    "New England Patriots": 1.42,
-    "Pittsburgh Steelers": 2.9
+    "San Francisco 49ers": 1.22,
+    "Arizona Cardinals": 4.25
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-england-patriots-vs-pittsburgh-steelers/5529f7e5-0608-4134-a9ae-58ae77a8b2f7"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/san-francisco-49-ers-vs-arizona-cardinals/9f44baae-c810-4f71-ad44-93c90c3238fd"
   },
   {
-   "label": "Carolina Panthers @ Atlanta Falcons",
-   "away": "Carolina Panthers",
-   "home": "Atlanta Falcons",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
-   "market": "Head To Head",
-   "tab_margin_pct": 4.32,
-   "tab_prices": {
-    "Atlanta Falcons": 2.25,
-    "Carolina Panthers": 1.67
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/atlanta-falcons-vs-carolina-panthers/29b06f27-6978-439e-ba13-628b87583c60"
-  },
-  {
-   "label": "Green Bay Packers @ New York Jets",
-   "away": "Green Bay Packers",
-   "home": "New York Jets",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 05:00am",
+   "label": "Baltimore Ravens @ Dallas Cowboys",
+   "away": "Baltimore Ravens",
+   "home": "Dallas Cowboys",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 08:25am",
    "market": "Head To Head",
    "tab_margin_pct": 5.36,
    "tab_prices": {
-    "New York Jets": 2.5,
-    "Green Bay Packers": 1.53
+    "Dallas Cowboys": 2.5,
+    "Baltimore Ravens": 1.53
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-york-jets-vs-green-bay-packers/29af7d7c-1e30-48a0-b234-ec35f1840e3b"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/dallas-cowboys-vs-baltimore-ravens/36c9c77e-eae3-4864-b417-77a4085e8c62"
   },
   {
-   "label": "Jacksonville Jaguars @ Denver Broncos",
-   "away": "Jacksonville Jaguars",
-   "home": "Denver Broncos",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 08:05am",
-   "market": "Head To Head",
-   "tab_margin_pct": 4.32,
-   "tab_prices": {
-    "Denver Broncos": 1.67,
-    "Jacksonville Jaguars": 2.25
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/denver-broncos-vs-jacksonville-jaguars/629da576-fca0-4312-ac14-585160e6bb3d"
-  },
-  {
-   "label": "Las Vegas Raiders @ Los Angeles Chargers",
+   "label": "Las Vegas Raiders @ New Orleans Saints",
    "away": "Las Vegas Raiders",
-   "home": "Los Angeles Chargers",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 08:05am",
+   "home": "New Orleans Saints",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 08:25am",
    "market": "Head To Head",
-   "tab_margin_pct": 4.74,
+   "tab_margin_pct": 4.52,
    "tab_prices": {
-    "Los Angeles Chargers": 1.32,
-    "Las Vegas Raiders": 3.45
+    "New Orleans Saints": 1.55,
+    "Las Vegas Raiders": 2.5
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/los-angeles-chargers-vs-las-vegas-raiders/6c251f85-bca0-47c0-b29c-2a7a73fe83e4"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/new-orleans-saints-vs-las-vegas-raiders/de9326a1-3bbf-409d-8596-6cbb6201b3ea"
   },
   {
-   "label": "Miami Dolphins @ San Francisco 49ers",
-   "away": "Miami Dolphins",
-   "home": "San Francisco 49ers",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 08:25am",
+   "label": "Los Angeles Rams @ Denver Broncos",
+   "away": "Los Angeles Rams",
+   "home": "Denver Broncos",
+   "day": "Mon 28 Sep",
+   "kickoff_nz": "Mon 28 Sep 12:20pm",
    "market": "Head To Head",
-   "tab_margin_pct": 4.7,
+   "tab_margin_pct": 4.28,
    "tab_prices": {
-    "San Francisco 49ers": 1.1,
-    "Miami Dolphins": 7.25
+    "Denver Broncos": 2.2,
+    "Los Angeles Rams": 1.7
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/san-francisco-49-ers-vs-miami-dolphins/0512c462-b5f6-4276-a325-cc76aa9ed72a"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/denver-broncos-vs-los-angeles-rams/3581b31a-6035-4389-bfe5-b4afefbb18c0"
   },
   {
-   "label": "Washington Commanders @ Dallas Cowboys",
-   "away": "Washington Commanders",
-   "home": "Dallas Cowboys",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 08:25am",
+   "label": "Philadelphia Eagles @ Chicago Bears",
+   "away": "Philadelphia Eagles",
+   "home": "Chicago Bears",
+   "day": "Tue 29 Sep",
+   "kickoff_nz": "Tue 29 Sep 12:15pm",
    "market": "Head To Head",
-   "tab_margin_pct": 5.3,
+   "tab_margin_pct": 5.51,
    "tab_prices": {
-    "Dallas Cowboys": 1.48,
-    "Washington Commanders": 2.65
+    "Chicago Bears": 2.85,
+    "Philadelphia Eagles": 1.42
    },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/dallas-cowboys-vs-washington-commanders/511f05ef-5e2b-4f9e-96f2-df9177d43c73"
-  },
-  {
-   "label": "Seattle Seahawks @ Arizona Cardinals",
-   "away": "Seattle Seahawks",
-   "home": "Arizona Cardinals",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 08:25am",
-   "market": "Head To Head",
-   "tab_margin_pct": 4.6,
-   "tab_prices": {
-    "Arizona Cardinals": 2.7,
-    "Seattle Seahawks": 1.48
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/arizona-cardinals-vs-seattle-seahawks/6a4deb70-b1ab-4719-bfaf-86399d343eba"
-  },
-  {
-   "label": "Indianapolis Colts @ Kansas City Chiefs",
-   "away": "Indianapolis Colts",
-   "home": "Kansas City Chiefs",
-   "day": "Mon 21 Sep",
-   "kickoff_nz": "Mon 21 Sep 12:20pm",
-   "market": "Head To Head",
-   "tab_margin_pct": 5.04,
-   "tab_prices": {
-    "Kansas City Chiefs": 1.33,
-    "Indianapolis Colts": 3.35
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/kansas-city-chiefs-vs-indianapolis-colts/21d766b3-423d-4ce4-8590-bdbc36cdb83c"
-  },
-  {
-   "label": "New York Giants @ Los Angeles Rams",
-   "away": "New York Giants",
-   "home": "Los Angeles Rams",
-   "day": "Tue 22 Sep",
-   "kickoff_nz": "Tue 22 Sep 12:15pm",
-   "market": "Head To Head",
-   "tab_margin_pct": 4.7,
-   "tab_prices": {
-    "Los Angeles Rams": 1.3,
-    "New York Giants": 3.6
-   },
-   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/los-angeles-rams-vs-new-york-giants/3f2f505a-2cfa-49c3-8c61-c87c30fe96ed"
+   "tab_url": "https://www.tab.co.nz/sports/american-football/nfl/chicago-bears-vs-philadelphia-eagles/c14a2375-e3c6-4443-b3e3-96633333225c"
   }
  ]
 }
