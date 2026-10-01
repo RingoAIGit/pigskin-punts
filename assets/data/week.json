@@ -1,100 +1,100 @@
 {
- "generated_utc": "2026-09-25T20:00:08Z",
- "generated_nz": "26 Sep 2026, 8:00AM NZ",
- "week": 3,
- "week_label": "Week 3",
+ "generated_utc": "2026-10-01T07:00:52Z",
+ "generated_nz": "1 Oct 2026, 8:00PM NZ",
+ "week": 4,
+ "week_label": "Week 4",
  "date_label": "28 Sep 2026",
  "state": "awaiting",
  "hero_class": "verdict empty",
- "kicker": "Week 3 \u2014 the picks aren't out yet",
+ "kicker": "Week 4 \u2014 the picks aren't out yet",
  "headline": "No picks filed yet this week.",
- "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 30 sides across the 15 games TAB has up. None of them has cleared the +4% bar.",
+ "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 32 sides across the 16 games TAB has up. None of them has cleared the +4% bar.",
  "panels": [
   {
    "meta": "Best on the board",
    "cls": "reject",
-   "title": "San Francisco 49ers 1.24 vs true 1.280",
-   "body": "<strong>-3.12%.</strong> San Francisco 49ers vs Arizona Cardinals, Mon 28 Sep 08:05am. Best of the 30 \u2014 and still a losing bet at that price."
+   "title": "Tampa Bay Buccaneers 2.55 vs true 2.627",
+   "body": "<strong>-2.93%.</strong> Tampa Bay Buccaneers vs Green Bay Packers, Mon 05 Oct 05:00am. Best of the 32 \u2014 and still a losing bet at that price."
   },
   {
    "meta": "Second best",
    "cls": "reject",
-   "title": "Dallas Cowboys 2.50 vs true 2.588",
-   "body": "<strong>-3.40%.</strong> Dallas Cowboys vs Baltimore Ravens, Mon 28 Sep 08:25am. Still short of the +4% bar."
+   "title": "Houston Texans 1.62 vs true 1.686",
+   "body": "<strong>-3.91%.</strong> Houston Texans vs Dallas Cowboys, Mon 05 Oct 05:00am. Still short of the +4% bar."
   }
  ],
  "callout": {
   "kicker": "Why nothing has been bet yet",
-  "body": "TAB's cut on these games is <strong>4.45\u20135.68%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
+  "body": "TAB's cut on these games is <strong>4.28\u20135.49%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
  },
- "cut_label": "4.45% to 5.68%",
+ "cut_label": "4.28% to 5.49%",
  "ledger_headline": "Nothing placed yet",
  "ledger_line": "No bets placed yet this season. This fills up from the first bet we put on \u2014 the price, how much, who put it on, and whose pick it was.",
- "footer_line": "Week 3, 28 September 2026",
+ "footer_line": "Week 4, 28 September 2026",
  "picks": [],
  "next_game": {
-  "away": "Cincinnati Bengals",
-  "home": "Pittsburgh Steelers",
-  "label": "Pittsburgh Steelers vs Cincinnati Bengals",
-  "kickoff_nz": "Mon 28 Sep 05:00am",
-  "kickoff_long": "Monday 28 September, 5:00am",
+  "away": "Pittsburgh Steelers",
+  "home": "Cleveland Browns",
+  "label": "Cleveland Browns vs Pittsburgh Steelers",
+  "kickoff_nz": "Fri 02 Oct 12:15pm",
+  "kickoff_long": "Friday 2 October, 12:15pm",
   "panels": [
    {
     "meta": "Line",
-    "title": "TAB Cincinnati Bengals \u22123.5 at 1.92",
-    "body": "The US books post \u22123.5 to \u22121.5, and \u22123.5 is the one most of them post \u2014 the same as TAB's. The price falls 4.62% short of the true one."
+    "title": "TAB Pittsburgh Steelers \u22122.5 at 1.83",
+    "body": "The US books post \u22123 to \u22122.5, and \u22122.5 is the one most of them post \u2014 the same as TAB's. The price falls 4.74% short of the true one."
    },
    {
     "meta": "Total",
-    "title": "TAB 42.5 at 1.88 over / 1.94 under",
-    "body": "The US books post 42.5 and TAB posts 42.5, so TAB's number is the same number the US books post. On price, both sides are short of the true one \u2014 the over by 3.98%, the under by 5.09%."
+    "title": "TAB 38.5 at 1.92 over / 1.88 under",
+    "body": "The US books post 38.5 and TAB posts 38.5, so TAB's number is the same number the US books post. On price, both sides are short of the true one \u2014 the over by 4.95%, the under by 5.05%."
    }
   ],
   "markets": [
    {
     "market": "Head To Head",
-    "side": "Cincinnati Bengals",
-    "tab": 1.53,
-    "fair": 1.594,
-    "edge_pct": -4.02
+    "side": "Pittsburgh Steelers",
+    "tab": 1.67,
+    "fair": 1.748,
+    "edge_pct": -4.46
    },
    {
     "market": "Head To Head",
-    "side": "Pittsburgh Steelers",
-    "tab": 2.5,
-    "fair": 2.684,
-    "edge_pct": -6.86
+    "side": "Cleveland Browns",
+    "tab": 2.2,
+    "fair": 2.337,
+    "edge_pct": -5.86
    },
    {
     "market": "Line",
-    "side": "Cincinnati Bengals \u22123.5",
+    "side": "Pittsburgh Steelers \u22122.5",
+    "tab": 1.83,
+    "fair": 1.921,
+    "edge_pct": -4.74
+   },
+   {
+    "market": "Line",
+    "side": "Cleveland Browns +2.5",
+    "tab": 1.98,
+    "fair": 2.086,
+    "edge_pct": -5.08
+   },
+   {
+    "market": "Total",
+    "side": "Over 38.5",
     "tab": 1.92,
-    "fair": 2.013,
-    "edge_pct": -4.62
-   },
-   {
-    "market": "Line",
-    "side": "Pittsburgh Steelers +3.5",
-    "tab": 1.88,
-    "fair": 1.987,
-    "edge_pct": -5.39
+    "fair": 2.02,
+    "edge_pct": -4.95
    },
    {
     "market": "Total",
-    "side": "Over 42.5",
+    "side": "Under 38.5",
     "tab": 1.88,
-    "fair": 1.958,
-    "edge_pct": -3.98
-   },
-   {
-    "market": "Total",
-    "side": "Under 42.5",
-    "tab": 1.94,
-    "fair": 2.044,
-    "edge_pct": -5.09
+    "fair": 1.98,
+    "edge_pct": -5.05
    }
   ],
-  "caption": "NZ TAB read 26 Sep, 6:49AM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
-  "swept": "26 Sep, 6:49AM NZ"
+  "caption": "NZ TAB read 1 Oct, 6:50PM NZ \u2014 priced against the US no-vig median. Bar is +4%.",
+  "swept": "1 Oct, 6:50PM NZ"
  }
 }
