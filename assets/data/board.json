@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-10-01T07:00:52Z",
- "generated_nz": "1 Oct 2026, 8:00PM NZ",
+ "generated_utc": "2026-10-02T20:00:48Z",
+ "generated_nz": "3 Oct 2026, 9:00AM NZ",
  "priced_at_nz": "1 Oct 2026, 7:22PM NZ",
  "priced_at_utc": "2026-10-01T06:22:10Z",
  "week": null,
@@ -11,7 +11,7 @@
  "cleared": 0,
  "best_pct": -2.93,
  "best_pick": "Tampa Bay Buccaneers",
- "still_to_start": 32,
+ "still_to_start": 30,
  "note": "Every price we checked, ranked best first. A pick clears the bar at +4% or better against the true US price. The bar is a label rather than a cutoff: everything below it is published with its number, and the call on what actually gets backed is Neil's and Curly's.",
  "rows": [
   {
@@ -143,7 +143,7 @@
    "fair": 1.748,
    "gap_pct": -4.46,
    "cleared": false,
-   "started": false,
+   "started": true,
    "rank": 12
   },
   {
@@ -297,7 +297,7 @@
    "fair": 2.337,
    "gap_pct": -5.86,
    "cleared": false,
-   "started": false,
+   "started": true,
    "rank": 26
   },
   {
