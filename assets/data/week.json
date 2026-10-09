@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-10-08T06:00:32Z",
- "generated_nz": "8 Oct 2026, 7:00PM NZ",
+ "generated_utc": "2026-10-09T19:00:28Z",
+ "generated_nz": "10 Oct 2026, 8:00AM NZ",
  "week": 4,
  "week_label": "Week 4",
  "date_label": "28 Sep 2026",
@@ -8,26 +8,26 @@
  "hero_class": "verdict empty",
  "kicker": "Week 4 \u2014 the picks aren't out yet",
  "headline": "No picks filed yet this week.",
- "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 32 sides across the 16 games TAB has up. None of them has cleared the +4% bar.",
+ "body": "Both sides file their picks on Saturday morning and they go public straight after the lock, so nothing is hidden \u2014 there's just nothing filed yet. What we can show you now is every price we've checked: 28 sides across the 14 games TAB has up. None of them has cleared the +4% bar.",
  "panels": [
   {
    "meta": "Best on the board",
    "cls": "reject",
-   "title": "Tampa Bay Buccaneers 2.55 vs true 2.627",
-   "body": "<strong>-2.93%.</strong> Tampa Bay Buccaneers vs Green Bay Packers, Mon 05 Oct 05:00am. Best of the 32 \u2014 and still a losing bet at that price."
+   "title": "Washington Commanders 1.52 vs true 1.566",
+   "body": "<strong>-2.94%.</strong> Washington Commanders vs New York Giants, Mon 12 Oct 05:00am. Best of the 28 \u2014 and still a losing bet at that price."
   },
   {
    "meta": "Second best",
    "cls": "reject",
-   "title": "Houston Texans 1.62 vs true 1.686",
-   "body": "<strong>-3.91%.</strong> Houston Texans vs Dallas Cowboys, Mon 05 Oct 05:00am. Still short of the +4% bar."
+   "title": "Denver Broncos 1.57 vs true 1.618",
+   "body": "<strong>-2.97%.</strong> Los Angeles Chargers vs Denver Broncos, Mon 12 Oct 08:05am. Still short of the +4% bar."
   }
  ],
  "callout": {
   "kicker": "Why nothing has been bet yet",
-  "body": "TAB's cut on these games is <strong>5.06\u20135.06%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
+  "body": "TAB's cut on these games is <strong>4.65\u20135.68%</strong>; the US books work on 2\u20133%. So every bet here starts behind before we've even looked at the two teams. The one advantage we can find is a price TAB hasn't got around to updating."
  },
- "cut_label": "5.06% to 5.06%",
+ "cut_label": "4.65% to 5.68%",
  "ledger_headline": "Nothing placed yet",
  "ledger_line": "No bets placed yet this season. This fills up from the first bet we put on \u2014 the price, how much, who put it on, and whose pick it was.",
  "footer_line": "Week 4, 28 September 2026",
@@ -51,20 +51,6 @@
    }
   ],
   "markets": [
-   {
-    "market": "Head To Head",
-    "side": "Pittsburgh Steelers",
-    "tab": 1.67,
-    "fair": 1.748,
-    "edge_pct": -4.46
-   },
-   {
-    "market": "Head To Head",
-    "side": "Cleveland Browns",
-    "tab": 2.2,
-    "fair": 2.337,
-    "edge_pct": -5.86
-   },
    {
     "market": "Line",
     "side": "Pittsburgh Steelers \u22122.5",
